@@ -6,12 +6,17 @@ export const getAllTasks = async (req, res) => {
   for (const todo of data) {
     let dataTodoLabel = {};
     try {
-      dataTodoLabel = await todoLabel.findById(todo.labelId, todo.color);
+      dataTodoLabel = await todoLabel.findById(todo.labelId);
     } catch (err) {
       console.log(err);
+      res.status(500).send("Internal Server Error");
     }
-    const newTdo = { ...todo._doc, label: dataTodoLabel, color: dataTodoLabel };
-    newData.push(newTdo);
+
+    const newTodo = {
+      ...todo._doc,
+      label: dataTodoLabel,
+    };
+    newData.push(newTodo);
   }
   res.send(JSON.stringify(newData));
 };
@@ -19,9 +24,13 @@ export const createTasks = async (req, res) => {
   const newTodomodel = new todo({
     task: req.body.task,
     labelId: req.body.labelId,
-    color: req.body.color,
+    time: req.body.time,
+    clockCompleted: req.body.clockCompleted,
+    countdownActive: false,
+    remainingTime: req.body.remainingTime || req.body.time,
   });
   newTodomodel.save();
+
   res.send(JSON.stringify(newTodomodel));
 };
 export const getSingleTasks = async (req, res) => {
@@ -37,7 +46,9 @@ export const updateTasks = async (req, res) => {
       $set: {
         task: req.body.task,
         labelId: req.body.labelId,
-        color: req.body.color,
+        time: req.body.time,
+        clockCompleted: req.body.clockCompleted,
+        remainingTime: req.body.remainingTime || req.body.time,
       },
     }
   );
