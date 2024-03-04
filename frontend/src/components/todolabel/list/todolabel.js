@@ -1,7 +1,8 @@
 import React from "react";
-import { v4 as uuidv4 } from "uuid";
 import { OpenAddModal } from "../add-modal/openaddmodal";
 import { Item } from "./item/item";
+import axios from "axios";
+
 export const TodoLabel = ({
   todoLabels,
   reloadAll,
@@ -15,14 +16,13 @@ export const TodoLabel = ({
       color: color,
       isEditing: false,
     };
-    fetch("http://localhost:5500/todoLabel", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: localStorage.getItem("token"),
-      },
-      body: JSON.stringify(newTodoLabel),
-    })
+    axios
+      .post("http://localhost:5500/todoLabel", newTodoLabel, {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: localStorage.getItem("token"),
+        },
+      })
       .then(() => {
         reloadAll();
       })
@@ -31,32 +31,26 @@ export const TodoLabel = ({
       });
   };
   const deleteTodoLabel = (_id) => {
-    fetch("http://localhost:5500/todoLabel/" + _id, {
-      method: "DELETE",
-    })
-      .then((res) => res.json())
-      .then(() => {
-        reloadAll();
-      });
+    axios.delete("http://localhost:5500/todoLabel/" + _id, {}).then(() => {
+      reloadAll();
+    });
   };
 
   const updateTaskLabel = (task, _id, color) => {
-    fetch("http://localhost:5500/todoLabel/" + _id, {
-      method: "PUT",
-      body: JSON.stringify({
-        _id: uuidv4(),
+    axios
+      .put("http://localhost:5500/todoLabel/" + _id, {
         task: task,
         color: color,
-      }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    }).then((response) => {
-      if (!response.ok) {
-        throw new Error(`Error! status: ${response.status}`);
-      }
-      reloadAll();
-    });
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+      .then((response) => {
+        if (response.status !== 200) {
+          throw new Error(`Error! status: ${response.status}`);
+        }
+        reloadAll();
+      });
   };
   return (
     <>

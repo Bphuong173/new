@@ -1,35 +1,26 @@
 // Login component
 import React, { useState } from "react";
+import axios from "axios";
 import { Navigate, useNavigate } from "react-router-dom";
 export const Login = ({ handleCloseLogin }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    fetch("http://localhost:5500/user/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ email, password }),
-    })
-      .then((response) => {
-        if (response.ok) {
-          return response.text(); // Trả về kết quả từ response.text()
-        } else {
-          throw new Error("Lỗi đăng nhập");
-        }
-      })
-      .then((token) => {
-        localStorage.setItem("token", token); // Lưu token vào localStorage
-        alert("login is succeed");
-        navigate("/todos");
-      })
-      .catch((error) => {
-        console.log(error);
-        alert("loi dang nhap");
+    try {
+      const response = await axios.post("http://localhost:5500/user/login", {
+        email,
+        password,
       });
+      const token = response.data;
+      localStorage.setItem("token", token); // Lưu token vào localStorage
+      alert("login is succeed");
+      navigate("/todos");
+    } catch (error) {
+      console.log(error);
+      alert("loi dang nhap");
+    }
   };
 
   const isLoggedIn = localStorage.getItem("token");

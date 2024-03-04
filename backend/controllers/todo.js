@@ -2,7 +2,6 @@ import { todo } from "../models/todomodel.js";
 import { todoLabel } from "../models/todolabelmodel.js";
 
 export const getAllTasks = async (req, res) => {
-  console.log(req.user);
   const userId = req.user.userId;
   const data = await todo.find({ userId: userId }).exec();
   const newData = [];

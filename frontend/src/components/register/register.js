@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Navigate } from "react-router-dom";
+import axios from "axios";
 export const Register = ({ handleCloseModal }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -15,23 +16,19 @@ export const Register = ({ handleCloseModal }) => {
       password: password,
     };
 
-    fetch("http://localhost:5500/user/register", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(newUser),
-    })
+    axios
+      .post("http://localhost:5500/user/register", newUser, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
       .then((response) => {
-        if (response.ok) {
-          setName("");
-          setEmail("");
-          setPassword("");
-          setIsLoading(false);
-          setIsRegistered(true);
-        } else {
-          throw new Error("Email đã tồn tại hoặc có lỗi xảy ra");
-        }
+        setName("");
+        setEmail("");
+        setPassword("");
+        setIsLoading(false);
+        setIsRegistered(true);
+        alert("signup succeed");
       })
       .catch((err) => {
         alert(err.message);

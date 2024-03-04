@@ -3,37 +3,38 @@ import { Todo } from "../todo/todo/todo";
 import { TodoLabel } from "../todolabel/list/todolabel";
 import { useNavigate } from "react-router-dom";
 import { UploadAvatar } from "../uploadavatar/uploadavatar";
+import axios from "axios";
 export function Main() {
   const [todoLabels, setTodoLabels] = useState([]);
   const [todos, setTodos] = useState([]);
   const navigate = useNavigate();
   const token = localStorage.getItem("token");
   const loadTodo = () => {
-    fetch("http://localhost:5500/todo", {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: token,
-      },
-    })
-      .then((response) => response.json())
-      .then((json) => {
-        setTodos(json);
+    axios
+      .get("http://localhost:5500/todo", {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: token,
+        },
+      })
+
+      .then((res) => {
+        setTodos(res.data);
       })
       .catch((error) => console.log(error));
   };
 
   const loadTodolabel = () => {
-    fetch("http://localhost:5500/todoLabel", {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: token,
-      },
-    })
-      .then((response) => response.json())
-      .then((json) => {
-        setTodoLabels(json);
+    axios
+      .get("http://localhost:5500/todoLabel", {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: token,
+        },
+      })
+
+      .then((res) => {
+        setTodoLabels(res.data);
       })
       .catch((error) => console.log(error));
   };

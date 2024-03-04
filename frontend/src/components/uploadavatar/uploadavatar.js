@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Avatar } from "../avatar/avatar";
+import axios from "axios";
 export const UploadAvatar = () => {
   const [selectedFile, setSelectedFile] = useState(null);
   const [avatarUrl, setAvatarUrl] = useState(null);
@@ -16,18 +17,18 @@ export const UploadAvatar = () => {
     }
     const formData = new FormData();
     formData.append("avatar", selectedFile);
-    fetch("http://localhost:5500/user/avatar", {
-      method: "POST",
-      headers: {
-        Authorization: localStorage.getItem("token"),
-      },
-      body: formData,
-    })
+    axios
+      .post("http://localhost:5500/user/avatar", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+          Authorization: localStorage.getItem("token"),
+        },
+      })
       .then((response) => {
-        if (!response.ok) {
-          throw new Error("Failed to upload avatar !!!");
+        if (response.status === 200) {
+          return response.data;
         }
-        return response.text();
+        throw new Error("Failed to upload avatar !!!");
       })
       .then((avatarPath) => {
         if (avatarPath) {
