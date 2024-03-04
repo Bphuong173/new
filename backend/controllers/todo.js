@@ -1,12 +1,8 @@
 import { todo } from "../models/todomodel.js";
 import { todoLabel } from "../models/todolabelmodel.js";
-import jwt from "jsonwebtoken";
 
 export const getAllTasks = async (req, res) => {
-  const token = req.headers["authorization"];
-  const decoded = jwt.verify(token, "tanhkute");
-  // Gán thông tin user vào request
-  req.user = decoded;
+  console.log(req.user);
   const userId = req.user.userId;
   const data = await todo.find({ userId: userId }).exec();
   const newData = [];
@@ -27,11 +23,6 @@ export const getAllTasks = async (req, res) => {
   res.send(JSON.stringify(newData));
 };
 export const createTasks = async (req, res) => {
-  const token = req.headers["authorization"];
-  console.log(token);
-  const decoded = jwt.verify(token, "tanhkute");
-  // Gán thông tin user vào request
-  req.user = decoded;
   const userId = req.user.userId;
   const newTodomodel = new todo({
     task: req.body.task,

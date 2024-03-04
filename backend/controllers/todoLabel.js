@@ -5,9 +5,8 @@ export const getAllTasksLabel = async (req, res) => {
   const token = req.headers["authorization"];
   const decoded = jwt.verify(token, "tanhkute");
   // Gán thông tin user vào request
-  req.user = decoded;
 
-  const userId = req.user.userId;
+  const userId = decoded.userId;
   const data = await todoLabel.find({ userId: userId }).exec();
   res.send(JSON.stringify(data));
 };
@@ -15,8 +14,8 @@ export const createTasksLabel = async (req, res) => {
   const token = req.headers["authorization"];
   const decoded = jwt.verify(token, "tanhkute");
   // Trích xuất userId từ mã token
-  req.user = decoded;
-  const userId = req.user.userId;
+
+  const userId = decoded.userId;
   const newTodomodel = new todoLabel({
     task: req.body.task,
     color: req.body.color,

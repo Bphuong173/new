@@ -1,19 +1,11 @@
 import express from "express";
-import multer from "multer";
+import authenToken from "../authen/authen.js";
 import { uploadAvatar } from "../controllers/user.js";
+import { upload } from "../storage/storage.js";
 const router = express.Router();
-
 import { createUser, getUser } from "../controllers/user.js";
-const storage = multer.diskStorage({
-  destination: "uploads/",
-  filename: function (req, file, cb) {
-    cb(null, file.fieldname + "-" + Date.now() + ".png");
-  },
-});
 
-const upload = multer({ storage: storage });
-
-router.post("/avatar", upload.single("avatar"), uploadAvatar);
+router.post("/avatar", authenToken, upload.single("avatar"), uploadAvatar);
 router.post("/register", createUser);
 router.post("/login", getUser);
 
