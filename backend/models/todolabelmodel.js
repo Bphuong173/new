@@ -6,6 +6,7 @@ const Schema = mongoose.Schema;
 const TodoSchema = new Schema({
   task: { type: String, require: true },
   color: { type: String, require: true },
+  userId: { type: String },
 });
 // convert từ schema sang model để sử dụng trong biến todomodel
 export const todoLabel = connection.model("todoLabel", TodoSchema);
