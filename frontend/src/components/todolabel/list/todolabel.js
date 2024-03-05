@@ -1,7 +1,11 @@
 import React from "react";
 import { OpenAddModal } from "../add-modal/openaddmodal";
 import { Item } from "./item/item";
-import axios from "axios";
+import {
+  createTodoLabelapi,
+  updateTodoLabelapi,
+  deleteTodoLabelapi,
+} from "../../api/apitodolabel";
 
 export const TodoLabel = ({
   todoLabels,
@@ -10,19 +14,13 @@ export const TodoLabel = ({
   handleOpenModal,
   handleCloseModal,
 }) => {
+  console.log(todoLabels);
   const addTodoLabel = (task, color) => {
-    const newTodoLabel = {
+    createTodoLabelapi({
       task: task,
       color: color,
       isEditing: false,
-    };
-    axios
-      .post("http://localhost:5500/todoLabel", newTodoLabel, {
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: localStorage.getItem("token"),
-        },
-      })
+    })
       .then(() => {
         reloadAll();
       })
@@ -31,26 +29,21 @@ export const TodoLabel = ({
       });
   };
   const deleteTodoLabel = (_id) => {
-    axios.delete("http://localhost:5500/todoLabel/" + _id, {}).then(() => {
+    deleteTodoLabelapi(_id).then(() => {
       reloadAll();
     });
   };
 
   const updateTaskLabel = (task, _id, color) => {
-    axios
-      .put("http://localhost:5500/todoLabel/" + _id, {
-        task: task,
-        color: color,
-        headers: {
-          "Content-Type": "application/json",
-        },
-      })
-      .then((response) => {
-        if (response.status !== 200) {
-          throw new Error(`Error! status: ${response.status}`);
-        }
-        reloadAll();
-      });
+    updateTodoLabelapi(_id, {
+      task: task,
+      color: color,
+    }).then((response) => {
+      if (response.status !== 200) {
+        throw new Error(`Error! status: ${response.status}`);
+      }
+      reloadAll();
+    });
   };
   return (
     <>

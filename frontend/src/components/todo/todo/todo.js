@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { v4 as uuidv4 } from "uuid";
 import { Input } from "../input/input";
 import { Item } from "../item/item";
 import axios from "axios";
+import { createTodoapi, updateTodoapi, deleteTodoapi } from "../../api/apitodo";
 export const Todo = ({ todoLabels, todos, loadTodo, setTodos }) => {
   const [clockCompleted, setClockCompleted] = useState([]);
   const [countdownActive, setCountdownActive] = useState(false);
@@ -43,20 +43,13 @@ export const Todo = ({ todoLabels, todos, loadTodo, setTodos }) => {
   };
 
   const addTodo = (task, labelId, time, clockCompleted, countdownTime) => {
-    const newTodo = {
+    createTodoapi({
       task: task,
       labelId: labelId,
       time: time,
       clockCompleted: clockCompleted,
       countdownTime: countdownTime,
-    };
-    axios
-      .post("http://localhost:5500/todo", newTodo, {
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: localStorage.getItem("token"),
-        },
-      })
+    })
       .then((res) => {
         loadTodo();
       })
@@ -65,28 +58,25 @@ export const Todo = ({ todoLabels, todos, loadTodo, setTodos }) => {
       });
   };
   const deleteTodo = (_id) => {
-    axios.delete("http://localhost:5500/todo/" + _id, {}).then(() => {
-      loadTodo();
-    });
+    deleteTodoapi(_id)
+      .then(() => {
+        loadTodo();
+      })
+      .catch((error) => {
+        alert(error.message);
+      });
   };
 
   const updateTask = (task, _id, clockCompleted) => {
-    axios
-      .put("http://localhost:5500/todo/" + _id, {
-        _id: uuidv4(),
-        task: task,
-        clockCompleted: clockCompleted,
-
-        headers: {
-          "Content-Type": "application/json",
-        },
-      })
-      .then((response) => {
-        if (response.status !== 200) {
-          throw new Error(`Error! status: ${response.status}`);
-        }
-        loadTodo();
-      });
+    updateTodoapi(_id, {
+      task,
+      clockCompleted,
+    }).then((response) => {
+      if (response.status !== 200) {
+        throw new Error(`Error! status: ${response.status}`);
+      }
+      loadTodo();
+    });
   };
 
   return (

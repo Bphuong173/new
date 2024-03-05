@@ -1,21 +1,20 @@
 import { todoLabel } from "../models/todolabelmodel.js";
-import jwt from "jsonwebtoken";
 
 export const getAllTasksLabel = async (req, res) => {
-  const token = req.headers["authorization"];
-  const decoded = jwt.verify(token, "tanhkute");
-  // Gán thông tin user vào request
+  const userId = req.user.userId;
+  const page = parseInt(req.query.page) || 1;
+  const limit = parseInt(req.query.limit) || 10;
+  const skip = (page - 1) * limit;
 
-  const userId = decoded.userId;
-  const data = await todoLabel.find({ userId: userId }).exec();
+  const data = await todoLabel
+    .find({ userId: userId })
+    .skip(skip)
+    .limit(limit)
+    .exec();
   res.send(JSON.stringify(data));
 };
 export const createTasksLabel = async (req, res) => {
-  const token = req.headers["authorization"];
-  const decoded = jwt.verify(token, "tanhkute");
-  // Trích xuất userId từ mã token
-
-  const userId = decoded.userId;
+  const userId = req.user.userId;
   const newTodomodel = new todoLabel({
     task: req.body.task,
     color: req.body.color,

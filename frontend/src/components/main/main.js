@@ -3,36 +3,24 @@ import { Todo } from "../todo/todo/todo";
 import { TodoLabel } from "../todolabel/list/todolabel";
 import { useNavigate } from "react-router-dom";
 import { UploadAvatar } from "../uploadavatar/uploadavatar";
-import axios from "axios";
+import { fetchTodos } from "../api/apitodo";
+import { fetchTodoLabelapi } from "../api/apitodolabel";
 export function Main() {
   const [todoLabels, setTodoLabels] = useState([]);
   const [todos, setTodos] = useState([]);
   const navigate = useNavigate();
-  const token = localStorage.getItem("token");
-  const loadTodo = () => {
-    axios
-      .get("http://localhost:5500/todo", {
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: token,
-        },
-      })
+  console.log(todoLabels);
 
+  const loadTodo = async () => {
+    await fetchTodos()
       .then((res) => {
         setTodos(res.data);
       })
       .catch((error) => console.log(error));
   };
 
-  const loadTodolabel = () => {
-    axios
-      .get("http://localhost:5500/todoLabel", {
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: token,
-        },
-      })
-
+  const loadTodolabel = async () => {
+    await fetchTodoLabelapi()
       .then((res) => {
         setTodoLabels(res.data);
       })
