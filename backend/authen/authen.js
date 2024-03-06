@@ -10,7 +10,6 @@ const authenToken = async (req, res, next) => {
   }
   try {
     // Xác thực token và lấy thông tin user
-
     const decoded = jwt.verify(token, "tanhkute");
     const foundUser = await user.findById(decoded.userId);
     if (!foundUser) {

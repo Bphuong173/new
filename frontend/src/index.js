@@ -12,3 +12,26 @@ root.render(<App />);
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
 // asdasdas
+// const loadNextPage = async () => {
+//     const nextPage = pagination.current_page + 1;
+//     if (nextPage <= pagination.total_pages) {
+//       await fetchTodos({ page: nextPage })
+//         .then((res) => {
+//           setTodos(res.data);
+//           setPagination(res.pagination);
+//         })
+//         .catch((error) => console.log(error));
+//     }
+//   };
+
+//   const loadPrevPage = async () => {
+//     const prevPage = pagination.current_page - 1;
+//     if (prevPage >= 1) {
+//       await fetchTodos({ page: prevPage })
+//         .then((res) => {
+//           setTodos(res.data);
+//           setPagination(res.pagination);
+//         })
+//         .catch((error) => console.log(error));
+//     }
+//   };

@@ -2,8 +2,30 @@ import { todo } from "../models/todomodel.js";
 import { todoLabel } from "../models/todolabelmodel.js";
 
 export const getAllTasks = async (req, res) => {
+  const page = parseInt(req.query.page) || 1;
+  const limit = parseInt(req.query.litmit) || 10;
+  const skip = (page - 1) * limit;
   const userId = req.user.userId;
-  const data = await todo.find({ userId: userId }).exec();
+  const totalRecords = await todo.countDocuments({ userId: userId });
+  const totalPages = Math.ceil(totalRecords / limit);
+
+  const data = await todo
+    .find({ userId: userId })
+    .skip(skip)
+    .limit(limit)
+    .exec();
+  const pagination = {
+    total_records: totalRecords,
+    current_page: page,
+    total_pages: totalPages,
+    next_page: page < totalPages ? page + 1 : null,
+    prev_page: page > 1 ? page - 1 : null,
+  };
+  const response = {
+    data,
+    pagination,
+  };
+
   const newData = [];
   for (const todo of data) {
     let dataTodoLabel = {};
@@ -19,7 +41,7 @@ export const getAllTasks = async (req, res) => {
     };
     newData.push(newTodo);
   }
-  res.send(JSON.stringify(newData));
+  res.send(JSON.stringify(newData, pagination));
 };
 export const createTasks = async (req, res) => {
   const userId = req.user.userId;

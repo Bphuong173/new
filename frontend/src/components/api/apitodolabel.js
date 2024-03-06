@@ -13,22 +13,23 @@ axios.interceptors.request.use(
   }
 );
 
-// Hàm gửi yêu cầu GET danh sách todo
-export const fetchTodoLabelapi = () => {
-  return axios.get(`${baseURL}/todoLabel`);
+// Hàm gửi yêu cầu GET danh sách todoLabel
+export const fetchTodoLabelapi = (page = 1, limit = 10) => {
+  console.log(page);
+  return axios.get(`${baseURL}/todoLabel?page=${page}&limit=${limit}`);
 };
 
-// Hàm gửi yêu cầu POST để tạo todo mới
+// Hàm gửi yêu cầu POST để tạo todoLabel mới
 export const createTodoLabelapi = (newTodoLabel) => {
   return axios.post(`${baseURL}/todoLabel`, newTodoLabel);
 };
 
-// Hàm gửi yêu cầu PUT để cập nhật todo
+// Hàm gửi yêu cầu PUT để cập nhật todoLabel
 export const updateTodoLabelapi = (id, data) => {
   return axios.put(`${baseURL}/todoLabel/${id}`, data);
 };
 
-// Hàm gửi yêu cầu DELETE để xóa todo
+// Hàm gửi yêu cầu DELETE để xóa todoLabel
 export const deleteTodoLabelapi = (id) => {
   return axios.delete(`${baseURL}/todoLabel/${id}`);
 };

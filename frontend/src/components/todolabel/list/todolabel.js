@@ -6,7 +6,7 @@ import {
   updateTodoLabelapi,
   deleteTodoLabelapi,
 } from "../../api/apitodolabel";
-
+import { PaginateTodolabel } from "../../paginate/paginateTodolabel";
 export const TodoLabel = ({
   todoLabels,
   reloadAll,
@@ -14,7 +14,6 @@ export const TodoLabel = ({
   handleOpenModal,
   handleCloseModal,
 }) => {
-  console.log(todoLabels);
   const addTodoLabel = (task, color) => {
     createTodoLabelapi({
       task: task,
@@ -62,6 +61,7 @@ export const TodoLabel = ({
             updateTodoLabel={updateTaskLabel}
           />
         ))}
+        <PaginateTodolabel />
       </div>
     </>
   );

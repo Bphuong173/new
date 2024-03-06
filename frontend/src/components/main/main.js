@@ -8,13 +8,14 @@ import { fetchTodoLabelapi } from "../api/apitodolabel";
 export function Main() {
   const [todoLabels, setTodoLabels] = useState([]);
   const [todos, setTodos] = useState([]);
+  const [pagination, setPagination] = useState([]);
   const navigate = useNavigate();
-  console.log(todoLabels);
 
   const loadTodo = async () => {
     await fetchTodos()
       .then((res) => {
         setTodos(res.data);
+        setPagination(res.data.pagination);
       })
       .catch((error) => console.log(error));
   };
@@ -22,7 +23,8 @@ export function Main() {
   const loadTodolabel = async () => {
     await fetchTodoLabelapi()
       .then((res) => {
-        setTodoLabels(res.data);
+        setTodoLabels(res.data.data);
+        setPagination(res.data.pagination);
       })
       .catch((error) => console.log(error));
   };
@@ -43,7 +45,29 @@ export function Main() {
     // Chuyển hướng người dùng về trang đăng nhập sau khi đăng xuất
     navigate("/login");
   };
-
+  const loadNextPage = async () => {
+    const nextPage = pagination.current_page + 1;
+    if (nextPage <= pagination.total_pages) {
+      await fetchTodoLabelapi(nextPage).then((res) => {
+        const newData = res.data.data;
+        const newPagination = res.data.pagination;
+        console.log(newData);
+        setTodoLabels(newData);
+        setPagination(newPagination);
+      });
+    }
+  };
+  const loadPrevPage = async () => {
+    const prevPage = pagination.current_page - 1;
+    if (prevPage <= pagination.total_pages) {
+      await fetchTodoLabelapi(prevPage).then((res) => {
+        const newData = res.data.data;
+        const newPagination = res.data.pagination;
+        setTodoLabels(newData);
+        setPagination(newPagination);
+      });
+    }
+  };
   return (
     <>
       <div>
@@ -58,6 +82,15 @@ export function Main() {
           />
         </div>
       </div>
+      <button onClick={loadPrevPage} disabled={pagination.current_page === 1}>
+        Trang trước
+      </button>
+      <button
+        onClick={loadNextPage}
+        disabled={pagination.current_page === pagination.total_pages}
+      >
+        Trang tiếp theo
+      </button>
       <div>
         <button onClick={handleLogout}>Đăng xuất</button>
       </div>
