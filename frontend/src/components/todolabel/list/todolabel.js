@@ -13,6 +13,9 @@ export const TodoLabel = ({
   setOpenModal,
   handleOpenModal,
   handleCloseModal,
+  setTodoLabels,
+  paginationLabel,
+  setPaginationLabel,
 }) => {
   const addTodoLabel = (task, color) => {
     createTodoLabelapi({
@@ -61,7 +64,11 @@ export const TodoLabel = ({
             updateTodoLabel={updateTaskLabel}
           />
         ))}
-        <PaginateTodolabel />
+        <PaginateTodolabel
+          setTodoLabels={setTodoLabels}
+          paginationLabel={paginationLabel}
+          setPaginationLabel={setPaginationLabel}
+        />
       </div>
     </>
   );

@@ -15,7 +15,6 @@ axios.interceptors.request.use(
 
 // Hàm gửi yêu cầu GET danh sách todoLabel
 export const fetchTodoLabelapi = (page = 1, limit = 10) => {
-  console.log(page);
   return axios.get(`${baseURL}/todoLabel?page=${page}&limit=${limit}`);
 };
 

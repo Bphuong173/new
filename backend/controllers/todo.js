@@ -14,16 +14,12 @@ export const getAllTasks = async (req, res) => {
     .skip(skip)
     .limit(limit)
     .exec();
-  const pagination = {
+  const paginationTodo = {
     total_records: totalRecords,
     current_page: page,
     total_pages: totalPages,
     next_page: page < totalPages ? page + 1 : null,
     prev_page: page > 1 ? page - 1 : null,
-  };
-  const response = {
-    data,
-    pagination,
   };
 
   const newData = [];
@@ -41,7 +37,12 @@ export const getAllTasks = async (req, res) => {
     };
     newData.push(newTodo);
   }
-  res.send(JSON.stringify(newData, pagination));
+  const response = {
+    data,
+    paginationTodo,
+    newData,
+  };
+  res.json(response);
 };
 export const createTasks = async (req, res) => {
   const userId = req.user.userId;

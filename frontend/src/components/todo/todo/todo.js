@@ -3,7 +3,15 @@ import { Input } from "../input/input";
 import { Item } from "../item/item";
 import axios from "axios";
 import { createTodoapi, updateTodoapi, deleteTodoapi } from "../../api/apitodo";
-export const Todo = ({ todoLabels, todos, loadTodo, setTodos }) => {
+import { PaginateTodo } from "../../paginate/paginateTodo";
+export const Todo = ({
+  todoLabels,
+  todos,
+  loadTodo,
+  setTodos,
+  paginationTodo,
+  setPaginationTodo,
+}) => {
   const [clockCompleted, setClockCompleted] = useState([]);
   const [countdownActive, setCountdownActive] = useState(false);
   const handleClockCompletedChange = (newClockCompleted) => {
@@ -99,6 +107,11 @@ export const Todo = ({ todoLabels, todos, loadTodo, setTodos }) => {
           loadTodo={loadTodo}
         />
       ))}
+      <PaginateTodo
+        setTodos={setTodos}
+        paginationTodo={paginationTodo}
+        setPaginationTodo={setPaginationTodo}
+      />
     </>
   );
 };

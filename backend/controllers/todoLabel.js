@@ -18,7 +18,7 @@ export const getAllTasksLabel = async (req, res) => {
     .skip(skip)
     .limit(limit)
     .exec();
-  const pagination = {
+  const paginationLabel = {
     total_records: totalRecords,
     current_page: page,
     total_pages: totalPages,
@@ -27,9 +27,10 @@ export const getAllTasksLabel = async (req, res) => {
   };
   const response = {
     data,
-    pagination,
+    paginationLabel,
   };
   res.json(response);
+  console.log(paginationLabel.current_page);
 };
 export const createTasksLabel = async (req, res) => {
   const userId = req.user.userId;
