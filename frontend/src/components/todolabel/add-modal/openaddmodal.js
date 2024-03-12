@@ -25,11 +25,15 @@ export const OpenAddModal = ({ addTodoLabel }) => {
       document.removeEventListener("click", handleClick);
     }
   }, [isModalOpen]);
+
   return (
     <>
       <div ref={refModal}>
-        <button className="addButtonOutSide" onClick={setIsModalOpen}>
-          + ADD
+        <button
+          className="text-[#f93b42] border-none bg-white pl-9 absolute bottom-0 cursor-pointer text-base"
+          onClick={setIsModalOpen}
+        >
+          + Thêm Dự Án
         </button>
         <div className="inputTodoLabel" ref={refModal}>
           {isModalOpen && (

@@ -19,10 +19,6 @@ export const Registerheader = () => {
   return (
     <>
       <div>
-        <button onClick={setShowLogin}>Đăng nhập</button>
-        <button onClick={setShowModal}>Đăng ký</button>
-      </div>
-      <div>
         {showModal && (
           <Register
             handleOpenModal={handleOpenModal}

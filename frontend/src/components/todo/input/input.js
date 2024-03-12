@@ -45,15 +45,18 @@ export const Input = ({
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <div className="Div-Input" ref={refInput}>
+        <div
+          className="flex relative h-full bg-white mr-2.5 mt-2.5 rounded-xl items-center input-wrapper"
+          ref={refInput}
+        >
           <Plusicon />
           <input
-            className="Input"
+            className="h-12  p-0 w-full rounded-xl pl-12"
             onChange={(e) => setValue(e.target.value)}
             value={value}
-            placeholder="write todo here"
+            placeholder="Thêm công việc theo nhãn tương ứng"
           />
-          <div className="container-Timeicon">
+          <div className="flex absolute right-12 items-center pt-0 pl-0 pr-3 pb-3">
             <ClockIcon
               setTimeDuration={setTimeDuration}
               handleClockCompletedChange={handleClockCompletedChange}
@@ -87,7 +90,6 @@ export const Input = ({
               position: "absolute",
               right: "10px",
             }}
-            className="icon-menu"
             onClick={() => setShowActions(true)}
           >
             <Menuicon labelSelected={labelSelected} />
@@ -96,7 +98,7 @@ export const Input = ({
 
           {showActions && (
             <div>
-              <div className="ListMenu">
+              <div className="absolute z-1000 bg-white boder rounded-xl h-auto w-48.5 mt-9 mr-0 ml-0 -mb-44">
                 <ListMenu
                   todoLabels={todoLabels}
                   labelSelected={labelSelected}

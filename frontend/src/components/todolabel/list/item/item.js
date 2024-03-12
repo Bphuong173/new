@@ -19,8 +19,7 @@ export const Item = ({ todoLabel, deleteTodoLabel, updateTodoLabel }) => {
             width: 10,
             borderRadius: 10,
             margin: 0,
-            marginRight: "5px",
-            paddingRight: "2px",
+            marginRight: "16px",
           }}
         ></p>
         <div className="todoTagLabel">

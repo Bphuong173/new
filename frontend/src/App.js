@@ -3,7 +3,12 @@ import { Main } from "./components/main/main";
 import { Login } from "./components/login/login";
 import { Register } from "./components/register/register";
 import { ProtectComponent } from "./components/protectcomponent/protectcomponent";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 
 export default function App() {
   return (
@@ -16,6 +21,7 @@ export default function App() {
             path="/todos"
             element={<ProtectComponent component={<Main />} />}
           />
+          <Route path="/" element={<Navigate to="/todos" replace />} />
         </Routes>
       </Router>
     </>

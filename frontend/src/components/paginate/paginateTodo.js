@@ -1,14 +1,15 @@
 import React from "react";
 import { fetchTodos } from "../api/apitodo";
+import { Paginateiconright } from "./paginateicon/paginateiconright";
+import { Paginateiconleft } from "./paginateicon/paginateiconleft";
 export function PaginateTodo({ setTodos, paginationTodo, setPaginationTodo }) {
-  console.log(paginationTodo);
   const loadNextPage = async () => {
     const nextPage = paginationTodo.current_page + 1;
     if (nextPage <= paginationTodo.total_pages) {
       await fetchTodos(nextPage).then((res) => {
         const newData = res.data.data;
         const newPaginationTodo = res.data.paginationTodo;
-        console.log(newData);
+
         setTodos(newData);
         setPaginationTodo(newPaginationTodo);
       });
@@ -28,18 +29,20 @@ export function PaginateTodo({ setTodos, paginationTodo, setPaginationTodo }) {
 
   return (
     <>
-      <button
-        disabled={paginationTodo.current_page === 1}
-        onClick={loadPrevPage}
-      >
-        Trang trước
-      </button>
-      <button
-        disabled={paginationTodo.current_page === paginationTodo.total_pages}
-        onClick={loadNextPage}
-      >
-        Trang tiếp theo
-      </button>
+      <div className="absolute pb-4 bottom-0 w-11/12 flex ">
+        <button
+          disabled={paginationTodo.current_page === 1}
+          onClick={loadPrevPage}
+        >
+          <Paginateiconleft />
+        </button>
+        <button
+          disabled={paginationTodo.current_page === paginationTodo.total_pages}
+          onClick={loadNextPage}
+        >
+          <Paginateiconright />
+        </button>
+      </div>
     </>
   );
 }

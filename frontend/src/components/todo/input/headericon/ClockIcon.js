@@ -21,7 +21,7 @@ export const ClockIcon = ({ setTimeDuration, handleClockCompletedChange }) => {
   };
   return (
     <>
-      <div>
+      <div className="flex absolute justify-between items-center inset-x-0.6 inset-y-0 right-3">
         {times.map((timeItem, index) => (
           <svg
             key={uuidv4()}

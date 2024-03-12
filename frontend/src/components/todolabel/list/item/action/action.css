@@ -1,6 +1,7 @@
 .div-action {
   position: absolute;
   right: 0px;
+  padding-right: 8px;
 }
 .threedots {
   cursor: pointer;

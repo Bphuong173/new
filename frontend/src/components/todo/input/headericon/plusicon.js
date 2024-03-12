@@ -3,12 +3,7 @@ import React from "react";
 export const Plusicon = () => {
   return (
     <svg
-      style={{
-        paddingLeft: "5px",
-        position: "absolute",
-        height: "15px",
-        width: "15px",
-      }}
+      className="absolute h-8 w-8 pl-2"
       xmlns="http://www.w3.org/2000/svg"
       x="0px"
       y="0px"

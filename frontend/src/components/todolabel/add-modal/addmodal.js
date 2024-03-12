@@ -78,13 +78,3 @@ export const AddModal = ({ addTodoLabel, handleCloseModal }) => {
     </>
   );
 };
-// export async function getUsers(pageNumber, pageSize) {
-//   try {
-//     const users = await User.find({})
-//       .skip((pageNumber - 1) * pageSize)
-//       .limit(pageSize);
-//     return users;
-//   } catch (error) {
-//     throw new Error("Error fetching users: " + error.message);
-//   }
-// }

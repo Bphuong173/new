@@ -1,18 +1,19 @@
 import React from "react";
 import { fetchTodoLabelapi } from "../api/apitodolabel";
+import { Paginateiconright } from "./paginateicon/paginateiconright";
+import { Paginateiconleft } from "./paginateicon/paginateiconleft";
 export function PaginateTodolabel({
   setTodoLabels,
   paginationLabel,
   setPaginationLabel,
 }) {
-  console.log(paginationLabel);
   const loadNextPage = async () => {
     const nextPage = (paginationLabel.current_page || 1) + 1;
     if (nextPage <= paginationLabel.total_pages) {
       await fetchTodoLabelapi(nextPage).then((res) => {
         const newData = res.data.data;
         const newPaginationLabel = res.data.paginationLabel;
-        console.log(newData);
+
         setTodoLabels(newData);
         setPaginationLabel(newPaginationLabel);
       });
@@ -32,18 +33,22 @@ export function PaginateTodolabel({
 
   return (
     <>
-      <button
-        disabled={paginationLabel.current_page === 1}
-        onClick={loadPrevPage}
-      >
-        Trang trước
-      </button>
-      <button
-        disabled={paginationLabel.current_page === paginationLabel.total_pages}
-        onClick={loadNextPage}
-      >
-        Trang tiếp theo
-      </button>
+      <div className="absolute pl-2.5 mb-5 bottom-0 w-11/12 flex justify-between">
+        <button
+          disabled={paginationLabel.current_page === 1}
+          onClick={loadPrevPage}
+        >
+          <Paginateiconleft />
+        </button>
+        <button
+          disabled={
+            paginationLabel.current_page === paginationLabel.total_pages
+          }
+          onClick={loadNextPage}
+        >
+          <Paginateiconright />
+        </button>
+      </div>
     </>
   );
 }

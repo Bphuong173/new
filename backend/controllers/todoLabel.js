@@ -30,7 +30,6 @@ export const getAllTasksLabel = async (req, res) => {
     paginationLabel,
   };
   res.json(response);
-  console.log(paginationLabel.current_page);
 };
 export const createTasksLabel = async (req, res) => {
   const userId = req.user.userId;
