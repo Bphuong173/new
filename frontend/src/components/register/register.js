@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Navigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
-
 import axios from "axios";
 import "../../index.css";
 
@@ -54,7 +53,13 @@ export const Register = ({ handleCloseModal }) => {
                   name="name"
                   type="name"
                   autoComplete="name"
-                  {...register("name", { required: true })}
+                  {...register("name", {
+                    required: true,
+                    maxLength: { value: 20 },
+                    pattern: { value: /^[A-Za-z]+$/i },
+                    title:
+                      "Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters",
+                  })}
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>
@@ -72,7 +77,11 @@ export const Register = ({ handleCloseModal }) => {
                   name="email"
                   type="email"
                   autoComplete="email"
-                  {...register("email", { required: true })}
+                  {...register("email", {
+                    required: true,
+                    pattern:
+                      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+                  })}
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>
@@ -93,7 +102,11 @@ export const Register = ({ handleCloseModal }) => {
                   name="password"
                   type="password"
                   autoComplete="current-password"
-                  {...register("password", { required: true })}
+                  {...register("password", {
+                    required: true,
+                    pattern:
+                      /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*\W)(?!.* ).{8,16}$/,
+                  })}
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>

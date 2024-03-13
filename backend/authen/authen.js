@@ -24,30 +24,3 @@ const authenToken = async (req, res, next) => {
   }
 };
 export default authenToken;
-export const getAllTasksLabel = async (req, res) => {
-  const userId = req.user.userId;
-  const { page = 1, limit = 10 } = req.query; // default page = 1, limit = 10
-  try {
-    const options = {
-      page: parseInt(page, 10),
-      limit: parseInt(limit, 10),
-    };
-    const data = await todoLabel.paginate({ userId: userId }, options);
-    console.log(data);
-    const paginationInfo = {
-      total_records: data.totalDocs,
-      current_page: data.page,
-      total_pages: data.totalPages,
-      next_page: data.nextPage,
-      prev_page: data.prevPage,
-    };
-    const response = {
-      pagination: paginationInfo,
-      tasks: data.docs,
-    };
-
-    res.send(JSON.stringify(response));
-  } catch (error) {
-    res.status(500).json({ message: error.message });
-  }
-};

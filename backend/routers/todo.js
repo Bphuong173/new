@@ -8,11 +8,12 @@ import {
   deleteTasks,
 } from "../controllers/todo.js";
 import authenToken from "../authen/authen.js";
-
+import { Validation } from "../valadation/valadation.js";
+import { yupTodoSchema } from "../models/todomodel.js";
 router.get("/", authenToken, getAllTasks);
-router.post("/", authenToken, createTasks);
-router.get("/:id", getSingleTasks);
-router.put("/:id", updateTasks);
-router.delete("/:id", deleteTasks);
+router.post("/", Validation(yupTodoSchema), authenToken, createTasks);
+router.get("/:id", Validation(yupTodoSchema), authenToken, getSingleTasks);
+router.put("/:id", Validation(yupTodoSchema), authenToken, updateTasks);
+router.delete("/:id", Validation(yupTodoSchema), authenToken, deleteTasks);
 
 export default router;

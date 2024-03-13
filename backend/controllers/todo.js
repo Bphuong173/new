@@ -60,27 +60,60 @@ export const createTasks = async (req, res) => {
 };
 export const getSingleTasks = async (req, res) => {
   const { id } = req.params;
-  const singleTodo = await todo.findById(id);
-  res.send(JSON.stringify(singleTodo));
+  const userId = req.user.userId;
+  try {
+    const singleTodo = await todo.findById(id, userId);
+    if (!singleTodo) {
+      return res
+        .status(404)
+        .json({ message: "Todo not found or unauthorized" });
+    }
+    res.send(JSON.stringify(singleTodo));
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
 };
 export const updateTasks = async (req, res) => {
   const { id } = req.params;
-
-  const updateTodo = await todo.findOneAndUpdate(
-    { _id: id },
-    {
-      $set: {
-        task: req.body.task,
-        labelId: req.body.labelId,
-        time: req.body.time,
-        clockCompleted: req.body.clockCompleted,
-      },
+  const userId = req.user.userId;
+  try {
+    const existingTodo = await todo.findOne({ _id: id, userId: userId });
+    if (!existingTodo) {
+      return res
+        .status(404)
+        .json({ message: "Todo not found or unauthorized" });
     }
-  );
-  res.send(JSON.stringify(updateTodo));
+
+    const updateTodo = await todo.findOneAndUpdate(
+      { _id: id },
+      {
+        $set: {
+          task: req.body.task,
+          labelId: req.body.labelId,
+          time: req.body.time,
+          clockCompleted: req.body.clockCompleted,
+        },
+      }
+    );
+    res.send(JSON.stringify(updateTodo));
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
 };
 export const deleteTasks = async (req, res) => {
   const { id } = req.params;
-  const removeTodo = await todo.deleteOne({ _id: id });
-  res.send(JSON.stringify(removeTodo));
+  const userId = req.user.userId;
+  try {
+    const existingTodo = await todo.findOne({ _id: id, userId: userId });
+    if (!existingTodo) {
+      return res
+        .status(404)
+        .json({ message: "Todo not found or unauthorized" });
+    }
+
+    await todo.deleteOne({ _id: id });
+    res.send("Todo deleted successfully");
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
 };
