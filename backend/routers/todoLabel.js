@@ -27,7 +27,7 @@ router.put(
 );
 router.delete(
   "/:id",
-  Validation(yupTodolabelSchema),
+
   authenToken,
   deleteTasksLabel
 );

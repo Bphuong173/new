@@ -2,15 +2,14 @@ import React, { useState } from "react";
 import { Input } from "../input/input";
 import { Item } from "../item/item";
 import axios from "axios";
-import { createTodoapi, updateTodoapi, deleteTodoapi } from "../../api/apitodo";
-import { PaginateTodo } from "../../paginate/paginateTodo";
 import {
-  useQuery,
-  useMutation,
-  useQueryClient,
-  QueryClient,
-  QueryClientProvider,
-} from "@tanstack/react-query";
+  fetchTodos,
+  createTodoapi,
+  updateTodoapi,
+  deleteTodoapi,
+} from "../../api/apitodo";
+import { PaginateTodo } from "../../paginate/paginateTodo";
+import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 export const Todo = ({
   todoLabels,
   todos,
@@ -19,6 +18,35 @@ export const Todo = ({
   paginationTodo,
   setPaginationTodo,
 }) => {
+  const queryClient = useQueryClient();
+  const query = useQuery({ queryKey: ["todos"], queryFn: fetchTodos });
+
+  const mutationCreate = useMutation({
+    mutationFn: createTodoapi,
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["todos"] });
+      query.refetch();
+    },
+  });
+
+  const mutation = useMutation({
+    mutationFn: (data) =>
+      updateTodoapi(data._id, {
+        task: data.task,
+        clockCompleted: data.clockCompleted,
+      }),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["todos"] });
+      query.refetch();
+    },
+  });
+  const mutationDelete = useMutation({
+    mutationFn: deleteTodoapi,
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["todos"] });
+      query.refetch();
+    },
+  });
   const [clockCompleted, setClockCompleted] = useState([]);
   const [countdownActive, setCountdownActive] = useState(false);
   const handleClockCompletedChange = (newClockCompleted) => {
@@ -58,42 +86,22 @@ export const Todo = ({
   };
 
   const addTodo = (task, labelId, time, clockCompleted, countdownTime) => {
-    createTodoapi({
+    mutationCreate.mutate({
       task: task,
       labelId: labelId,
       time: time,
       clockCompleted: clockCompleted,
       countdownTime: countdownTime,
-    })
-      .then((res) => {
-        loadTodo();
-      })
-      .catch((err) => {
-        alert(err.message);
-      });
-  };
-  const deleteTodo = (_id) => {
-    deleteTodoapi(_id)
-      .then(() => {
-        loadTodo();
-      })
-      .catch((error) => {
-        alert(error.message);
-      });
-  };
-
-  const updateTask = (task, _id, clockCompleted) => {
-    updateTodoapi(_id, {
-      task,
-      clockCompleted,
-    }).then((response) => {
-      if (response.status !== 200) {
-        throw new Error(`Error! status: ${response.status}`);
-      }
-      loadTodo();
     });
   };
-
+  const deleteTodo = (_id) => {
+    mutationDelete.mutate(_id);
+  };
+  const updateTask = (task, _id, clockCompleted) => {
+    mutation.mutate({ _id, task, clockCompleted });
+  };
+  if (query.isLoading) return <div>Loading...</div>;
+  if (query.error) return <div>Error: {query.error.message}</div>;
   return (
     <>
       <Input
@@ -102,7 +110,7 @@ export const Todo = ({
         todoLabels={todoLabels}
         handleClockCompletedChange={handleClockCompletedChange}
       />
-      {todos.map((todo) => (
+      {query?.data?.data?.data.map((todo) => (
         <Item
           key={todo._id}
           todo={todo}

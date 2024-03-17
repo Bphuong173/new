@@ -14,6 +14,6 @@ router.get("/", authenToken, getAllTasks);
 router.post("/", Validation(yupTodoSchema), authenToken, createTasks);
 router.get("/:id", Validation(yupTodoSchema), authenToken, getSingleTasks);
 router.put("/:id", Validation(yupTodoSchema), authenToken, updateTasks);
-router.delete("/:id", Validation(yupTodoSchema), authenToken, deleteTasks);
+router.delete("/:id", authenToken, deleteTasks);
 
 export default router;

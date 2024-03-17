@@ -5,8 +5,11 @@ import {
   createTodoLabelapi,
   updateTodoLabelapi,
   deleteTodoLabelapi,
+  fetchTodoLabelapi,
 } from "../../api/apitodolabel";
 import { PaginateTodolabel } from "../../paginate/paginateTodolabel";
+import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
+
 export const TodoLabel = ({
   todoLabels,
   reloadAll,
@@ -17,36 +20,61 @@ export const TodoLabel = ({
   paginationLabel,
   setPaginationLabel,
 }) => {
+  const queryClient = useQueryClient();
+  const query = useQuery({
+    queryKey: ["todolabel"],
+    queryFn: fetchTodoLabelapi,
+  });
+  const mutationCreate = useMutation({
+    mutationFn: createTodoLabelapi,
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["todolabel"] });
+      query.refetch();
+    },
+  });
+  const mutationDelete = useMutation({
+    mutationFn: deleteTodoLabelapi,
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["todolabel"] });
+      query.refetch();
+    },
+  });
   const addTodoLabel = (task, color) => {
-    createTodoLabelapi({
+    mutationCreate.mutate({
       task: task,
       color: color,
       isEditing: false,
-    })
-      .then(() => {
-        reloadAll();
-      })
-      .catch((err) => {
-        alert(err.message);
-      });
+    });
   };
   const deleteTodoLabel = (_id) => {
-    deleteTodoLabelapi(_id).then(() => {
-      reloadAll();
-    });
+    mutationDelete.mutate(_id);
   };
-
+  const mutation = useMutation({
+    mutationFn: (data) =>
+      updateTodoLabelapi(data._id, {
+        task: data.task,
+        clockCompleted: data.clockCompleted,
+        color: data.color,
+      }),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["todos"] });
+      query.refetch();
+    },
+  });
   const updateTaskLabel = (task, _id, color) => {
-    updateTodoLabelapi(_id, {
-      task: task,
-      color: color,
-    }).then((response) => {
-      if (response.status !== 200) {
-        throw new Error(`Error! status: ${response.status}`);
-      }
-      reloadAll();
-    });
+    mutation.mutate({ task, _id, color });
   };
+  // const updateTaskLabel = (task, _id, color) => {
+  //   updateTodoLabelapi(_id, {
+  //     task: task,
+  //     color: color,
+  //   }).then((response) => {
+  //     if (response.status !== 200) {
+  //       throw new Error(`Error! status: ${response.status}`);
+  //     }
+  //     reloadAll();
+  //   });
+  // };
   return (
     <>
       <div>
@@ -56,7 +84,7 @@ export const TodoLabel = ({
           handleOpenModal={handleOpenModal}
           handleCloseModal={handleCloseModal}
         />
-        {todoLabels.map((todoLabel) => (
+        {query?.data?.data?.data.map((todoLabel) => (
           <Item
             key={todoLabel._id}
             todoLabel={todoLabel}
