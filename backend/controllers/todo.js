@@ -23,24 +23,39 @@ export const getAllTasks = async (req, res) => {
   };
 
   const newData = [];
-  for (const todo of data) {
-    let dataTodoLabel = {};
+  for (const todoItem of data) {
+    let dataTodoLabel = null;
     try {
-      dataTodoLabel = await todoLabel.findById(todo.labelId);
+      if (todoItem.labelId) {
+        dataTodoLabel = await todoLabel.findById(todoItem.labelId);
+        if (!dataTodoLabel) {
+          // Xử lý trường hợp không tìm thấy nhãn
+          console.error(
+            `Label not found for todo with labelId: ${todoItem.labelId}`
+          );
+          continue; // Bỏ qua và tiếp tục với vòng lặp tiếp theo
+        }
+      } else {
+        // Xử lý trường hợp không có labelId
+        console.error(
+          `LabelId not provided for todo with _id: ${todoItem._id}`
+        );
+        continue; // Bỏ qua và tiếp tục với vòng lặp tiếp theo
+      }
     } catch (err) {
-      console.log(err);
+      console.error(err);
       res.status(500).send("Internal Server Error");
     }
     const newTodo = {
-      ...todo._doc,
-      label: dataTodoLabel,
+      ...todoItem._doc,
+      label: dataTodoLabel.task, // Truy cập vào trường task của nhãn
     };
+
     newData.push(newTodo);
   }
   const response = {
-    data,
+    data: newData,
     paginationTodo,
-    newData,
   };
   res.json(response);
 };
@@ -55,7 +70,6 @@ export const createTasks = async (req, res) => {
     userId: userId,
   });
   newTodomodel.save();
-
   res.send(JSON.stringify(newTodomodel));
 };
 export const getSingleTasks = async (req, res) => {

@@ -29,7 +29,7 @@ export function PaginateTodo({ setTodos, paginationTodo, setPaginationTodo }) {
 
   return (
     <>
-      <div className="absolute pb-4 bottom-0 w-11/12 flex ">
+      <div className=" pb-4 bottom-0 w-11/12 flex items-center mt-3 justify-center ">
         <button
           disabled={paginationTodo.current_page === 1}
           onClick={loadPrevPage}

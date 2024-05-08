@@ -23,8 +23,8 @@ export const Action = ({ setIsEditing, deleteTodoLabel, todoLabel }) => {
 
   return (
     <>
-      <div className="div-action" ref={refContainer}>
-        <p className="threedots" onClick={() => setShowActions(true)}>
+      <div className="absolute right-0 mr-5" ref={refContainer}>
+        <p className="m-o cursor-pointer" onClick={() => setShowActions(true)}>
           ...
         </p>
         {showActions && (

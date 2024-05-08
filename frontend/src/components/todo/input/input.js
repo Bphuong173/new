@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from "react";
-import "./input.css";
 import { Plusicon } from "./headericon/plusicon";
 import { Linebreak } from "./headericon/linebreak";
 import { ListMenu } from "./listmenu";
@@ -46,7 +45,7 @@ export const Input = ({
     <>
       <form onSubmit={handleSubmit}>
         <div
-          className="flex relative h-full bg-white mr-2.5 mt-2.5 rounded-xl items-center input-wrapper"
+          className="flex relative h-full bg-white mr-2.5 mt-2.5 mr- rounded-xl items-center input-wrapper ml-4"
           ref={refInput}
         >
           <Plusicon />
@@ -98,7 +97,7 @@ export const Input = ({
 
           {showActions && (
             <div>
-              <div className="absolute z-1000 bg-white boder rounded-xl h-auto w-48.5 mt-9 mr-0 ml-0 -mb-44">
+              <div className="absolute z-10000 bg-white boder rounded-xl h-40 w-52 transform translate-x-[-210px] translate-y-[10px] overflow-auto  ">
                 <ListMenu
                   todoLabels={todoLabels}
                   labelSelected={labelSelected}

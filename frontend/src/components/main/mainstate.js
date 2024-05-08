@@ -5,6 +5,8 @@ export const MainProvider = ({ children }) => {
   const [todos, setTodos] = useState([]);
   const [paginationLabel, setPaginationLabel] = useState([]);
   const [paginationTodo, setPaginationTodo] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [displayedLabels, setDisplayedLabels] = useState([]);
   return (
     <MainContext.Provider
       value={{
@@ -16,6 +18,10 @@ export const MainProvider = ({ children }) => {
         setPaginationLabel,
         paginationTodo,
         setPaginationTodo,
+        currentPage,
+        setCurrentPage,
+        displayedLabels,
+        setDisplayedLabels,
       }}
     >
       {children}

@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useRef } from "react";
-import "../../../todolabel/list/item/action/action.css";
 export const Action = ({ setIsEditing, deleteTodo, todo }) => {
   const refContainer = useRef();
   const [showActions, setShowActions] = useState(false);
@@ -23,19 +22,25 @@ export const Action = ({ setIsEditing, deleteTodo, todo }) => {
 
   return (
     <>
-      <div className="div-action" ref={refContainer}>
+      <div className="" ref={refContainer}>
         <p
-          className="mt-0 cursor-pointer m-0 pr-4"
+          className="mt-0 cursor-pointer m-0 pr-4 pl-3 pb-2"
           onClick={() => setShowActions(true)}
         >
           ...
         </p>
         {showActions && (
-          <div className="headerModal">
-            <button className="updateBtn" onClick={() => setIsEditing(true)}>
+          <div className="fixed bg-white rounded-xl shadow-md shadow-[#ccc] h-16 w-36 translate-x-[10%] translate-y-[10%]">
+            <button
+              className="w-full border-none bg-white cursor-pointer  hover:bg-[#ccc] mt-2"
+              onClick={() => setIsEditing(true)}
+            >
               Update
             </button>
-            <button className="deleteBtn" onClick={() => deleteTodo(todo._id)}>
+            <button
+              className="w-full border-none bg-white cursor-pointer  hover:bg-[#ccc]"
+              onClick={() => deleteTodo(todo._id)}
+            >
               Delete
             </button>
           </div>

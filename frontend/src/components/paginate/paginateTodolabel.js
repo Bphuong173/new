@@ -6,7 +6,9 @@ export function PaginateTodolabel({
   setTodoLabels,
   paginationLabel,
   setPaginationLabel,
+  setCurrentPage,
 }) {
+  console.log(paginationLabel);
   const loadNextPage = async () => {
     const nextPage = (paginationLabel.current_page || 1) + 1;
     if (nextPage <= paginationLabel.total_pages) {
@@ -16,6 +18,7 @@ export function PaginateTodolabel({
 
         setTodoLabels(newData);
         setPaginationLabel(newPaginationLabel);
+        setCurrentPage(nextPage);
       });
     }
   };
@@ -27,13 +30,14 @@ export function PaginateTodolabel({
         const newPaginationLabel = res.data.paginationLabel;
         setTodoLabels(newData);
         setPaginationLabel(newPaginationLabel);
+        setCurrentPage(prevPage);
       });
     }
   };
 
   return (
     <>
-      <div className="absolute pl-2.5 mb-5 bottom-0 w-11/12 flex justify-between">
+      <div className=" mt-3  flex w-full items-center justify-center mb-11 ">
         <button
           disabled={paginationLabel.current_page === 1}
           onClick={loadPrevPage}

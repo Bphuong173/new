@@ -29,13 +29,24 @@ export const Item = ({
   };
   return (
     <>
-      <div className="flex items-center rounded-lg mt-4 bg-white w-[98.5%]">
-        <div
-          style={{
-            marginRight: "10px",
-          }}
-          className=" mr-3"
-        >
+      <div className="flex items-center rounded-xl  bg-white mr-3 mt-5 ml-4  ">
+        {isEditing ? (
+          <Updatemodal
+            updateTasktodo={updateTasktodo}
+            todo={todo}
+            key={todo._id}
+            loadTodo={loadTodo}
+          />
+        ) : (
+          <>
+            <Action
+              deleteTodo={deleteTodo}
+              todo={todo}
+              setIsEditing={setIsEditing}
+            />
+          </>
+        )}
+        <div className="mr-3 pl-3">
           <Playicon
             getCompletedList={getCompletedList}
             setShowCountdown={setShowCountdown}
@@ -44,10 +55,9 @@ export const Item = ({
         </div>
         <div>
           <div>{todo.task}</div>
-          <div>label: {todo.label?.task}</div>
-          <div>time:{todo.time}</div>
+          <div>label: {todo?.label}</div>
         </div>
-        <div className="flex">
+        <div className="flex ml-3">
           {clockCompleted.map((index) => (
             <svg
               key={uuidv4()}
@@ -55,6 +65,8 @@ export const Item = ({
                 backgroundColor: "#FF1B2A",
                 height: "20px",
                 width: "20px",
+                margin: "2px",
+                borderRadius: "10px",
               }}
               xmlns="http://www.w3.org/2000/svg"
               x="0px"
@@ -85,22 +97,6 @@ export const Item = ({
             </svg>
           ))}
         </div>
-        {isEditing ? (
-          <Updatemodal
-            updateTasktodo={updateTasktodo}
-            todo={todo}
-            key={todo._id}
-            loadTodo={loadTodo}
-          />
-        ) : (
-          <>
-            <Action
-              deleteTodo={deleteTodo}
-              todo={todo}
-              setIsEditing={setIsEditing}
-            />
-          </>
-        )}
       </div>
 
       <div>

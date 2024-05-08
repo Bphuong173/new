@@ -33,6 +33,8 @@ export const ClockIcon = ({ setTimeDuration, handleClockCompletedChange }) => {
               backgroundColor: index <= currentIndex ? "#FF1B2A" : "white",
               height: "20px",
               width: "20px",
+              marginRight: "2px",
+              borderRadius: "10px",
             }}
             xmlns="http://www.w3.org/2000/svg"
             x="0px"

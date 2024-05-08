@@ -12,23 +12,22 @@ export const ListMenu = ({
         <div
           key={todoLabel._id}
           onClick={() => setLabelSelected(todoLabel)}
-          className="flex items-center w-full relative hover:shadow-zinc-300"
+          className="flex items-center w-full relative hover:bg-[#F2F2F8]"
         >
           <p
             value={todoLabel._id}
             style={{
-              height: 10,
-              width: 12,
+              height: 12,
+              width: 14,
               borderRadius: 10,
               margin: 0,
-              marginLeft: 5,
+              marginLeft: 20,
               backgroundColor: todoLabel.color,
-              position: "absolute",
             }}
           ></p>
           <div
             onClick={handleClickInside}
-            className="w-full pt-3 pr-0 pl-3 pb-5"
+            className="w-full pt-3 pr-0 pl-9 pb-5"
             key={todoLabel._id}
             value={todoLabel._id}
           >

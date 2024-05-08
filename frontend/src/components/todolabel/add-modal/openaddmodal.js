@@ -30,7 +30,7 @@ export const OpenAddModal = ({ addTodoLabel }) => {
     <>
       <div ref={refModal}>
         <button
-          className="text-[#f93b42] border-none bg-white pl-9 absolute bottom-0 cursor-pointer text-base"
+          className="text-[#f93b42]  bg-white  flex items-center bottom-0 cursor-pointer text-base pt-2  "
           onClick={setIsModalOpen}
         >
           + Thêm Dự Án

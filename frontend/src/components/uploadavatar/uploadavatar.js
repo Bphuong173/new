@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Avatar } from "../avatar/avatar";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 export const UploadAvatar = () => {
   const [selectedFile, setSelectedFile] = useState(null);
   const [avatarUrl, setAvatarUrl] = useState(null);
-
+  const navigate = useNavigate();
   const handleFileChange = (event) => {
     setSelectedFile(event.target.files[0]);
   };
@@ -49,12 +50,24 @@ export const UploadAvatar = () => {
       setAvatarUrl(savedAvatar);
     }
   }, []);
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    // Chuyển hướng người dùng về trang đăng nhập sau khi đăng xuất
+    navigate("/login");
+  };
 
   return (
-    <div>
-      <input name="file" type="file" onChange={handleFileChange} />
-      <button onClick={handleUpload}>Upload Avatar</button>
+    <div className=" border-y-2 flex fixed items-center h-12 w-full z-50 bg-white">
+      <div>
+        <input name="file" type="file" onChange={handleFileChange} />
+      </div>
+      <div>
+        <button onClick={handleUpload}>Upload Avatar</button>
+      </div>
       {avatarUrl && <Avatar src={avatarUrl} />}
+      <div className="  text-white bg-[#F93B42] absolute right-7 rounded-xl p-1   ">
+        <button onClick={handleLogout}>Đăng xuất</button>
+      </div>
     </div>
   );
 };

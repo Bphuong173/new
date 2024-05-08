@@ -1,3 +1,4 @@
+import { Query } from "@tanstack/react-query";
 import React, { useState } from "react";
 
 export const Updateinput = ({ updateTasktodo, todo, loadTodo }) => {
@@ -7,7 +8,6 @@ export const Updateinput = ({ updateTasktodo, todo, loadTodo }) => {
     e.preventDefault();
     // edit todo
     updateTasktodo(value, todo._id);
-    loadTodo();
   };
   return (
     <div className="py-8 px-8">

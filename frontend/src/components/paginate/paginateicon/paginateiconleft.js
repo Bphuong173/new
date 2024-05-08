@@ -10,6 +10,7 @@ export const Paginateiconleft = () => {
         style={{
           height: "18px",
           width: "18px",
+          cursor: "pointer",
         }}
       >
         <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
