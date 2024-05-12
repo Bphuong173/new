@@ -3,7 +3,7 @@ import { todoLabel } from "../models/todolabelmodel.js";
 
 export const getAllTasks = async (req, res) => {
   const page = parseInt(req.query.page) || 1;
-  const limit = parseInt(req.query.litmit) || 10;
+  const limit = parseInt(req.query.litmit) || 4;
   const skip = (page - 1) * limit;
   const userId = req.user.userId;
   const totalRecords = await todo.countDocuments({ userId: userId });

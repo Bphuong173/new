@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { Todo } from "../todo/todo/todo";
 import { TodoLabel } from "../todolabel/list/todolabel";
-import { useNavigate } from "react-router-dom";
 import { UploadAvatar } from "../uploadavatar/uploadavatar";
 import { fetchTodos } from "../api/apitodo";
 import { fetchTodoLabelapi } from "../api/apitodolabel";
@@ -19,13 +18,8 @@ export function Main() {
     setPaginationLabel,
     paginationTodo,
     setPaginationTodo,
-    currentPage,
-    setCurrentPage,
-    displayedLabels,
-    setDisplayedLabels,
   } = useData();
 
-  const navigate = useNavigate();
   const loadTodo = async () => {
     await fetchTodos()
       .then((res) => {
@@ -34,7 +28,6 @@ export function Main() {
       })
       .catch((error) => console.log(error));
   };
-
   const loadTodolabel = async () => {
     await fetchTodoLabelapi()
       .then((res) => {
@@ -47,14 +40,9 @@ export function Main() {
     loadTodolabel();
     loadTodo();
   }, []);
-  const updateTodoLabels = async () => {
-    try {
-      const res = await fetchTodoLabelapi(currentPage); // Fetch lại dữ liệu nhãn công việc sau mỗi thao tác
-      setDisplayedLabels(res.data.data);
-      setPaginationLabel(res.data.paginationLabel);
-    } catch (error) {
-      console.log(error);
-    }
+  const reloadAll = () => {
+    loadTodo();
+    loadTodolabel();
   };
 
   return (
@@ -65,18 +53,16 @@ export function Main() {
           <div className=" w-1/4 mt-12 relative h[90%] ">
             <TodoLabel
               setTodoLabels={setTodoLabels}
+              todoLabels={todoLabels}
               paginationLabel={paginationLabel}
               setPaginationLabel={setPaginationLabel}
-              updateTodoLabels={updateTodoLabels}
-              currentPage={currentPage}
-              setCurrentPage={setCurrentPage}
-              displayedLabels={displayedLabels}
-              setDisplayedLabels={setDisplayedLabels}
+              reloadAll={reloadAll}
             />
           </div>
           <div className=" w-3/4 mt-12 bg-[#F5F5F9]">
             <Todo
               todoLabels={todoLabels}
+              setTodoLabels={setTodoLabels}
               todos={todos}
               loadTodo={loadTodo}
               setTodos={setTodos}

@@ -2,10 +2,12 @@ import React, { useState, useEffect } from "react";
 import { Avatar } from "../avatar/avatar";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+
 export const UploadAvatar = () => {
   const [selectedFile, setSelectedFile] = useState(null);
   const [avatarUrl, setAvatarUrl] = useState(null);
   const navigate = useNavigate();
+
   const handleFileChange = (event) => {
     setSelectedFile(event.target.files[0]);
   };
@@ -34,7 +36,7 @@ export const UploadAvatar = () => {
       .then((avatarPath) => {
         if (avatarPath) {
           localStorage.setItem("avatarUrl", avatarPath);
-          setAvatarUrl(avatarPath); // Sử dụng đường dẫn avatar trả về từ máy chủ
+          setAvatarUrl(avatarPath);
         } else {
           throw new Error("Invalid response data");
         }
@@ -44,28 +46,59 @@ export const UploadAvatar = () => {
         alert("Failed to upload avatar.");
       });
   };
+
   useEffect(() => {
     const savedAvatar = localStorage.getItem("avatarUrl");
     if (savedAvatar) {
       setAvatarUrl(savedAvatar);
     }
   }, []);
+
   const handleLogout = () => {
     localStorage.removeItem("token");
-    // Chuyển hướng người dùng về trang đăng nhập sau khi đăng xuất
     navigate("/login");
   };
 
   return (
     <div className=" border-y-2 flex fixed items-center h-12 w-full z-50 bg-white">
-      <div>
-        <input name="file" type="file" onChange={handleFileChange} />
+      <div className="flex items-center">
+        <label htmlFor="avatar-upload" className="cursor-pointer">
+          <div className="relative">
+            <div className="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center border-2 border-gray-500 overflow-hidden">
+              {avatarUrl ? (
+                <img
+                  src={avatarUrl}
+                  alt="Avatar"
+                  className="w-full h-full object-cover"
+                />
+              ) : (
+                <span className="text-gray-500 text-xs">Avatar</span>
+              )}
+            </div>
+            <input
+              id="avatar-upload"
+              name="file"
+              type="file"
+              onChange={handleFileChange}
+              className="absolute top-0 left-0 opacity-0 w-full h-full cursor-pointer"
+            />
+          </div>
+        </label>
+        <input
+          id="avatar-upload"
+          name="file"
+          type="file"
+          onChange={handleFileChange}
+          className="hidden"
+        />
+        <button
+          onClick={handleUpload}
+          className="ml-4 px-4 py-2 bg-gray-500 text-white rounded-md shadow-md hover:bg-gray-600 text-xs"
+        >
+          Upload
+        </button>
       </div>
-      <div>
-        <button onClick={handleUpload}>Upload Avatar</button>
-      </div>
-      {avatarUrl && <Avatar src={avatarUrl} />}
-      <div className="  text-white bg-[#F93B42] absolute right-7 rounded-xl p-1   ">
+      <div className="text-white bg-[#F93B42] ml-auto rounded-xl p-1 shadow-md hover:bg-red-600">
         <button onClick={handleLogout}>Đăng xuất</button>
       </div>
     </div>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { fetchTodoLabelapi } from "../api/apitodolabel";
 import { Paginateiconright } from "./paginateicon/paginateiconright";
 import { Paginateiconleft } from "./paginateicon/paginateiconleft";
@@ -6,9 +6,7 @@ export function PaginateTodolabel({
   setTodoLabels,
   paginationLabel,
   setPaginationLabel,
-  setCurrentPage,
 }) {
-  console.log(paginationLabel);
   const loadNextPage = async () => {
     const nextPage = (paginationLabel.current_page || 1) + 1;
     if (nextPage <= paginationLabel.total_pages) {
@@ -18,7 +16,6 @@ export function PaginateTodolabel({
 
         setTodoLabels(newData);
         setPaginationLabel(newPaginationLabel);
-        setCurrentPage(nextPage);
       });
     }
   };
@@ -30,7 +27,6 @@ export function PaginateTodolabel({
         const newPaginationLabel = res.data.paginationLabel;
         setTodoLabels(newData);
         setPaginationLabel(newPaginationLabel);
-        setCurrentPage(prevPage);
       });
     }
   };

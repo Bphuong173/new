@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { OpenAddModal } from "../add-modal/openaddmodal";
 import { Item } from "./item/item";
 import {
@@ -11,17 +11,14 @@ import { PaginateTodolabel } from "../../paginate/paginateTodolabel";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 
 export const TodoLabel = ({
+  todoLabels,
+  reloadAll,
   setOpenModal,
   handleOpenModal,
   handleCloseModal,
   setTodoLabels,
   paginationLabel,
   setPaginationLabel,
-  updateTodoLabels,
-  currentPage,
-  setCurrentPage,
-  displayedLabels,
-  setDisplayedLabels,
 }) => {
   const queryClient = useQueryClient();
   const query = useQuery({
@@ -33,7 +30,6 @@ export const TodoLabel = ({
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["todolabel"] });
       query.refetch();
-      updateTodoLabels();
     },
   });
   const mutationDelete = useMutation({
@@ -41,7 +37,6 @@ export const TodoLabel = ({
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["todolabel"] });
       query.refetch();
-      updateTodoLabels();
     },
   });
   const addTodoLabel = (task, color) => {
@@ -50,9 +45,11 @@ export const TodoLabel = ({
       color: color,
       isEditing: false,
     });
+    reloadAll();
   };
   const deleteTodoLabel = (_id) => {
     mutationDelete.mutate(_id);
+    reloadAll();
   };
   const mutation = useMutation({
     mutationFn: (data) =>
@@ -69,23 +66,11 @@ export const TodoLabel = ({
   const updateTaskLabel = (task, _id, color) => {
     mutation.mutate({ task, _id, color });
   };
-  useEffect(() => {
-    const loadTodoLabel = async () => {
-      try {
-        const res = await fetchTodoLabelapi(currentPage); // Sử dụng currentPage để fetch dữ liệu cho trang hiện tại
-        setDisplayedLabels(res.data.data); // Cập nhật displayedLabels thay vì todoLabels
-        setPaginationLabel(res.data.paginationLabel);
-      } catch (error) {
-        console.log(error);
-      }
-    };
 
-    loadTodoLabel();
-  }, [currentPage, setPaginationLabel]);
   return (
     <>
-      <div className="">
-        {displayedLabels.map((todoLabel) => (
+      <div className="Hola">
+        {todoLabels?.map((todoLabel) => (
           <Item
             key={todoLabel._id}
             todoLabel={todoLabel}
@@ -98,7 +83,6 @@ export const TodoLabel = ({
         setTodoLabels={setTodoLabels}
         paginationLabel={paginationLabel}
         setPaginationLabel={setPaginationLabel}
-        setCurrentPage={setCurrentPage}
       />
       <div className=" bottom-0 absolute w-full  h-10 pl-5 border-solid border-[1px] border-[#f1f1f1] bg-white  ">
         <OpenAddModal
@@ -111,4 +95,3 @@ export const TodoLabel = ({
     </>
   );
 };
-// w-full h-10 border-[#F1F1F1] boder-2 border-solid
