@@ -14,10 +14,11 @@ axios.interceptors.request.use(
 );
 
 // Hàm gửi yêu cầu GET danh sách todoLabel
-export const fetchTodoLabelapi = (page = 1, limit = 10) => {
-  return axios.get(`${baseURL}/todoLabel?page=${page}&limit=${limit}`);
+export const fetchTodoLabelapi = (lastIdLabel = null) => {
+  return axios.get(
+    `${baseURL}/todoLabel?lastId=${lastIdLabel ? lastIdLabel : ""}`
+  );
 };
-
 // Hàm gửi yêu cầu POST để tạo todoLabel mới
 export const createTodoLabelapi = (newTodoLabel) => {
   return axios.post(`${baseURL}/todoLabel`, newTodoLabel);

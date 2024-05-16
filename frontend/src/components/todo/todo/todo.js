@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Input } from "../input/input";
 import { Item } from "../item/item";
 import axios from "axios";
@@ -8,18 +8,46 @@ import {
   updateTodoapi,
   deleteTodoapi,
 } from "../../api/apitodo";
-import { PaginateTodo } from "../../paginate/paginateTodo";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-export const Todo = ({
-  todoLabels,
-  todos,
-  loadTodo,
-  setTodos,
-  paginationTodo,
-  setPaginationTodo,
-}) => {
+import { useData } from "../../main/mainstate";
+export const Todo = ({ loadTodo, filteredLabel }) => {
+  const { todos, setTodos } = useData();
   const queryClient = useQueryClient();
   const query = useQuery({ queryKey: ["todos"], queryFn: fetchTodos });
+  const [lastId, setLastId] = useState(null);
+  const containerRef = useRef(null);
+
+  // let filteredTodos;
+  // if (filteredLabel) {
+  //   filteredTodos = todos.filter((todo) => todo.labelId === filteredLabel);
+  // } else {
+  //   filteredTodos = todos;
+  // }
+  useEffect(() => {
+    const container = containerRef.current;
+
+    if (container) {
+      // Kiểm tra container có tồn tại hay không
+
+      const handleScroll = async () => {
+        if (
+          container.scrollTop + container.clientHeight >=
+          container.scrollHeight
+        ) {
+          if (lastId) {
+            const res = await loadTodo(lastId);
+            setTodos((prevTodos) => [...prevTodos, ...res.data]);
+            setLastId(res.data[res.data.length - 1]._id);
+          }
+        }
+      };
+
+      container.addEventListener("scroll", handleScroll);
+      return () => {
+        container.removeEventListener("scroll", handleScroll);
+      };
+    }
+  }, [lastId]);
 
   const mutationCreate = useMutation({
     mutationFn: createTodoapi,
@@ -102,32 +130,36 @@ export const Todo = ({
   };
   if (query.isLoading) return <div>Loading...</div>;
   if (query.error) return <div>Error: {query.error.message}</div>;
+
   return (
     <>
-      <Input
-        clockCompleted={clockCompleted}
-        addTodo={addTodo}
-        todoLabels={todoLabels}
-        handleClockCompletedChange={handleClockCompletedChange}
-      />
-      <div className="mt-4 -mb-4 pl-4">Nhiệm vụ</div>
-      {query?.data?.data?.data.map((todo) => (
-        <Item
-          key={todo._id}
-          todo={todo}
-          deleteTodo={deleteTodo}
-          updateTodo={updateTask}
-          handleCountdownEnd={handleCountdownEnd}
-          countdownActive={countdownActive}
-          setCountdownActive={setCountdownActive}
-          loadTodo={loadTodo}
+      <div>
+        <Input
+          clockCompleted={clockCompleted}
+          addTodo={addTodo}
+          handleClockCompletedChange={handleClockCompletedChange}
         />
-      ))}
-      <PaginateTodo
-        setTodos={setTodos}
-        paginationTodo={paginationTodo}
-        setPaginationTodo={setPaginationTodo}
-      />
+        <div className="mt-4 -mb-4 pl-4">Nhiệm vụ</div>
+        <div
+          ref={containerRef}
+          className="overflow-y-auto"
+          style={{ maxHeight: "calc(100vh - 200px)" }}
+        >
+          {" "}
+          {todos.map((todo) => (
+            <Item
+              key={todo._id}
+              todo={todo}
+              deleteTodo={deleteTodo}
+              updateTodo={updateTask}
+              handleCountdownEnd={handleCountdownEnd}
+              countdownActive={countdownActive}
+              setCountdownActive={setCountdownActive}
+              loadTodo={loadTodo}
+            />
+          ))}
+        </div>
+      </div>
     </>
   );
 };

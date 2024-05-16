@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { AddModal } from "./addmodal";
+
 export const OpenAddModal = ({ addTodoLabel }) => {
   const refModal = useRef();
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -30,11 +31,12 @@ export const OpenAddModal = ({ addTodoLabel }) => {
     <>
       <div ref={refModal}>
         <button
-          className="text-[#f93b42]  bg-white  flex items-center bottom-0 cursor-pointer text-base pt-2  "
+          className="text-[#f93b42] text-sm  bg-white  flex  bottom-0 cursor-pointer  pt-2    "
           onClick={setIsModalOpen}
         >
           + Thêm Dự Án
         </button>
+
         <div className="inputTodoLabel" ref={refModal}>
           {isModalOpen && (
             <AddModal

@@ -5,13 +5,14 @@ import { ListMenu } from "./listmenu";
 import { Menuicon } from "./headericon/menuicon";
 import { Arrowicon } from "./headericon/arrowicon";
 import { ClockIcon } from "./headericon/ClockIcon";
+import { useData } from "../../main/mainstate";
 export const Input = ({
   addTodo,
-  todoLabels,
   handleClockCompletedChange,
   clockCompleted,
 }) => {
   const refInput = useRef();
+  const { todoLabels } = useData();
   const [value, setValue] = useState("");
   const [labelSelected, setLabelSelected] = useState(undefined);
   const [showActions, setShowActions] = useState(false);
@@ -48,9 +49,12 @@ export const Input = ({
           className="flex relative h-full bg-white mr-2.5 mt-2.5 mr- rounded-xl items-center input-wrapper ml-4"
           ref={refInput}
         >
-          <Plusicon />
+          <div className=" absolute mb-[5px] ml-[6px] h-5 w-7 bg-[length:25px_24px]">
+            <Plusicon />
+          </div>
+
           <input
-            className="h-12  p-0 w-full rounded-xl pl-12"
+            className="h-12  p-0 w-full text-[14px] rounded-xl pl-12"
             onChange={(e) => setValue(e.target.value)}
             value={value}
             placeholder="Thêm công việc theo nhãn tương ứng"

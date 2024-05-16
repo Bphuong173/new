@@ -24,19 +24,22 @@ export const Action = ({ setIsEditing, deleteTodoLabel, todoLabel }) => {
   return (
     <>
       <div className="absolute right-0 mr-5" ref={refContainer}>
-        <p className="m-o cursor-pointer" onClick={() => setShowActions(true)}>
+        <p
+          className="m-o mb-1 cursor-pointer text-[#9E9E9E] ]"
+          onClick={() => setShowActions(true)}
+        >
           ...
         </p>
         {showActions && (
           <div className="headerModal">
             <button className="updateBtn" onClick={() => setIsEditing(true)}>
-              Update
+              Chỉnh Sửa Dự Án
             </button>
             <button
               className="deleteBtn"
               onClick={() => deleteTodoLabel(todoLabel._id)}
             >
-              Delete
+              Hoàn Thành
             </button>
           </div>
         )}

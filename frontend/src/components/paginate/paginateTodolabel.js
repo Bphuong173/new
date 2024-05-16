@@ -33,7 +33,7 @@ export function PaginateTodolabel({
 
   return (
     <>
-      <div className=" mt-3  flex w-full items-center justify-center mb-11 ">
+      <div className="  flex w-full items-center justify-center mb-11 ">
         <button
           disabled={paginationLabel.current_page === 1}
           onClick={loadPrevPage}

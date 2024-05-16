@@ -2,25 +2,13 @@ import { todo } from "../models/todomodel.js";
 import { todoLabel } from "../models/todolabelmodel.js";
 
 export const getAllTasks = async (req, res) => {
-  const page = parseInt(req.query.page) || 1;
-  const limit = parseInt(req.query.litmit) || 4;
-  const skip = (page - 1) * limit;
   const userId = req.user.userId;
-  const totalRecords = await todo.countDocuments({ userId: userId });
-  const totalPages = Math.ceil(totalRecords / limit);
-
-  const data = await todo
-    .find({ userId: userId })
-    .skip(skip)
-    .limit(limit)
-    .exec();
-  const paginationTodo = {
-    total_records: totalRecords,
-    current_page: page,
-    total_pages: totalPages,
-    next_page: page < totalPages ? page + 1 : null,
-    prev_page: page > 1 ? page - 1 : null,
-  };
+  const lastIdTodo = req.query.lastIdTodo || null;
+  let query = { userId: userId };
+  if (lastIdTodo) {
+    query._id = { $gt: lastIdTodo };
+  }
+  const data = await todo.find(query).limit(10).exec();
 
   const newData = [];
   for (const todoItem of data) {
@@ -29,18 +17,16 @@ export const getAllTasks = async (req, res) => {
       if (todoItem.labelId) {
         dataTodoLabel = await todoLabel.findById(todoItem.labelId);
         if (!dataTodoLabel) {
-          // Xử lý trường hợp không tìm thấy nhãn
           console.error(
             `Label not found for todo with labelId: ${todoItem.labelId}`
           );
-          continue; // Bỏ qua và tiếp tục với vòng lặp tiếp theo
+          continue;
         }
       } else {
-        // Xử lý trường hợp không có labelId
         console.error(
           `LabelId not provided for todo with _id: ${todoItem._id}`
         );
-        continue; // Bỏ qua và tiếp tục với vòng lặp tiếp theo
+        continue;
       }
     } catch (err) {
       console.error(err);
@@ -48,16 +34,12 @@ export const getAllTasks = async (req, res) => {
     }
     const newTodo = {
       ...todoItem._doc,
-      label: dataTodoLabel.task, // Truy cập vào trường task của nhãn
+      label: dataTodoLabel.task,
     };
-
     newData.push(newTodo);
   }
-  const response = {
-    data: newData,
-    paginationTodo,
-  };
-  res.json(response);
+
+  res.json(newData);
 };
 export const createTasks = async (req, res) => {
   const userId = req.user.userId;

@@ -1,36 +1,17 @@
 import { todoLabel } from "../models/todolabelmodel.js";
-
 export const getAllTasksLabel = async (req, res) => {
   const userId = req.user.userId;
-  const page = parseInt(req.query.page) || 1;
-  // console.log(page);
-  const limit = parseInt(req.query.limit) || 10;
-  // console.log(limit);
-  const skip = (page - 1) * limit;
-  // console.log(skip);
+  const lastId = req.query.lastId || null;
+  console.log(lastId);
+  let query = { userId: userId };
 
-  const totalRecords = await todoLabel.countDocuments({ userId: userId }); // Tổng số todoLabel
-
-  const totalPages = Math.ceil(totalRecords / limit); // Tổng số trang
-
-  const data = await todoLabel
-    .find({ userId: userId })
-    .skip(skip)
-    .limit(limit)
-    .exec();
-  const paginationLabel = {
-    total_records: totalRecords,
-    current_page: page,
-    total_pages: totalPages,
-    next_page: page < totalPages ? page + 1 : null,
-    prev_page: page > 1 ? page - 1 : null,
-  };
-  const response = {
-    data,
-    paginationLabel,
-  };
-  res.json(response);
+  if (lastId != null) {
+    query = { ...query, _id: { $gt: lastId } }; // lay id cuoi cung
+  }
+  const data = await todoLabel.find(query).limit(15).exec();
+  res.json(data);
 };
+
 export const createTasksLabel = async (req, res) => {
   const userId = req.user.userId;
   const newTodomodel = new todoLabel({

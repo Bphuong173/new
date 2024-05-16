@@ -14,8 +14,8 @@ axios.interceptors.request.use(
 );
 
 // Hàm gửi yêu cầu GET danh sách todo
-export const fetchTodos = (page = 1, limit = 10) => {
-  return axios.get(`${baseURL}/todo?page=${page}&limit=${limit}`);
+export const fetchTodos = (lastIdTodo = null) => {
+  return axios.get(`${baseURL}/todo?lastId=${lastIdTodo}`);
 };
 
 // Hàm gửi yêu cầu POST để tạo todo mới

@@ -1,42 +1,34 @@
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { OpenAddModal } from "../add-modal/openaddmodal";
 import { Item } from "./item/item";
 import {
   createTodoLabelapi,
   updateTodoLabelapi,
   deleteTodoLabelapi,
-  fetchTodoLabelapi,
 } from "../../api/apitodolabel";
-import { PaginateTodolabel } from "../../paginate/paginateTodolabel";
-import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { useData } from "../../main/mainstate";
 
 export const TodoLabel = ({
-  todoLabels,
-  reloadAll,
   setOpenModal,
   handleOpenModal,
   handleCloseModal,
-  setTodoLabels,
-  paginationLabel,
-  setPaginationLabel,
+  setFilteredLabel,
+  loadTodolabel,
 }) => {
+  const { todoLabels, selectedItemId, setSelectedItemId } = useData();
   const queryClient = useQueryClient();
-  const query = useQuery({
-    queryKey: ["todolabel"],
-    queryFn: fetchTodoLabelapi,
-  });
   const mutationCreate = useMutation({
     mutationFn: createTodoLabelapi,
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["todolabel"] });
-      query.refetch();
+      loadTodolabel();
     },
   });
   const mutationDelete = useMutation({
     mutationFn: deleteTodoLabelapi,
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["todolabel"] });
-      query.refetch();
+      loadTodolabel();
     },
   });
   const addTodoLabel = (task, color) => {
@@ -45,11 +37,9 @@ export const TodoLabel = ({
       color: color,
       isEditing: false,
     });
-    reloadAll();
   };
   const deleteTodoLabel = (_id) => {
     mutationDelete.mutate(_id);
-    reloadAll();
   };
   const mutation = useMutation({
     mutationFn: (data) =>
@@ -60,31 +50,53 @@ export const TodoLabel = ({
       }),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["todos"] });
-      query.refetch();
     },
   });
   const updateTaskLabel = (task, _id, color) => {
     mutation.mutate({ task, _id, color });
   };
+  const handleLabelClick = (labelId) => {
+    setFilteredLabel(labelId);
+    setSelectedItemId(labelId);
+  };
+  const containerRef = useRef(null);
 
+  useEffect(() => {
+    const container = containerRef.current;
+    if (container) {
+      const handleScroll = async () => {
+        if (
+          container.scrollTop + container.clientHeight >=
+          container.scrollHeight
+        ) {
+          const last = todoLabels[todoLabels.length - 1];
+          console.log(last);
+          await loadTodolabel(last._id);
+        }
+      };
+      container.addEventListener("scroll", handleScroll);
+      return () => {
+        container.removeEventListener("scroll", handleScroll);
+      };
+    }
+  }, [loadTodolabel, todoLabels]);
   return (
     <>
-      <div className="Hola">
-        {todoLabels?.map((todoLabel) => (
+      <div className=" h-full overflow-y-auto" ref={containerRef}>
+        {todoLabels?.map((todoLabel, index) => (
           <Item
-            key={todoLabel._id}
+            key={index}
             todoLabel={todoLabel}
             deleteTodoLabel={deleteTodoLabel}
             updateTodoLabel={updateTaskLabel}
+            handleLabelClick={handleLabelClick}
+            isSelected={selectedItemId === todoLabel._id}
+            onClick={() => handleLabelClick(todoLabel._id)}
           />
         ))}
       </div>
-      <PaginateTodolabel
-        setTodoLabels={setTodoLabels}
-        paginationLabel={paginationLabel}
-        setPaginationLabel={setPaginationLabel}
-      />
-      <div className=" bottom-0 absolute w-full  h-10 pl-5 border-solid border-[1px] border-[#f1f1f1] bg-white  ">
+
+      <div className=" flex bottom-0 absolute w-full  h-10 pl-5 border-solid border-[1px] border-[#f4f4f4] bg-white  ">
         <OpenAddModal
           addTodoLabel={addTodoLabel}
           setOpenModal={setOpenModal}

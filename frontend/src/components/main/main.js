@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Todo } from "../todo/todo/todo";
 import { TodoLabel } from "../todolabel/list/todolabel";
 import { UploadAvatar } from "../uploadavatar/uploadavatar";
@@ -10,39 +10,51 @@ import "../../index.css";
 export function Main() {
   const queryClient = new QueryClient();
   const {
-    todoLabels,
     setTodoLabels,
-    todos,
     setTodos,
-    paginationLabel,
-    setPaginationLabel,
-    paginationTodo,
-    setPaginationTodo,
+    filteredLabel,
+    setFilteredLabel,
+    lastIdLabel,
+    lastIdTodo,
+    setLastIdTodo,
   } = useData();
 
-  const loadTodo = async () => {
-    await fetchTodos()
-      .then((res) => {
-        setTodos(res.data.data);
-        setPaginationTodo(res.data.paginationTodo);
-      })
-      .catch((error) => console.log(error));
+  const loadTodo = async (lastId = lastIdTodo) => {
+    console.log(`Fetching Todos with lastId: ${lastId}`);
+    try {
+      const res = await fetchTodos(lastId);
+      setTodos((prevTodos) => [...prevTodos, ...res.data]);
+      console.log(`Successfully fetched todos:`, res.data);
+    } catch (error) {
+      console.error("Error fetching todos:", error);
+    }
   };
-  const loadTodolabel = async () => {
-    await fetchTodoLabelapi()
-      .then((res) => {
-        setTodoLabels(res.data.data);
-        setPaginationLabel(res.data.paginationLabel);
-      })
-      .catch((error) => console.log(error));
+  const loadTodolabel = async (lastId = lastIdLabel) => {
+    console.log(`Fetching TodoLabel with lastId: ${lastId}`);
+    try {
+      const res = await fetchTodoLabelapi(lastId);
+      console.log(res.data);
+      setTodoLabels((prevLabels) => {
+        console.log(`Successfully fetched todoLabel:`, [
+          ...prevLabels,
+          ...res.data,
+        ]);
+        return [...prevLabels, ...res.data];
+      });
+      return res.data.length;
+    } catch (error) {
+      console.error("Error fetching todoLabels:", error);
+    }
   };
+
   useEffect(() => {
     loadTodolabel();
     loadTodo();
   }, []);
+
   const reloadAll = () => {
     loadTodo();
-    loadTodolabel();
+    // loadTodolabel();
   };
 
   return (
@@ -50,24 +62,18 @@ export function Main() {
       <QueryClientProvider client={queryClient}>
         <UploadAvatar />
         <div className="flex w-full h-[100vh]">
-          <div className=" w-1/4 mt-12 relative h[90%] ">
+          <div className=" w-1/4 mt-12 relative h[90%] flex flex-col ">
             <TodoLabel
-              setTodoLabels={setTodoLabels}
-              todoLabels={todoLabels}
-              paginationLabel={paginationLabel}
-              setPaginationLabel={setPaginationLabel}
               reloadAll={reloadAll}
+              setFilteredLabel={setFilteredLabel}
+              loadTodolabel={loadTodolabel}
             />
           </div>
           <div className=" w-3/4 mt-12 bg-[#F5F5F9]">
             <Todo
-              todoLabels={todoLabels}
-              setTodoLabels={setTodoLabels}
-              todos={todos}
               loadTodo={loadTodo}
-              setTodos={setTodos}
-              paginationTodo={paginationTodo}
-              setPaginationTodo={setPaginationTodo}
+              filteredLabel={filteredLabel}
+              setLastIdTodo={setLastIdTodo}
             />
           </div>
         </div>

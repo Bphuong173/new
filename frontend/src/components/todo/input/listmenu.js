@@ -6,7 +6,6 @@ export const ListMenu = ({
   setLabelSelected,
   handleClickInside,
 }) => {
-  console.log(todoLabels);
   return (
     <>
       {todoLabels.map((todoLabel) => (
