@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Todo } from "../todo/todo/todo";
 import { TodoLabel } from "../todolabel/list/todolabel";
 import { UploadAvatar } from "../uploadavatar/uploadavatar";
@@ -9,39 +9,24 @@ import { useData } from "./mainstate.js";
 import "../../index.css";
 export function Main() {
   const queryClient = new QueryClient();
-  const {
-    setTodoLabels,
-    setTodos,
-    filteredLabel,
-    setFilteredLabel,
-    lastIdLabel,
-    lastIdTodo,
-    setLastIdTodo,
-  } = useData();
+  const { setTodoLabels, setTodos, setLastIdTodo } = useData();
 
-  const loadTodo = async (lastId = lastIdTodo) => {
-    console.log(`Fetching Todos with lastId: ${lastId}`);
+  const loadTodo = async (lastIdTodo) => {
+    console.log(`Fetching Todos with lastId: ${lastIdTodo}`);
     try {
-      const res = await fetchTodos(lastId);
+      const res = await fetchTodos(lastIdTodo);
       setTodos((prevTodos) => [...prevTodos, ...res.data]);
       console.log(`Successfully fetched todos:`, res.data);
     } catch (error) {
       console.error("Error fetching todos:", error);
     }
   };
-  const loadTodolabel = async (lastId = lastIdLabel) => {
-    console.log(`Fetching TodoLabel with lastId: ${lastId}`);
+  const loadTodolabel = async (lastIdLabel) => {
+    console.log(`Fetching TodoLabel with lastId: ${lastIdLabel}`);
     try {
-      const res = await fetchTodoLabelapi(lastId);
+      const res = await fetchTodoLabelapi(lastIdLabel);
       console.log(res.data);
-      setTodoLabels((prevLabels) => {
-        console.log(`Successfully fetched todoLabel:`, [
-          ...prevLabels,
-          ...res.data,
-        ]);
-        return [...prevLabels, ...res.data];
-      });
-      return res.data.length;
+      setTodoLabels((prevLabels) => [...prevLabels, ...res.data]);
     } catch (error) {
       console.error("Error fetching todoLabels:", error);
     }
@@ -53,8 +38,8 @@ export function Main() {
   }, []);
 
   const reloadAll = () => {
-    loadTodo();
     // loadTodolabel();
+    loadTodo();
   };
 
   return (
@@ -63,21 +48,19 @@ export function Main() {
         <UploadAvatar />
         <div className="flex w-full h-[100vh]">
           <div className=" w-1/4 mt-12 relative h[90%] flex flex-col ">
-            <TodoLabel
-              reloadAll={reloadAll}
-              setFilteredLabel={setFilteredLabel}
-              loadTodolabel={loadTodolabel}
-            />
+            <TodoLabel reloadAll={reloadAll} loadTodolabel={loadTodolabel} />
           </div>
           <div className=" w-3/4 mt-12 bg-[#F5F5F9]">
-            <Todo
-              loadTodo={loadTodo}
-              filteredLabel={filteredLabel}
-              setLastIdTodo={setLastIdTodo}
-            />
+            <Todo loadTodo={loadTodo} setLastIdTodo={setLastIdTodo} />
           </div>
         </div>
       </QueryClientProvider>
     </>
   );
 }
+
+// {showTodomodal && (
+//   <div>
+//     <Todomodal />
+//   </div>
+// )}

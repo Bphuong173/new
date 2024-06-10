@@ -16,7 +16,7 @@ axios.interceptors.request.use(
 // Hàm gửi yêu cầu GET danh sách todoLabel
 export const fetchTodoLabelapi = (lastIdLabel = null) => {
   return axios.get(
-    `${baseURL}/todoLabel?lastId=${lastIdLabel ? lastIdLabel : ""}`
+    `${baseURL}/todoLabel?lastIdLabel=${lastIdLabel ? lastIdLabel : ""}`
   );
 };
 // Hàm gửi yêu cầu POST để tạo todoLabel mới

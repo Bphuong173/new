@@ -1,14 +1,17 @@
 import { todoLabel } from "../models/todolabelmodel.js";
 export const getAllTasksLabel = async (req, res) => {
   const userId = req.user.userId;
-  const lastId = req.query.lastId || null;
-  console.log(lastId);
+  const lastIdLabel = req.query.lastIdLabel || null;
   let query = { userId: userId };
 
-  if (lastId != null) {
-    query = { ...query, _id: { $gt: lastId } }; // lay id cuoi cung
+  if (lastIdLabel != null) {
+    query = { ...query, _id: { $lt: lastIdLabel } }; // lay id cuoi cung
   }
-  const data = await todoLabel.find(query).limit(15).exec();
+  const data = await todoLabel
+    .find(query)
+    .sort({ _id: "desc" })
+    .limit(10)
+    .exec();
   res.json(data);
 };
 

@@ -1,14 +1,22 @@
 import { todo } from "../models/todomodel.js";
 import { todoLabel } from "../models/todolabelmodel.js";
+import mongoose, { trusted } from "mongoose";
 
 export const getAllTasks = async (req, res) => {
   const userId = req.user.userId;
   const lastIdTodo = req.query.lastIdTodo || null;
   let query = { userId: userId };
-  if (lastIdTodo) {
-    query._id = { $gt: lastIdTodo };
+  if (lastIdTodo && mongoose.Types.ObjectId.isValid(lastIdTodo)) {
+    try {
+      const objectId = new mongoose.Types.ObjectId(lastIdTodo);
+      query = { ...query, _id: { $gt: objectId } };
+    } catch (error) {
+      console.error("Error converting lastIdTodo to ObjectId:", error);
+    }
+  } else {
+    console.error("Invalid lastIdTodo value:", lastIdTodo);
   }
-  const data = await todo.find(query).limit(10).exec();
+  const data = await todo.find(query).limit(5).exec();
 
   const newData = [];
   for (const todoItem of data) {
@@ -50,6 +58,7 @@ export const createTasks = async (req, res) => {
     clockCompleted: req.body.clockCompleted,
     countdownTime: req.body.countdownTime,
     userId: userId,
+    notes: req.body.notes,
   });
   newTodomodel.save();
   res.send(JSON.stringify(newTodomodel));
@@ -72,6 +81,8 @@ export const getSingleTasks = async (req, res) => {
 export const updateTasks = async (req, res) => {
   const { id } = req.params;
   const userId = req.user.userId;
+  console.log("Received update request for task ID:", id);
+  console.log("Request body:", req.body);
   try {
     const existingTodo = await todo.findOne({ _id: id, userId: userId });
     if (!existingTodo) {
@@ -85,12 +96,16 @@ export const updateTasks = async (req, res) => {
       {
         $set: {
           task: req.body.task,
-          labelId: req.body.labelId,
+          labelId: req.body.label,
           time: req.body.time,
           clockCompleted: req.body.clockCompleted,
+          notes: req.body.notes,
         },
-      }
+      },
+      { new: true }
     );
+
+    console.log("Updated todo:", updateTodo);
     res.send(JSON.stringify(updateTodo));
   } catch (error) {
     res.status(500).json({ message: error.message });

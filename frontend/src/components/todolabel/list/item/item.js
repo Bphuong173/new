@@ -29,8 +29,8 @@ export const Item = ({
         <p
           style={{
             backgroundColor: todoLabel.color,
-            height: "11px",
-            width: "11px",
+            height: "12px",
+            width: "12px",
             borderRadius: 10,
             margin: "12px 7px 11px 7px",
             paddingLeft: "8px",

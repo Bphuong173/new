@@ -12,6 +12,7 @@ const TodoSchema = new Schema({
   clockCompleted: { type: Array },
   countdownTime: { type: Number, default: 25 },
   userId: { type: String },
+  notes: { type: String },
 });
 // convert từ schema sang model để sử dụng trong biến todomodel
 export const todo = connection.model("todo", TodoSchema);

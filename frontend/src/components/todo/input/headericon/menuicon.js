@@ -6,8 +6,8 @@ export const Menuicon = ({ labelSelected }) => {
       <p
         style={{
           position: "absolute",
-          height: "15px",
-          width: "15px",
+          height: "12px",
+          width: "12px",
           borderRadius: "100%",
           backgroundColor: labelSelected?.color,
         }}

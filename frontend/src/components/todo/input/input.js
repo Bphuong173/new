@@ -12,9 +12,9 @@ export const Input = ({
   clockCompleted,
 }) => {
   const refInput = useRef();
-  const { todoLabels } = useData();
+  const { todoLabels, focusedLabel, notes, setNotes } = useData();
   const [value, setValue] = useState("");
-  const [labelSelected, setLabelSelected] = useState(undefined);
+  const [labelSelected, setLabelSelected] = useState(focusedLabel || undefined);
   const [showActions, setShowActions] = useState(false);
   const [timeDuration, setTimeDuration] = useState([]);
 
@@ -36,10 +36,14 @@ export const Input = ({
       document.removeEventListener("click", handleClickOutSide);
     }
   }, [showActions]);
+  useEffect(() => {
+    setLabelSelected(focusedLabel); // Cập nhật labelSelected khi focusedLabel thay đổi
+  }, [focusedLabel]);
   const handleSubmit = (e) => {
     e.preventDefault();
-    addTodo(value, labelSelected, timeDuration, clockCompleted);
+    addTodo(value, labelSelected, timeDuration, clockCompleted, notes);
     setValue("");
+    setNotes("");
   };
 
   return (
@@ -59,7 +63,7 @@ export const Input = ({
             value={value}
             placeholder="Thêm công việc theo nhãn tương ứng"
           />
-          <div className="flex absolute right-12 items-center pt-0 pl-0 pr-3 pb-3">
+          <div className="flex  absolute right-12 items-center pt-0 pl-0 pr-3 pb-3">
             <ClockIcon
               setTimeDuration={setTimeDuration}
               handleClockCompletedChange={handleClockCompletedChange}
@@ -84,8 +88,8 @@ export const Input = ({
 
           <p
             style={{
-              height: "15px",
-              width: "15px",
+              height: "12px",
+              width: "12px",
               borderRadius: "100%",
               backgroundColor: "red",
               display: "flex",
@@ -98,10 +102,9 @@ export const Input = ({
             <Menuicon labelSelected={labelSelected} />
           </p>
           <Linebreak />
-
           {showActions && (
             <div>
-              <div className="absolute z-10000 bg-white boder rounded-xl h-40 w-52 transform translate-x-[-210px] translate-y-[10px] overflow-auto  ">
+              <div className="absolute z-10000 bg-white boder rounded-xl h-40 w-52 transform translate-x-[-210px] translate-y-[10px] overflow-auto shadow-xl">
                 <ListMenu
                   todoLabels={todoLabels}
                   labelSelected={labelSelected}

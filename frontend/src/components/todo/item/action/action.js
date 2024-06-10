@@ -1,7 +1,10 @@
 import React, { useEffect, useState, useRef } from "react";
+import TaskCircle from "../image/task_circle.png";
+import TickDone from "../image/task-done.png";
 export const Action = ({ setIsEditing, deleteTodo, todo }) => {
   const refContainer = useRef();
   const [showActions, setShowActions] = useState(false);
+  const [showTick, setShowTick] = useState(false);
 
   const handleClick = (event) => {
     const target = event.target;
@@ -9,9 +12,13 @@ export const Action = ({ setIsEditing, deleteTodo, todo }) => {
 
     if (currentContainer && !currentContainer.contains(target)) {
       setShowActions(false);
+      setShowTick(false);
     }
   };
-
+  const handleTaskCircleClick = () => {
+    setShowActions(true);
+    setShowTick(!showTick); // Toggle the tick
+  };
   useEffect(() => {
     if (showActions) {
       document.addEventListener("click", handleClick);
@@ -24,10 +31,10 @@ export const Action = ({ setIsEditing, deleteTodo, todo }) => {
     <>
       <div className="" ref={refContainer}>
         <p
-          className="mt-0 cursor-pointer m-0 pr-4 pl-3 pb-2"
-          onClick={() => setShowActions(true)}
+          className=" cursor-pointer m-0  w-[20px] h-[20px] ml-3"
+          onClick={() => handleTaskCircleClick()}
         >
-          ...
+          <img src={showTick ? TickDone : TaskCircle} alt="icon" />
         </p>
         {showActions && (
           <div className="fixed bg-white rounded-xl shadow-md shadow-[#ccc] h-16 w-36 translate-x-[10%] translate-y-[10%]">

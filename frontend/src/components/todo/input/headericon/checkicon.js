@@ -4,8 +4,8 @@ export const Checkicon = () => {
   return (
     <svg
       style={{
-        height: "15px",
-        width: "15px",
+        height: "12px",
+        width: "12px",
         position: "absolute",
         right: "10px",
       }}

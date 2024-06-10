@@ -12,7 +12,7 @@ export const ListMenu = ({
         <div
           key={todoLabel._id}
           onClick={() => setLabelSelected(todoLabel)}
-          className="flex items-center w-full relative hover:bg-[#F2F2F8]"
+          className="flex h-11 items-center w-full relative hover:bg-[#F2F2F8] text-sm text-[14px] text-[#414141"
         >
           <p
             value={todoLabel._id}
@@ -27,7 +27,7 @@ export const ListMenu = ({
           ></p>
           <div
             onClick={handleClickInside}
-            className="w-full pt-3 pr-0 pl-9 pb-5"
+            className="w-full pt-3 pr-0 pl-4 pb-5"
             key={todoLabel._id}
             value={todoLabel._id}
           >

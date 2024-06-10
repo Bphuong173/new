@@ -1,10 +1,11 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { OpenAddModal } from "../add-modal/openaddmodal";
 import { Item } from "./item/item";
 import {
   createTodoLabelapi,
   updateTodoLabelapi,
   deleteTodoLabelapi,
+  fetchTodoLabelapi,
 } from "../../api/apitodolabel";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useData } from "../../main/mainstate";
@@ -13,35 +14,46 @@ export const TodoLabel = ({
   setOpenModal,
   handleOpenModal,
   handleCloseModal,
-  setFilteredLabel,
   loadTodolabel,
 }) => {
-  const { todoLabels, selectedItemId, setSelectedItemId } = useData();
+  const {
+    todoLabels,
+    selectedItemId,
+    setSelectedItemId,
+    setFilteredLabel,
+    setTodoLabels,
+    setFocusedLabel,
+  } = useData();
+  const [isLoading, setIsLoading] = useState(false);
   const queryClient = useQueryClient();
+  const containerRef = useRef(null);
+  const fetchTodoLabels = async () => {
+    const response = await fetchTodoLabelapi();
+    setTodoLabels(response.data);
+    console.log(response.data);
+  };
+
   const mutationCreate = useMutation({
     mutationFn: createTodoLabelapi,
-    onSuccess: () => {
+    onSuccess: (newTodoLabels) => {
+      setTodoLabels((prevTodoLabels) => [
+        newTodoLabels.data,
+        ...prevTodoLabels,
+      ]);
+      console.log(newTodoLabels);
       queryClient.invalidateQueries({ queryKey: ["todolabel"] });
-      loadTodolabel();
     },
   });
+
   const mutationDelete = useMutation({
     mutationFn: deleteTodoLabelapi,
     onSuccess: () => {
-      loadTodolabel();
+      fetchTodoLabels();
+      queryClient.invalidateQueries({ queryKey: ["todolabel"] });
     },
   });
-  const addTodoLabel = (task, color) => {
-    mutationCreate.mutate({
-      task: task,
-      color: color,
-      isEditing: false,
-    });
-  };
-  const deleteTodoLabel = (_id) => {
-    mutationDelete.mutate(_id);
-  };
-  const mutation = useMutation({
+
+  const mutationUpdate = useMutation({
     mutationFn: (data) =>
       updateTodoLabelapi(data._id, {
         task: data.task,
@@ -52,26 +64,42 @@ export const TodoLabel = ({
       queryClient.invalidateQueries({ queryKey: ["todos"] });
     },
   });
-  const updateTaskLabel = (task, _id, color) => {
-    mutation.mutate({ task, _id, color });
+
+  const addTodoLabel = (task, color) => {
+    mutationCreate.mutate({
+      task: task,
+      color: color,
+      isEditing: false,
+    });
   };
+
+  const deleteTodoLabel = (_id) => {
+    mutationDelete.mutate(_id);
+  };
+
+  const updateTaskLabel = (task, _id, color) => {
+    mutationUpdate.mutate({ task, _id, color });
+  };
+
   const handleLabelClick = (labelId) => {
     setFilteredLabel(labelId);
     setSelectedItemId(labelId);
+    setFocusedLabel(labelId);
   };
-  const containerRef = useRef(null);
 
+  const lastElement = todoLabels[todoLabels.length - 1];
+  const latsIdLabel = lastElement?._id;
   useEffect(() => {
     const container = containerRef.current;
     if (container) {
       const handleScroll = async () => {
         if (
+          !isLoading &&
           container.scrollTop + container.clientHeight >=
-          container.scrollHeight
+            container.scrollHeight - 1
         ) {
-          const last = todoLabels[todoLabels.length - 1];
-          console.log(last);
-          await loadTodolabel(last._id);
+          setIsLoading(true);
+          await loadTodolabel(latsIdLabel);
         }
       };
       container.addEventListener("scroll", handleScroll);
@@ -79,10 +107,11 @@ export const TodoLabel = ({
         container.removeEventListener("scroll", handleScroll);
       };
     }
-  }, [loadTodolabel, todoLabels]);
+  }, [latsIdLabel, loadTodolabel, isLoading]);
+
   return (
     <>
-      <div className=" h-full overflow-y-auto" ref={containerRef}>
+      <div className="h-full overflow-y-auto" ref={containerRef}>
         {todoLabels?.map((todoLabel, index) => (
           <Item
             key={index}
@@ -96,7 +125,7 @@ export const TodoLabel = ({
         ))}
       </div>
 
-      <div className=" flex bottom-0 absolute w-full  h-10 pl-5 border-solid border-[1px] border-[#f4f4f4] bg-white  ">
+      <div className="flex bottom-0  w-full h-10 pl-5 border-solid border-[1px] border-[#f4f4f4] bg-white">
         <OpenAddModal
           addTodoLabel={addTodoLabel}
           setOpenModal={setOpenModal}

@@ -10,50 +10,21 @@ import {
 } from "../../api/apitodo";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { useData } from "../../main/mainstate";
-export const Todo = ({ loadTodo, filteredLabel }) => {
-  const { todos, setTodos } = useData();
+export const Todo = ({ loadTodo }) => {
+  const { todos, setTodos, filteredLabel, todoLabels } = useData();
   const queryClient = useQueryClient();
   const query = useQuery({ queryKey: ["todos"], queryFn: fetchTodos });
-  const [lastId, setLastId] = useState(null);
   const containerRef = useRef(null);
 
-  // let filteredTodos;
-  // if (filteredLabel) {
-  //   filteredTodos = todos.filter((todo) => todo.labelId === filteredLabel);
-  // } else {
-  //   filteredTodos = todos;
-  // }
-  useEffect(() => {
-    const container = containerRef.current;
-
-    if (container) {
-      // Kiểm tra container có tồn tại hay không
-
-      const handleScroll = async () => {
-        if (
-          container.scrollTop + container.clientHeight >=
-          container.scrollHeight
-        ) {
-          if (lastId) {
-            const res = await loadTodo(lastId);
-            setTodos((prevTodos) => [...prevTodos, ...res.data]);
-            setLastId(res.data[res.data.length - 1]._id);
-          }
-        }
-      };
-
-      container.addEventListener("scroll", handleScroll);
-      return () => {
-        container.removeEventListener("scroll", handleScroll);
-      };
-    }
-  }, [lastId]);
-
+  const fetchTodoapi = async () => {
+    const response = await fetchTodos();
+    setTodos(response.data);
+  };
   const mutationCreate = useMutation({
     mutationFn: createTodoapi,
     onSuccess: () => {
+      fetchTodoapi();
       queryClient.invalidateQueries({ queryKey: ["todos"] });
-      query.refetch();
     },
   });
 
@@ -62,17 +33,19 @@ export const Todo = ({ loadTodo, filteredLabel }) => {
       updateTodoapi(data._id, {
         task: data.task,
         clockCompleted: data.clockCompleted,
+        label: data.labelId,
+        notes: data.notes,
       }),
     onSuccess: () => {
+      fetchTodoapi();
       queryClient.invalidateQueries({ queryKey: ["todos"] });
-      query.refetch();
     },
   });
   const mutationDelete = useMutation({
     mutationFn: deleteTodoapi,
     onSuccess: () => {
+      fetchTodoapi();
       queryClient.invalidateQueries({ queryKey: ["todos"] });
-      query.refetch();
     },
   });
   const [clockCompleted, setClockCompleted] = useState([]);
@@ -98,6 +71,8 @@ export const Todo = ({ loadTodo, filteredLabel }) => {
         _id: todoId,
         task: todoToUpdate.task,
         clockCompleted: todoToUpdate.clockCompleted,
+        labelId: todoToUpdate.labelId,
+        notes: todoToUpdate.notes,
         headers: {
           "Content-Type": "application/json",
         },
@@ -113,23 +88,60 @@ export const Todo = ({ loadTodo, filteredLabel }) => {
       });
   };
 
-  const addTodo = (task, labelId, time, clockCompleted, countdownTime) => {
+  const addTodo = (
+    task,
+    labelId,
+    time,
+    clockCompleted,
+    countdownTime,
+    notes
+  ) => {
+    if (!task || !labelId || !clockCompleted) {
+      alert(
+        "Vui lòng nhập đầy đủ thông tin 'Công việc' + 'Nhãn' + 'Thời gian' "
+      );
+      return;
+    }
     mutationCreate.mutate({
       task: task,
       labelId: labelId,
       time: time,
       clockCompleted: clockCompleted,
       countdownTime: countdownTime,
+      notes: notes,
     });
   };
   const deleteTodo = (_id) => {
     mutationDelete.mutate(_id);
   };
-  const updateTask = (task, _id, clockCompleted) => {
-    mutation.mutate({ _id, task, clockCompleted });
+  const updateTask = (task, _id, clockCompleted, newLabelId, notes) => {
+    mutation.mutate({ task, _id, clockCompleted, labelId: newLabelId, notes });
+    console.log(newLabelId);
   };
+  const lastElement = todos[todos.length - 1];
+  const lastIdTodo = lastElement ? lastElement._id : "";
+  useEffect(() => {
+    const container = containerRef.current;
+    if (container) {
+      const handleScroll = async () => {
+        if (
+          container.scrollTop + container.clientHeight >=
+          container.scrollHeight
+        ) {
+          await loadTodo(lastIdTodo);
+        }
+      };
+      container.addEventListener("scroll", handleScroll);
+      return () => {
+        container.removeEventListener("scroll", handleScroll);
+      };
+    }
+  }, [lastIdTodo, loadTodo]);
   if (query.isLoading) return <div>Loading...</div>;
   if (query.error) return <div>Error: {query.error.message}</div>;
+  const filteredTodos = filteredLabel
+    ? todos.filter((todo) => todo.labelId === filteredLabel)
+    : todos;
 
   return (
     <>
@@ -146,7 +158,7 @@ export const Todo = ({ loadTodo, filteredLabel }) => {
           style={{ maxHeight: "calc(100vh - 200px)" }}
         >
           {" "}
-          {todos.map((todo) => (
+          {filteredTodos.map((todo) => (
             <Item
               key={todo._id}
               todo={todo}
