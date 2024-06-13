@@ -1,40 +1,25 @@
 import React, { useState } from "react";
-import ClockIcon from "../input/headericon/image/redPromo.png";
-
 export const UpdateClock = ({ initialCount, onCountChange }) => {
   const [count, setCount] = useState(initialCount);
 
-  const handleIncrement = (e) => {
-    e.preventDefault();
-    const newCount = count + 1;
-    setCount(newCount);
-    onCountChange(newCount);
-  };
-
-  const handleDecrement = (e) => {
-    e.preventDefault();
-    if (count > 0) {
-      const newCount = count - 1;
+  const handleChange = (e) => {
+    const newCount = parseInt(e.target.value, 10);
+    if (newCount >= 0) {
       setCount(newCount);
       onCountChange(newCount);
+    } else {
+      setCount(""); // If a negative (so am) number is entered, reset to ""
+      onCountChange("");
     }
   };
-
   return (
     <div className="flex items-center">
-      <button onClick={handleDecrement} className="border px-2 py-1">
-        -
-      </button>
-      <img
-        src={ClockIcon}
-        alt="clock"
-        className="mx-2"
-        style={{ height: "20px", width: "20px" }}
+      <input
+        type="number"
+        value={count}
+        onChange={handleChange}
+        className="border px-2 h-7 w-[50px] rounded-md text-[14px] flex"
       />
-      <span>{count}</span>
-      <button onClick={handleIncrement} className="border px-2 py-1">
-        +
-      </button>
     </div>
   );
 };

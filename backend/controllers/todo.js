@@ -59,6 +59,7 @@ export const createTasks = async (req, res) => {
     countdownTime: req.body.countdownTime,
     userId: userId,
     notes: req.body.notes,
+    createTime: new Date(),
   });
   newTodomodel.save();
   res.send(JSON.stringify(newTodomodel));

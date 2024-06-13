@@ -12,7 +12,7 @@ export const Input = ({
   clockCompleted,
 }) => {
   const refInput = useRef();
-  const { todoLabels, focusedLabel, notes, setNotes } = useData();
+  const { todoLabels, focusedLabel } = useData();
   const [value, setValue] = useState("");
   const [labelSelected, setLabelSelected] = useState(focusedLabel || undefined);
   const [showActions, setShowActions] = useState(false);
@@ -41,9 +41,8 @@ export const Input = ({
   }, [focusedLabel]);
   const handleSubmit = (e) => {
     e.preventDefault();
-    addTodo(value, labelSelected, timeDuration, clockCompleted, notes);
+    addTodo(value, labelSelected, timeDuration, clockCompleted);
     setValue("");
-    setNotes("");
   };
 
   return (

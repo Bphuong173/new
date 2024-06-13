@@ -20,14 +20,21 @@ export const Item = ({
   const [showCountdown, setShowCountdown] = useState(false);
 
   const clockCompleted = todo.clockCompleted;
-  const updateTasktodo = (value, todoid, newClockCompleted, newLabelId) => {
+  const updateTasktodo = (
+    value,
+    todoid,
+    newClockCompleted,
+    newLabelId,
+    notes
+  ) => {
     console.log("Updating task with data:", {
       task: value,
       _id: todoid,
       clockCompleted: newClockCompleted,
-      labelId: newLabelId, // Ensure this is included
+      labelId: newLabelId,
+      notes: notes, // Ensure this is included
     });
-    updateTodo(value, todoid, newClockCompleted, newLabelId);
+    updateTodo(value, todoid, newClockCompleted, newLabelId, notes);
     setIsEditing(false);
   };
   const getCompletedList = () => {
@@ -42,7 +49,7 @@ export const Item = ({
   };
   return (
     <>
-      <div className="flex items-center rounded-xl  bg-white mr-3 mt-5 ml-4  ">
+      <div className="flex items-center rounded-xl  bg-white mr-3 mt-5 ml-4 break-all  ">
         {isEditing ? (
           <Updatemodal
             updateTasktodo={updateTasktodo}
@@ -60,32 +67,32 @@ export const Item = ({
             />
           </>
         )}
-        <div className="mr-3 ">
+        <div className="pl-[2px]">
           <Playicon
             getCompletedList={getCompletedList}
             setShowCountdown={setShowCountdown}
             countdownActive={countdownActive}
           />
         </div>
-        <div>
-          <div>{todo.task}</div>
-          <div>label: {todo?.label}</div>
+        <div className="pl-[4px]">
+          <div className="pl-[4px]">{todo.task}</div>
+          <div className="flex ">
+            {clockCompleted.map((index) => (
+              <img
+                src={PromoRed}
+                alt="icon"
+                key={uuidv4()}
+                style={{
+                  height: "18px",
+                  width: "18px",
+                  margin: "2px",
+                  borderRadius: "10px",
+                }}
+              />
+            ))}
+          </div>
         </div>
-        <div className="flex ml-3">
-          {clockCompleted.map((index) => (
-            <img
-              src={PromoRed}
-              alt="icon"
-              key={uuidv4()}
-              style={{
-                height: "18px",
-                width: "18px",
-                margin: "2px",
-                borderRadius: "10px",
-              }}
-            />
-          ))}
-        </div>
+
         <div className="w-[82%] h-12" onClick={() => handleClick()}></div>
       </div>
       {showTodomodal && (
@@ -98,6 +105,8 @@ export const Item = ({
             deleteTodo={deleteTodo}
             handleCountdownEnd={handleCountdownEnd}
             loadTodo={loadTodo}
+            setShowTodomodal={setShowTodomodal}
+            showTodomodal={showTodomodal}
           />
         </div>
       )}
