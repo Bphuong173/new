@@ -24,6 +24,7 @@ export const Todomodal = ({
   setShowTodomodal,
   showTodomodal,
 }) => {
+  console.log(todo);
   const { todoLabels } = useData();
   const [value, setValue] = useState(todo.task);
   const [isEditing, setIsEditing] = useState(false);

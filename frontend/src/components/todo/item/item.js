@@ -113,6 +113,10 @@ export const Item = ({
 
       {showCountdown && (
         <Timercountdown
+          isEditing={isEditing}
+          setIsEditing={setIsEditing}
+          deleteTodo={deleteTodo}
+          todo={todo}
           todoId={todo._id}
           countdownTime={todo.countdownTime}
           clockCompleted={todo.clockCompleted}

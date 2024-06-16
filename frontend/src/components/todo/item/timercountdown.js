@@ -4,12 +4,16 @@ import TimerBackGround from "./image/timer-bg.jpeg";
 import TimerStart from "./image/timer-start.png";
 import TimerPause from "./image/timer-pause.png";
 import { Extendmodal } from "./extendmodal";
-
 export const Timercountdown = ({
   onCountdownEnd,
   setCountdownActive,
   countdownActive,
   onClose,
+  isEditing,
+  setIsEditing,
+  deleteTodo,
+  todo,
+  clockCompleted,
 }) => {
   const initialTime = 2500;
   const [time, setTime] = useState(0);
@@ -71,7 +75,15 @@ export const Timercountdown = ({
       className="bg-center flex w-[129px] ml-[-60px] h-[58px]  left-1/2 bottom-[16px] rounded-[8px] shadow-[0_0_8px_0_rgba(131,131,131,0.5)] absolute z-[800] bg-cover transition-all duration-200 overflow-y-auto justify-around items-center "
       style={{ backgroundImage: `url(${TimerBackGround})` }}
     >
-      <Extendmodal />
+      <Extendmodal
+        setCountdownActive={setCountdownActive}
+        isEditing={isEditing}
+        setIsEditing={setIsEditing}
+        todo={todo}
+        deleteTodo={deleteTodo}
+        clockCompleted={clockCompleted}
+        countdownActive={countdownActive}
+      />
       <div
         className="bg-center bg-cover"
         id="circle"
@@ -80,6 +92,7 @@ export const Timercountdown = ({
         <div
           id="circle-input"
           style={{ backgroundImage: `url(${TimerBackGround})` }}
+          className="bg-center"
         ></div>
         <div className="font-bold" id="timer">
           {formatTime(time)}
@@ -95,47 +108,14 @@ export const Timercountdown = ({
             />
           ) : (
             <img
-              className="h-[26px] w-[26px] mt-1 bg-[26px]"
+              className="h-[26px] w-[26px] mt-1 bg-[26px] mr-[5px]"
               src={TimerStart}
               alt="Timer Start"
             />
           )}
         </button>
+        {/* <button onClick={resetCountdown}>Reset</button> */}
       </div>
     </div>
   );
 };
-
-/* <div
-className="bg-center flex w-[129px] ml-[-60px] h-[58px]  left-1/2 bottom-[16px] rounded-[8px] shadow-[0_0_8px_0_rgba(131,131,131,0.5)] absolute z-[800] bg-cover transition-all duration-200 overflow-y-auto justify-around items-center "
-style={{ backgroundImage: `url(${TimerBackGround})` }}
->
-<div
-  className="text-[#fff] relative w-[45px] h-[45px] rounded-[50%]  border-[2px] border-[rgba(255,255,255,0.2)] overflow-visible  "
-  style={borderStyle}
->
-  <div className="absolute top-[-2px] left-[-2px] w-[45px] h-[45px]">
-    <div className="absolute top-1 w-full h-9 leading-9 text-center text-[12px] font-bold">
-      {formatTime(time)}
-    </div>
-  </div>
-</div>
-<div>
-  <button onClick={isActive ? pauseCountdown : startCountdown}>
-    {isActive ? (
-      <img
-        className="h-[26px] w-[26px] mt-1 bg-[26px]"
-        src={TimerPause}
-        alt="Timer Pause"
-      />
-    ) : (
-      <img
-        className="h-[26px] w-[26px] mt-1 bg-[26px]"
-        src={TimerStart}
-        alt="Timer Start"
-      />
-    )}
-  </button>
-  {/* <button onClick={resetCountdown}>Reset</button> */
-// </div>
-// </div> */}
