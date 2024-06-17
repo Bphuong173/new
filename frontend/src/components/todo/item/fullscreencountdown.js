@@ -6,6 +6,7 @@ import { Action } from "./action/action";
 import RedPromo from "../input/headericon/image/redPromo.png";
 import { v4 as uuidv4 } from "uuid";
 import { MusicModal } from "./musicmodal";
+import MusicIcon from "./image/music-icon.png";
 const tracks = [
   {
     id: 1,
@@ -156,22 +157,6 @@ export const Fullscreencountdown = ({
               </div>
             </div>
           </div>
-
-          <div>
-            <button
-              onClick={toggleMusicModal}
-              className="text-[#09280F] text-[16px] bg-white h-11 rounded-[22px] flex items-center justify-center"
-            >
-              Chọn âm nhạc
-            </button>
-          </div>
-          {showMusicModal && (
-            <MusicModal
-              tracks={tracks}
-              onSelectTrack={handleSelectTrack}
-              onClose={toggleMusicModal}
-            />
-          )}
           <div
             className="bg-center bg-cover flex items-center justify-center  relative w-[400px] h-[400px] rounded-full left-[35%] top-[5%] translate-x-[-120px]"
             style={conicGradientStyle}
@@ -231,6 +216,24 @@ export const Fullscreencountdown = ({
             )}
           </div>
         </div>
+        <div className="flex items-center justify-center flex-col h-[62px] mb-[30px]">
+          <img
+            src={MusicIcon}
+            alt="Music Icon"
+            onClick={toggleMusicModal}
+            className="h-[60px] w-[60px]"
+          />
+          <p className="text-[#a4a4ad] text-[14px]">
+            Tiếng Động Giúp Tập Trung
+          </p>
+        </div>
+        {showMusicModal && (
+          <MusicModal
+            tracks={tracks}
+            onSelectTrack={handleSelectTrack}
+            onClose={toggleMusicModal}
+          />
+        )}
       </div>
     </div>
   );

@@ -2,6 +2,9 @@ import { user } from "../models/usermodel.js";
 import asyncHandler from "express-async-handler";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
+import { OAuth2Client } from "google-auth-library";
+const client = new OAuth2Client("YOUR_GOOGLE_CLIENT_ID");
+
 export const createUser = asyncHandler(async (req, res) => {
   const saltRounds = 10;
   const hash = bcrypt.hashSync(req.body.password, saltRounds);

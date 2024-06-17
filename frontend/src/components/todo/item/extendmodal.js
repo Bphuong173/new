@@ -9,8 +9,6 @@ export const Extendmodal = ({
   setCountdownActive,
   countdownActive,
 }) => {
-  console.log(todo);
-
   const [fullScreen, setFullScreen] = useState(false);
 
   return (
