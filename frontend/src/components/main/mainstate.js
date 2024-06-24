@@ -7,6 +7,14 @@ export const MainProvider = ({ children }) => {
   const [selectedItemId, setSelectedItemId] = useState(null);
   const [focusedLabel, setFocusedLabel] = useState(null);
   const [notes, setNotes] = useState("");
+  const resetState = () => {
+    setTodoLabels([]);
+    setTodos([]);
+    setFilteredLabel(null);
+    setSelectedItemId(null);
+    setFocusedLabel(null);
+    setNotes("");
+  };
 
   return (
     <MainContext.Provider
@@ -23,6 +31,7 @@ export const MainProvider = ({ children }) => {
         setFocusedLabel,
         notes,
         setNotes,
+        resetState,
       }}
     >
       {children}

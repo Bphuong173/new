@@ -3,7 +3,9 @@ import asyncHandler from "express-async-handler";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import { OAuth2Client } from "google-auth-library";
-const client = new OAuth2Client("YOUR_GOOGLE_CLIENT_ID");
+const client = new OAuth2Client(
+  "99288234114-5cev3rks5teiaf5j6mojaspct9rj394m.apps.googleusercontent.com"
+);
 
 export const createUser = asyncHandler(async (req, res) => {
   const saltRounds = 10;
@@ -55,3 +57,36 @@ export const uploadAvatar = async (req, res) => {
     res.status(500).send(`Error uploading avatar: ${error.message}`);
   }
 };
+export const googleLogin = asyncHandler(async (req, res) => {
+  const { token } = req.body;
+
+  try {
+    const ticket = await client.verifyIdToken({
+      idToken: token,
+      audience:
+        "99288234114-5cev3rks5teiaf5j6mojaspct9rj394m.apps.googleusercontent.com",
+    });
+    const { name, email } = ticket.getPayload();
+
+    let existingUser = await user.findOne({ email });
+
+    if (!existingUser) {
+      const newUser = new user({
+        name,
+        email,
+        password: bcrypt.hashSync("random_password", 10), // Tạo password ngẫu nhiên
+      });
+      existingUser = await newUser.save();
+    }
+
+    const jwtToken = jwt.sign(
+      { email: existingUser.email, userId: existingUser.id },
+      "tanhkute"
+    );
+
+    res.json({ token: jwtToken });
+  } catch (error) {
+    console.error("Google login error:", error.message);
+    res.status(401).send("Đăng nhập bằng Google thất bại");
+  }
+});

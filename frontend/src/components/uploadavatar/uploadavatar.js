@@ -2,8 +2,10 @@ import React, { useState, useEffect } from "react";
 import { Avatar } from "../avatar/avatar";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { useData } from "../main/mainstate";
 
 export const UploadAvatar = () => {
+  const { resetState } = useData();
   const [selectedFile, setSelectedFile] = useState(null);
   const [avatarUrl, setAvatarUrl] = useState(null);
   const navigate = useNavigate();
@@ -56,6 +58,7 @@ export const UploadAvatar = () => {
 
   const handleLogout = () => {
     localStorage.removeItem("token");
+    resetState();
     navigate("/login");
   };
 

@@ -1,0 +1,233 @@
+#section-couter {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: 90px;
+  height: 90px;
+  border: 1px solid black;
+}
+
+#section-couter h1 {
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+  font-size: 27px;
+}
+
+#section-couter p {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#section-couter p::before {
+  content: "";
+  position: absolute;
+  margin-top: -0.5px;
+  top: 0;
+  right: 0;
+  width: 125px;
+  height: 100%;
+  border-top: 1px solid black;
+  transform-origin: top right;
+  transform: translateY(100%) rotate(45deg); /* Đảo ngược hướng xoay và dịch lên */
+}
+
+#section-couter1 {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  width: 90px;
+  height: 90px;
+  border: 1px solid black;
+}
+
+#section-couter1 h1 {
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+  font-size: 27px;
+}
+
+#section-couter1 p {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#section-couter1 p::before {
+  content: "";
+  position: absolute;
+  margin-top: -0.5px;
+  top: 0;
+  right: 0;
+  width: 125px;
+  height: 100%;
+  border-top: 1px solid black;
+  transform-origin: top right;
+  transform: translateY(100%) rotate(45deg); /* Đảo ngược hướng xoay và dịch lên */
+}
+
+#section-couter2 {
+  position: absolute;
+  top: 10rem;
+  right: 5rem;
+  width: 90px;
+  height: 90px;
+  border: 1px solid black;
+}
+
+#section-couter2 h1 {
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+  font-size: 27px;
+}
+
+#section-couter2 p {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#section-couter2 p::before {
+  content: "";
+  position: absolute;
+  margin-top: -0.5px;
+  top: 0;
+  right: 0;
+  width: 125px;
+  height: 100%;
+  border-top: 1px solid black;
+  transform-origin: top right;
+  transform: translateY(100%) rotate(45deg); /* Đảo ngược hướng xoay và dịch lên */
+}
+/* section-couter3 */
+#section-couter3 {
+  position: absolute;
+  top: 146px;
+  left: 0;
+  width: 90px;
+  height: 90px;
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+}
+
+#section-couter3 h1 {
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+  font-size: 27px;
+}
+
+#section-couter3 p {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#section-couter3 p::before {
+  content: "";
+  position: absolute;
+  margin-top: -0.5px;
+  top: 0;
+  right: 0;
+  width: 125px;
+  height: 100%;
+  border-top: 1px solid black;
+  transform-origin: top right;
+  transform: translateY(100%) rotate(45deg); /* Đảo ngược hướng xoay và dịch lên */
+}
+#rollingBanner1 {
+  overflow: hidden;
+  position: relative;
+}
+
+#rollingBanner-rail1 {
+  display: flex;
+  animation: scroll 40s linear infinite; /* Điều chỉnh tốc độ cuộn ở đây */
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+#rollingBanner-rail1 h1,
+#rollingBanner-rail1 span {
+  white-space: nowrap; /* Đảm bảo các dòng chữ không bị ngắt */
+  margin: 0 10px; /* Khoảng cách giữa các mục (tùy chỉnh) */
+  color: #fff; /* Màu chữ */
+  font-size: 38px;
+}
+
+#rollingBanner-rail1 img {
+  display: inline-block;
+  margin: 0 10px;
+  height: 20px; /* Chiều cao của biểu tượng sao */
+  width: 20px; /* Chiều rộng của biểu tượng sao */
+}
+
+/* CSS cho rolling banner */
+#rollingBanner-2 {
+  overflow: hidden;
+  position: relative;
+}
+
+#rollingBanner-rail-2 {
+  display: flex;
+  animation: scroll 40s linear infinite; /* Điều chỉnh tốc độ cuộn ở đây */
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Keyframes cho dòng chạy ngược lại */
+@keyframes scroll-reverse {
+  100% {
+    transform: translateX(0);
+  }
+  0% {
+    transform: translateX(-100%);
+  }
+}
+
+/* CSS cho các thành phần văn bản và hình ảnh */
+#rollingBanner-rail-2 h1,
+#rollingBanner-rail-2 span {
+  white-space: nowrap; /* Đảm bảo các dòng chữ không bị ngắt */
+  margin: 0 10px; /* Khoảng cách giữa các mục (tùy chỉnh) */
+  color: #fff; /* Màu chữ */
+  font-size: 38px;
+}
+
+#rollingBanner-rail-2 img {
+  display: inline-block;
+  margin: 0 10px;
+  height: 20px; /* Chiều cao của biểu tượng sao */
+  width: 20px; /* Chiều rộng của biểu tượng sao */
+}
+
+/* Áp dụng animation ngược lại mặc định */
+#rollingBanner-rail-2 {
+  animation: scroll-reverse 40s linear infinite;
+}

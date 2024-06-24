@@ -8,55 +8,15 @@ body {
   height: 100vh;
   width: 100vw;
 }
-
-/* .InputTodoLabel {
-  position: relative;
-  bottom: 0;
+h1 {
+  font-family: "PP Right", sans-serif;
+  font-weight: 700;
 }
-.todoLabel {
-  position: relative;
-  height: 100vh;
-  width: 100vh;
-  overflow: auto;
-  border-bottom: 2px solid #f2f2f8;
+.diagonal-border {
+  @apply absolute inset-0 border-l-2 border-blue-500;
+  transform: rotate(45deg);
+  transform-origin: top left;
 }
-.todoList {
-  position: relative;
-  background: #f5f5f9;
-  padding-left: 20px;
-  height: 100vh;
-  width: 300vh;
-}
-.addButtonOutSide {
-  position: absolute;
-  bottom: 0;
-  cursor: pointer;
-}
-.todoTagLabel:hover {
-  background-color: #ccc;
-}
-.addButtonOutSide {
-  color: #f93b42;
-  border: 0;
-  background-color: white;
-  margin-left: 60px;
-}
-
-.modal-input {
-  width: 100%;
-  height: 32px;
-  border: 1px solid;
-  border-radius: 5px;
-  box-sizing: border-box;
-}
-.colorBtn {
-  padding: 0;
-  margin: 0;
-  width: 20px;
-  height: 20px;
-  border-radius: 10px;
-} */
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
@@ -64,3 +24,12 @@ code {
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+@font-face {
+  font-family: "PP Right";
+  src: url(./fonts/PPRightGrotesk-CompactDark.otf);
+  src: url(./fonts/PPRightGrotesk-CompactDark.otf?#iefix) format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}

@@ -1,9 +1,10 @@
 // Login component
-import React, { useState } from "react";
+import React from "react";
 import axios from "axios";
 import { Navigate, useNavigate } from "react-router-dom";
 import "../../index.css";
 import { useForm } from "react-hook-form";
+import { GoogleLogin } from "@react-oauth/google";
 
 export const Login = ({ handleCloseLogin }) => {
   const {
@@ -13,6 +14,18 @@ export const Login = ({ handleCloseLogin }) => {
   } = useForm();
 
   const navigate = useNavigate();
+
+  const responseGoogle = async (response) => {
+    try {
+      const res = await axios.post("http://localhost:5500/user/google-login", {
+        token: response.credential,
+      });
+      localStorage.setItem("token", res.data.token);
+      navigate("/todos");
+    } catch (error) {
+      console.error("Google login error", error);
+    }
+  };
   const onSubmit = async (data) => {
     try {
       const response = await axios.post(
@@ -74,16 +87,13 @@ export const Login = ({ handleCloseLogin }) => {
               </div>
             </div>
 
-            <div>
-              <button
-                type="submit"
-                className=" flex w-full justify-center rounded-md bg-[#F93B42]  px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-              >
-                Đăng nhập
-              </button>
-            </div>
+            <GoogleLogin
+              onSuccess={responseGoogle}
+              onFailure={responseGoogle}
+              cookiePolicy={"single_host_origin"}
+            />
           </form>
-
+          <div id="google-signin" className="flex justify-center mt-4"></div>
           <p className="mt-10 text-center text-sm">
             <a
               href="/register"
