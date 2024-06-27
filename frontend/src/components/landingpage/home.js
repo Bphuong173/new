@@ -13,12 +13,24 @@ export const Home = () => {
   return (
     <>
       <div>
-        <Section1 />
-        <Section2 />
-        <Section3 />
-        <Section4 />
-        <Section5 />
-        <Section6 />
+        <div>
+          <Section1 />
+        </div>
+        <div>
+          <Section2 />
+        </div>
+        <div>
+          <Section3 />
+        </div>
+        <div>
+          <Section4 />
+        </div>
+        <div>
+          <Section5 />
+        </div>
+        <div>
+          <Section6 />
+        </div>
       </div>
     </>
   );

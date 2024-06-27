@@ -7,12 +7,12 @@ import backgroundImage from "./image/background-grid.svg";
 export const Section5 = () => {
   return (
     <>
-      <section id="section-5">
+      <section id="section-5" className="mr-[-14px] ml-[14px]">
         <div
           id="love nav-blue locked"
-          className="w-full h-[1100px] bg-[#ececec] absolute top-[4915px] ml-[-14px] "
+          className="w-full relative bg-[#ececec]  "
         >
-          <div id="love-main" className="w-full h-[1100px] relative">
+          <div id="love-main" className="w-full h-[1348px] max-h-[1348px] ">
             <div id="section-couter2" className="">
               <h1 className="font-pp-right text-[27px] absolute bottom-[5px] left-[5px]">
                 03
@@ -25,7 +25,7 @@ export const Section5 = () => {
             >
               <div
                 id="h1 h-anim anima- in"
-                className="w-[1354px] h-[340px] mb-[70px] leading-[133px]"
+                className=" h-[340px] mb-[70px] leading-[133px]"
               >
                 <h1 id="h-line" className="text-[133px]">
                   GET BACK
@@ -113,14 +113,17 @@ export const Section5 = () => {
               </div>
             </div>
           </div>
-          <div id="love-banner" className="w-full h-[294px]">
+          <div
+            id="love-banner"
+            className="w-full ml-[-14px] h-[294px] absolute top-[1056px] overflow-hidden"
+          >
             <div
               id="rollingBanner1"
               className="h-[98px] w-full bg-[#212121] border-b border-[#fff] relative flex items-center"
             >
               <div
                 id="rollingBanner-rail1"
-                className="w-[1440px] flex items-center text-uppercase"
+                className="max-w[1440px] flex items-center text-uppercase"
               >
                 <h1>GET OFF THE COMPUTER * AND INTO A SAUNA</h1>
                 <img src={Star} alt="Star Icon"></img>
@@ -162,11 +165,11 @@ export const Section5 = () => {
             </div>
             <div
               id="rollingBanner-2"
-              className="h-[98px] w-full bg-[#989696]  border-b border-[#fff] relative flex items-center"
+              className="h-[98px] w-full bg-[#989696]   border-b border-[#fff] relative flex items-center"
             >
               <div
                 id="rollingBanner-rail-2"
-                className="w-[1440px] flex items-center text-uppercase"
+                className=" max-w-[1440px] flex items-center text-uppercase"
               >
                 <h1>GET OFF THE COMPUTER * AND INTO A SAUNA</h1>
                 <img src={Star} alt="Star Icon"></img>
@@ -207,12 +210,12 @@ export const Section5 = () => {
               </div>
             </div>
             <div
-              id="rollingBanner1"
+              id="rollingBanner-3"
               className="h-[98px] w-full bg-[#212121] border-b border-[#fff] relative flex items-center"
             >
               <div
                 id="rollingBanner-rail1"
-                className="w-[1440px] flex items-center text-uppercase"
+                className=" max-2-[1440px] flex items-center text-uppercase"
               >
                 <h1>GET OFF THE COMPUTER * AND INTO A SAUNA</h1>
                 <img src={Star} alt="Star Icon"></img>

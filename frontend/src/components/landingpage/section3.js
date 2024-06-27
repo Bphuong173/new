@@ -8,7 +8,7 @@ export const Section3 = () => {
     <>
       <div
         id="section-3"
-        className=" w-full h-full bg-[#989696] top-0 left-0 right-0 bottom-0 bg-[position:6.35rem_0rem] p-[14px] pt-0 relative "
+        className=" w-full h-full bg-[#989696] top-0 left-0 right-0 bottom-0 bg-[position:6.35rem_0rem] p-[14px] pb-[100px] pt-0 relative "
         style={{ backgroundImage: `url(${backgroundImage})` }}
       >
         <section id="promise nav-blue locked-1" className="w-auto pt-[190px] ">
@@ -61,9 +61,7 @@ export const Section3 = () => {
                     <div className="pl-[29.5px]   border-b border-[black] relative text-[133px] flex items-center">
                       THE PATCH
                       <div id="section-couter1">
-                        <h1 className="font-pp-right text-[27px] absolute bottom-[5px] left-[5px]">
-                          02
-                        </h1>
+                        <h1 className="font-pp-right">02</h1>
                         <p className=""></p>
                       </div>
                     </div>
