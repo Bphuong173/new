@@ -6,6 +6,8 @@ import { Section4 } from "./section4";
 import { Section5 } from "./section5";
 import { Section6 } from "./section6";
 import { Section7 } from "./section7";
+import { Section8 } from "./section8";
+import { Section9 } from "./section9";
 
 import "./home.css";
 
@@ -13,24 +15,15 @@ export const Home = () => {
   return (
     <>
       <div>
-        <div>
-          <Section1 />
-        </div>
-        <div>
-          <Section2 />
-        </div>
-        <div>
-          <Section3 />
-        </div>
-        <div>
-          <Section4 />
-        </div>
-        <div>
-          <Section5 />
-        </div>
-        <div>
-          <Section6 />
-        </div>
+        <Section1 />
+        <Section2 />
+        <Section3 />
+        <Section4 />
+        <Section5 />
+        <Section6 />
+        <Section7 />
+        <Section8 />
+        <Section9 />
       </div>
     </>
   );

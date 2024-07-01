@@ -2,7 +2,8 @@
 #section-couter,
 #section-couter1,
 #section-couter2,
-#section-couter3 {
+#section-couter3,
+#section-couter4 {
   width: 90px;
   height: 90px;
   border: 1px solid black;
@@ -12,7 +13,8 @@
 #section-couter h1,
 #section-couter1 h1,
 #section-couter2 h1,
-#section-couter3 h1 {
+#section-couter3 h1,
+#section-couter4 h1 {
   position: absolute;
   font-size: 27px;
 }
@@ -20,7 +22,8 @@
 #section-couter p,
 #section-couter1 p,
 #section-couter2 p,
-#section-couter3 p {
+#section-couter3 p,
+#section-couter4 p {
   position: absolute;
   top: 0;
   left: 0;
@@ -31,7 +34,8 @@
 #section-couter p::before,
 #section-couter1 p::before,
 #section-couter2 p::before,
-#section-couter3 p::before {
+#section-couter3 p::before,
+#section-couter4 p::before {
   content: "";
   position: absolute;
   margin-top: -0.5px;
@@ -66,6 +70,7 @@
   top: 10rem;
   right: 5rem;
 }
+
 #section-couter2 h1 {
   bottom: 5px;
   left: 5px;
@@ -81,6 +86,10 @@
 #section-couter3 h1 {
   bottom: 5px;
   left: 5px;
+}
+#section-couter4 {
+  top: -35px;
+  right: 80px;
 }
 
 /* Rolling banners */
@@ -179,3 +188,4 @@
 #people-clientRail-2 img {
   display: inline-block;
 }
+/* style={{ fontFamily: "Archivo, sans-serif" }} */

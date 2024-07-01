@@ -86,7 +86,6 @@ export const Login = ({ handleCloseLogin }) => {
                 )}
               </div>
             </div>
-
             <GoogleLogin
               onSuccess={responseGoogle}
               onFailure={responseGoogle}

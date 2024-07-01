@@ -12,6 +12,9 @@ h1 {
   font-family: "PP Right", sans-serif;
   font-weight: 700;
 }
+p {
+  font-family: "Archivo, sans-serif";
+}
 .diagonal-border {
   @apply absolute inset-0 border-l-2 border-blue-500;
   transform: rotate(45deg);
