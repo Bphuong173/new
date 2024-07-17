@@ -8,7 +8,7 @@ import { Section6 } from "./section6";
 import { Section7 } from "./section7";
 import { Section8 } from "./section8";
 import { Section9 } from "./section9";
-import { Footer } from "./footer";
+
 import "./home.css";
 
 export const Home = () => {
@@ -24,7 +24,6 @@ export const Home = () => {
         <Section7 />
         <Section8 />
         <Section9 />
-        <Footer />
       </div>
     </>
   );
