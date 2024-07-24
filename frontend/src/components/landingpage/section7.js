@@ -5,8 +5,10 @@ import { Teamcard2 } from "./teamcard2";
 import { Teamcard3 } from "./teamcard3";
 import { Teamcard4 } from "./teamcard4";
 import backgroundImage from "./image/background-grid.svg";
+import { AnimatedSection } from "./animatedsection";
+import Iconpeople from "./image/icon-people.svg";
 
-export const Section7 = () => {
+export default function Section7() {
   return (
     <>
       <div
@@ -21,10 +23,24 @@ export const Section7 = () => {
             <h2 id="h2 h-anima">
               <h1
                 id="h-line"
-                className=" uppercase  pr-[47.6px] text-[133.33px] leading-[125px] tracking-wide"
+                className=" flex uppercase  pr-[47.6px] text-[133.33px] leading-[125px] tracking-wide"
               >
-                <span className="pr-[22px]">Our</span>
-                <span>Team</span>
+                <span>
+                  <AnimatedSection
+                    animationClass="slide-in-bottom"
+                    className="pr-[22px]"
+                  >
+                    Our
+                  </AnimatedSection>
+                </span>
+                <span>
+                  <AnimatedSection
+                    animationClass="slide-in-bottom"
+                    className="pr-[22px]"
+                  >
+                    Team
+                  </AnimatedSection>
+                </span>
               </h1>
             </h2>
             <p
@@ -43,18 +59,57 @@ export const Section7 = () => {
             </div>
           </div>
           <div id="team-bottom" className=" relative  pr-[20px] ">
-            <div
-              id="team-cards"
-              className="flex flex-wrap flex-row-reverse gap-x-[14px] "
+            <AnimatedSection
+              animationClass="slide-in-left"
+              id="block-sectionBlock-anima-in-2"
+              className="bg-white border border-[black] rounded-md max-w-[339px]  h-[153.4px] absolute top-[150px] ml-[36px]"
             >
-              <Teamcard1 />
-              <Teamcard2 />
-              <Teamcard3 />
-              <Teamcard4 />
-            </div>
+              <div
+                id="sectionBlock-top-2"
+                className=" h-[55px] justify-between flex border-b border-[black] pl-[21px] "
+              >
+                <div className="flex items-center justify-center ">
+                  <h1 className="font-pp-right  text-[24px]">
+                    THE USUAL SUSPECTS
+                  </h1>
+                </div>
+
+                <div
+                  id="sectionBlock-icon-2"
+                  className="w-[83.8px] h-[54px] border-l border-[black] flex items-center justify-center"
+                >
+                  <img
+                    src={Iconpeople}
+                    alt="People Icon"
+                    className="w-[60px] h-[31px]"
+                  />
+                </div>
+              </div>
+              <div
+                id="sectionBlock-bottom-2"
+                className=" pt-[17px] pr-[21px] pl-[21px] pb-[22px] h-[96px] flex items-center justify-center"
+              >
+                <p
+                  style={{ fontFamily: "Archivo, sans-serif" }}
+                  className=" h-[57px] text-[19px]"
+                >
+                  Our band of merry marketers, assembled to make your life
+                  easier
+                </p>
+              </div>
+            </AnimatedSection>
+          </div>
+          <div
+            id="team-cards"
+            className="flex flex-wrap flex-row-reverse gap-x-[14px] mr-[32px] "
+          >
+            <Teamcard1 />
+            <Teamcard2 />
+            <Teamcard3 />
+            <Teamcard4 />
           </div>
         </div>
       </div>
     </>
   );
-};
+}

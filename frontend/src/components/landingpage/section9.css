@@ -1,0 +1,7 @@
+.arrow {
+  transition: transform 0.5s ease; /* Thay đổi tốc độ xoay hình ảnh */
+}
+
+.arrow-rotated {
+  transform: rotate(180deg); /* Xoay hình ảnh 180 độ */
+}

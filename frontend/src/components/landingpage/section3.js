@@ -2,8 +2,9 @@ import React from "react";
 import Battery from "./image/icon-battery.svg";
 import Process from "./image/process.svg";
 import backgroundImage from "./image/background-grid.svg";
+import { AnimatedSection } from "./animatedsection";
 
-export const Section3 = () => {
+export default function Section3() {
   return (
     <>
       <div
@@ -15,9 +16,10 @@ export const Section3 = () => {
           <div id="gird-1" className="">
             <div id="col-1" className="flex">
               <div className="flex-1">
-                <div
-                  id="block sectionBlock anima in"
+                <AnimatedSection
+                  id="block-sectionBlock-anima-in"
                   className="bg-white border border-[black] rounded-md w-[339px] "
+                  animationClass="slide-in-left"
                 >
                   <div
                     id="sectionBlock-top"
@@ -52,7 +54,7 @@ export const Section3 = () => {
                       specific needs.
                     </p>
                   </div>
-                </div>
+                </AnimatedSection>
                 <div id="block-1" className="mt-[14px]  ">
                   <h1
                     id="h1-anima-in"
@@ -88,4 +90,4 @@ export const Section3 = () => {
       </div>
     </>
   );
-};
+}

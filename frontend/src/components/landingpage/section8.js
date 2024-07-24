@@ -6,8 +6,20 @@ import { Features1 } from "./features1";
 import { Features2 } from "./features2";
 import { Features3 } from "./features3";
 import { Features4 } from "./features4";
+import { AnimatedSection } from "./animatedsection";
 
-export const Section8 = () => {
+export default function Section8() {
+  const AnimatedText = ({ text }) => {
+    return (
+      <h1 className="fade-in">
+        {text.split("").map((char, index) => (
+          <span key={index} className="letter" style={{ "--delay": index }}>
+            {char}
+          </span>
+        ))}
+      </h1>
+    );
+  };
   return (
     <>
       <div
@@ -18,19 +30,20 @@ export const Section8 = () => {
         <div id="products-top" className="relative">
           <div>
             <h2 id="h2 h-anima" className="pl-[45.7px]">
-              <h1
+              <AnimatedSection
                 id="h-line"
-                className=" uppercase  pr-[47.6px] text-[133.33px] leading-[125px] tracking-wide "
+                className="uppercase pr-[47.6px] text-[133.33px] leading-[125px] tracking-wide"
+                animationClass="fade-in"
               >
-                <span className="pr-[22px]">Patch</span>
-                <span>Service</span>
-              </h1>
-              <h1
+                <AnimatedText text="Patch Service" />
+              </AnimatedSection>
+              <AnimatedSection
                 id="h-line"
-                className=" uppercase  pr-[47.6px] text-[133.33px] leading-[125px] tracking-wide"
+                className="uppercase pr-[47.6px] text-[133.33px] leading-[125px] tracking-wide"
+                animationClass="fade-in"
               >
-                <span>Offerings</span>
-              </h1>
+                <AnimatedText text="Offerings" />
+              </AnimatedSection>
               <div id="section-couter4">
                 <h1 className="font-pp-right text-[27px] absolute bottom-[5px] left-[5px]">
                   06
@@ -45,7 +58,8 @@ export const Section8 = () => {
           className="mt-[76px] pb-[190.4px] relative top-0 "
         >
           <div>
-            <div
+            <AnimatedSection
+              animationClass="slide-in-left"
               id="block"
               className=" absolute left-[44.7px] top-0 w-[249.5px] border border-[black] rounded-[5px] bg-[#fff] min-h-[151px]"
             >
@@ -83,7 +97,7 @@ export const Section8 = () => {
                   Find what you need for your business
                 </div>
               </div>
-            </div>
+            </AnimatedSection>
           </div>
           <div
             id="products-sticky"
@@ -159,4 +173,4 @@ export const Section8 = () => {
       </div>
     </>
   );
-};
+}

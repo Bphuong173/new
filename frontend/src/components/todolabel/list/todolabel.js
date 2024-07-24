@@ -61,7 +61,7 @@ export const TodoLabel = ({
         color: data.color,
       }),
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["todos"] });
+      queryClient.invalidateQueries({ queryKey: ["todolabel"] });
     },
   });
 

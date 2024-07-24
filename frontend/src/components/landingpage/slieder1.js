@@ -32,11 +32,11 @@ export const Slieder1 = ({ currentSlide, handleNext, handlePrevious }) => {
                   id="testimonial-quote"
                   className="font-pp-right text-[38px] leading-[43px] tracking-[1.5px] uppercase"
                 >
-                  <p>
+                  <h1>
                     Patch helped us with our Google Ads and now we've seen a
                     huge return. compared to who we were previously Patch is
                     miles ahead more effective!
-                  </p>
+                  </h1>
                 </h1>
                 <div
                   id="testimonial-author"

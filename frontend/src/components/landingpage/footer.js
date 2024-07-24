@@ -1,7 +1,7 @@
 import React from "react";
 import LogoPatch from "./image/logo-patch.svg";
 import "./footer.css";
-export const Footer = () => {
+export default function Footer() {
   return (
     <>
       <div id="footer" className="px-[4.7px] pb-[4.7px] text-[#ffff] block">
@@ -157,4 +157,4 @@ export const Footer = () => {
       </div>
     </>
   );
-};
+}

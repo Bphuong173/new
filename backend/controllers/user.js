@@ -59,7 +59,6 @@ export const uploadAvatar = async (req, res) => {
 };
 export const googleLogin = asyncHandler(async (req, res) => {
   const { token } = req.body;
-
   try {
     const ticket = await client.verifyIdToken({
       idToken: token,
