@@ -37,7 +37,7 @@ export const Action = ({ setIsEditing, deleteTodoLabel, todoLabel }) => {
             </button>
             <button
               className="deleteBtn"
-              onClick={() => deleteTodoLabel(todoLabel._id)}
+              onClick={() => deleteTodoLabel(todoLabel.id)}
             >
               Hoàn Thành
             </button>

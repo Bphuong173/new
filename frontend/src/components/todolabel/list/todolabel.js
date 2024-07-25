@@ -55,12 +55,13 @@ export const TodoLabel = ({
 
   const mutationUpdate = useMutation({
     mutationFn: (data) =>
-      updateTodoLabelapi(data._id, {
+      updateTodoLabelapi(data.id, {
         task: data.task,
         clockCompleted: data.clockCompleted,
         color: data.color,
       }),
     onSuccess: () => {
+      fetchTodoLabels();
       queryClient.invalidateQueries({ queryKey: ["todos"] });
     },
   });
@@ -73,12 +74,12 @@ export const TodoLabel = ({
     });
   };
 
-  const deleteTodoLabel = (_id) => {
-    mutationDelete.mutate(_id);
+  const deleteTodoLabel = (id) => {
+    mutationDelete.mutate(id);
   };
 
-  const updateTaskLabel = (task, _id, color) => {
-    mutationUpdate.mutate({ task, _id, color });
+  const updateTaskLabel = (task, id, color) => {
+    mutationUpdate.mutate({ task, id, color });
   };
 
   const handleLabelClick = (labelId) => {
@@ -88,7 +89,7 @@ export const TodoLabel = ({
   };
 
   const lastElement = todoLabels[todoLabels.length - 1];
-  const latsIdLabel = lastElement?._id;
+  const latsIdLabel = lastElement?.id;
   useEffect(() => {
     const container = containerRef.current;
     if (container) {
@@ -119,8 +120,8 @@ export const TodoLabel = ({
             deleteTodoLabel={deleteTodoLabel}
             updateTodoLabel={updateTaskLabel}
             handleLabelClick={handleLabelClick}
-            isSelected={selectedItemId === todoLabel._id}
-            onClick={() => handleLabelClick(todoLabel._id)}
+            isSelected={selectedItemId === todoLabel.id}
+            onClick={() => handleLabelClick(todoLabel.id)}
           />
         ))}
       </div>
