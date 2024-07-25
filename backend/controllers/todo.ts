@@ -29,7 +29,7 @@ export const getAllTasks = async (req: Request, res: Response) => {
     try {
       if (todoItem.labelId) {
         dataTodoLabel = await prisma.todolabel.findUnique({
-          where: {id: id}
+          where: {id: todoItem.labelId}
         });
         if (!dataTodoLabel) {
           console.error(

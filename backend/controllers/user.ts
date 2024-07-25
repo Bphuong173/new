@@ -21,6 +21,7 @@ export const createUser = asyncHandler(async (req: Request, res: Response) => {
       password: hash,
     },
   });
+  console.log(newUsermodel);
   res.send(JSON.stringify(newUsermodel));
 });
 
@@ -72,7 +73,7 @@ export const uploadAvatar = async (req: Request, res: Response) => {
 };
 export const googleLogin = asyncHandler(async (req: Request, res: Response) => {
   const { token } = req.body;
-  
+
   try {
     const ticket = await client.verifyIdToken({
       idToken: token,

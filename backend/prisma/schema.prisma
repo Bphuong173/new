@@ -16,7 +16,7 @@ datasource db {
 model user {
   id        String      @id @default(cuid())
   userId    String   @default(uuid())
-  name      String   @unique
+  name      String   
   email     String   @unique
   password  String
   avatar    String?
@@ -29,7 +29,7 @@ model todo{
   clockCompleted Json
   countdownTime Int  @default(25)
   userId  String
-  notes String
+  notes String? 
   createTime DateTime @default(now())
 }
 model todolabel{
