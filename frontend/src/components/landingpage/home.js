@@ -1,6 +1,8 @@
 import React, { Suspense, lazy } from "react";
 
 import "./home.css";
+const Footer = lazy(() => import("./footer"));
+
 const Section1 = lazy(() => import("./section1"));
 const Section2 = lazy(() => import("./section2"));
 const Section3 = lazy(() => import("./section3"));
@@ -10,7 +12,6 @@ const Section6 = lazy(() => import("./section6"));
 const Section7 = lazy(() => import("./section7"));
 const Section8 = lazy(() => import("./section8"));
 const Section9 = lazy(() => import("./section9"));
-const Footer = lazy(() => import("./footer"));
 
 export const Home = () => {
   return (
