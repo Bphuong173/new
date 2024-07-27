@@ -9,6 +9,7 @@ export const Register = ({ handleCloseModal }) => {
   const [isRegistered, setIsRegistered] = useState(false);
 
   const onSubmit = async (data) => {
+    console.log(data);
     try {
       axios.post("http://localhost:5500/user/register", data);
       reset();

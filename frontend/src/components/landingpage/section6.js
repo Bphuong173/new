@@ -9,8 +9,8 @@ import Logo2 from "./image/logo2.webp";
 import Logo3 from "./image/logo3.webp";
 import Logo4 from "./image/logo4.webp";
 import Logo5 from "./image/logo5.webp";
-import { AnimatedSection } from "./animatedsection";
-export default function Section6() {
+
+export const Section6 = () => {
   const [currentSlide, setCurrentSlide] = useState(1);
   const handleNext = (e) => {
     e.preventDefault();
@@ -27,20 +27,15 @@ export default function Section6() {
 
   return (
     <>
-      <section
-        id="section-6"
-        className="mr-[-30px] w-full h-full bg-[#989696] top-0 left-0 right-0 bottom-0 bg-[position:6.35rem_0rem] relative"
-        style={{ backgroundImage: `url(${backgroundImage})` }}
-      >
+      <section id="section-6" className="mr-[-30px]">
         <div
           id="people nav-blue locked"
-          className="w-full  ml-[-14px]  pt-[190px] pr-[14px] pl-[14px] pb-[142px]"
+          className="w-full  ml-[-14px] bg-[#989696] pt-[190px] pr-[14px] pl-[14px] pb-[142px]"
         >
           <div id="people-top grid" className=" mb-[57px]">
             <div className="flex pl-[14px] pr-[14px]">
-              <AnimatedSection
-                animationClass="slide-in-left"
-                id="block-sectionBlock-anima-in-2"
+              <div
+                id="block sectionBlock anima in-2"
                 className="bg-white border border-[black] rounded-md max-w-[339px]  h-[153.4px]"
               >
                 <div
@@ -75,7 +70,7 @@ export default function Section6() {
                     Our system works, and we’re proud to share success stories.
                   </p>
                 </div>
-              </AnimatedSection>
+              </div>
               <div id="block-2" className=" flex-1 h-[300px] pl-[14px]   ">
                 <h1
                   id="h1-anima-in-2"
@@ -169,10 +164,7 @@ export default function Section6() {
               </span>
             </div>
           </div>
-          <div
-            id="people-bottom"
-            className="h-[232px] overflow-hidden mr-[-27px] ml-[-13px]"
-          >
+          <div id="people-bottom" className="h-[232px] overflow-hidden">
             <div id="people-client-1" className="h-[110.4px]  mb-[11.4px]">
               <div
                 id="people-clientRail-1"
@@ -399,4 +391,4 @@ export default function Section6() {
       </section>
     </>
   );
-}
+};

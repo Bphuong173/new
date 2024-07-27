@@ -33,10 +33,10 @@ export const Slider2 = () => {
                     id="testimonial-quote"
                     className="font-pp-right text-[38px] leading-[43px] tracking-[1.5px] uppercase"
                   >
-                    <h1>
+                    <p>
                       Patch has been great for streamlining our process and
                       knowing where patients are in our Method Timeline.
-                    </h1>
+                    </p>
                   </h1>
                   <div
                     id="testimonial-author"

@@ -30,7 +30,7 @@ export const Todo = ({ loadTodo }) => {
 
   const mutation = useMutation({
     mutationFn: (data) =>
-      updateTodoapi(data._id, {
+      updateTodoapi(data.id, {
         task: data.task,
         clockCompleted: data.clockCompleted,
         label: data.labelId,
@@ -55,7 +55,7 @@ export const Todo = ({ loadTodo }) => {
   };
   const handleCountdownEnd = (todoId) => {
     const updatedTodos = todos.map((todo) =>
-      todo._id === todoId
+      todo.id === todoId
         ? {
             ...todo,
             clockCompleted: todo.clockCompleted.slice(0, -1),
@@ -63,7 +63,7 @@ export const Todo = ({ loadTodo }) => {
         : todo
     );
     setTodos(updatedTodos);
-    const todoToUpdate = updatedTodos.find((todo) => todo._id === todoId);
+    const todoToUpdate = updatedTodos.find((todo) => todo.id === todoId);
 
     // Gửi yêu cầu cập nhật dữ liệu đến server
     axios
@@ -111,11 +111,11 @@ export const Todo = ({ loadTodo }) => {
       notes: notes,
     });
   };
-  const deleteTodo = (_id) => {
-    mutationDelete.mutate(_id);
+  const deleteTodo = (id) => {
+    mutationDelete.mutate(id);
   };
-  const updateTask = (task, _id, clockCompleted, newLabelId, notes) => {
-    mutation.mutate({ task, _id, clockCompleted, labelId: newLabelId, notes });
+  const updateTask = (task, id, clockCompleted, newLabelId, notes) => {
+    mutation.mutate({ task, id, clockCompleted, labelId: newLabelId, notes });
     console.log(newLabelId);
   };
   const lastElement = todos[todos.length - 1];
@@ -160,7 +160,7 @@ export const Todo = ({ loadTodo }) => {
           {" "}
           {filteredTodos.map((todo) => (
             <Item
-              key={todo._id}
+              key={todo.id}
               todo={todo}
               deleteTodo={deleteTodo}
               updateTodo={updateTask}

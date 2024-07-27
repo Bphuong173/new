@@ -2,13 +2,12 @@ import React from "react";
 import RootIcon from "./image/icon-root.svg";
 import Bullet from "./image/bullet.svg";
 import Star from "./image/star.svg";
-import { AnimatedSection } from "./animatedsection";
-import { motion } from "framer-motion";
+import backgroundImage from "./image/background-grid.svg";
 
-export default function Section5() {
+export const Section5 = () => {
   return (
     <>
-      <section id="section-5" className="">
+      <section id="section-5" className="mr-[-14px] ml-[14px]">
         <div
           id="love nav-blue locked"
           className="w-full relative bg-[#ececec]  "
@@ -28,59 +27,17 @@ export default function Section5() {
                 id="h1 h-anim anima- in"
                 className=" h-[340px] mb-[70px] leading-[133px]"
               >
-                <motion.h1
-                  id="h-line"
-                  className="text-[133px]"
-                  initial={{ y: -30 }}
-                  animate={{ y: [0, -30, 0] }}
-                  transition={{
-                    duration: 0.5,
-                    repeat: Infinity,
-                    repeatType: "loop",
-                  }}
-                >
+                <h1 id="h-line" className="text-[133px]">
                   GET BACK
-                </motion.h1>
-                <motion.h1
-                  id="h-line1"
-                  className="text-[133px]"
-                  initial={{ y: -30 }}
-                  animate={{ y: [0, -30, 0] }}
-                  transition={{
-                    duration: 0.5,
-                    repeat: Infinity,
-                    repeatType: "loop",
-                    delay: 0.1,
-                  }}
-                >
+                </h1>
+                <h1 id="h-line1" className="text-[133px]">
                   TO WHAT
-                </motion.h1>
+                </h1>
                 <div id="h-line2" className="text-[133px] flex">
-                  <motion.h1
-                    initial={{ y: -30 }}
-                    animate={{ y: [0, -30, 0] }}
-                    transition={{
-                      duration: 0.5,
-                      repeat: Infinity,
-                      repeatType: "loop",
-                      delay: 0.2,
-                    }}
-                  >
-                    YOU
-                  </motion.h1>
-                  <motion.h1
-                    className="w-[275px] h-[113px] bg-[#fff] flex items-center justify-center rounded-[10px]"
-                    initial={{ y: -30 }}
-                    animate={{ y: [0, -30, 0] }}
-                    transition={{
-                      duration: 0.5,
-                      repeat: Infinity,
-                      repeatType: "loop",
-                      delay: 0.3,
-                    }}
-                  >
+                  <h1>YOU </h1>
+                  <h1 className="w-[275px] h-[113px] bg-[#fff] flex items-center justify-center rounded-[10px]">
                     LOVE
-                  </motion.h1>
+                  </h1>
                 </div>
               </div>
 
@@ -93,8 +50,7 @@ export default function Section5() {
                 NOT WITH YOUR EMAIL.
               </h1>
             </div>
-            <AnimatedSection
-              animationClass="slide-in-right"
+            <div
               id="love-blockWrap"
               className="w-[361px] h-[277px] bg-[#fff] rounded-[5px] border border-[black] absolute right-[70px] top-[630px]"
             >
@@ -155,15 +111,15 @@ export default function Section5() {
                   </ul>
                 </div>
               </div>
-            </AnimatedSection>
+            </div>
           </div>
           <div
             id="love-banner"
-            className="w-full  h-[294px] absolute top-[1056px] overflow-hidden"
+            className="w-full ml-[-14px] h-[294px] absolute top-[1056px] overflow-hidden"
           >
             <div
               id="rollingBanner1"
-              className="h-[98px] w-full bg-[#212121] border-b border-[#fff] relative flex items-center uppercase "
+              className="h-[98px] w-full bg-[#212121] border-b border-[#fff] relative flex items-center"
             >
               <div
                 id="rollingBanner-rail1"
@@ -209,7 +165,7 @@ export default function Section5() {
             </div>
             <div
               id="rollingBanner-2"
-              className="h-[98px] w-full bg-[#989696]   border-b border-[#fff] relative flex items-center uppercase"
+              className="h-[98px] w-full bg-[#989696]   border-b border-[#fff] relative flex items-center"
             >
               <div
                 id="rollingBanner-rail-2"
@@ -255,7 +211,7 @@ export default function Section5() {
             </div>
             <div
               id="rollingBanner-3"
-              className="h-[98px] w-full bg-[#212121] border-b border-[#fff] relative flex items-center uppercase"
+              className="h-[98px] w-full bg-[#212121] border-b border-[#fff] relative flex items-center"
             >
               <div
                 id="rollingBanner-rail1"
@@ -304,4 +260,4 @@ export default function Section5() {
       </section>
     </>
   );
-}
+};

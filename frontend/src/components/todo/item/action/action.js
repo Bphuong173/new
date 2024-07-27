@@ -7,7 +7,7 @@ export const Action = ({ deleteTodo, todo }) => {
   const handleTaskCircleClick = () => {
     setShowTick(true);
     setTimeout(() => {
-      deleteTodo(todo._id);
+      deleteTodo(todo.id);
     }, 100);
   };
 

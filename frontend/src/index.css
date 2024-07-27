@@ -8,16 +8,6 @@ body {
   height: 100vh;
   width: 100vw;
 }
-html,
-body {
-  overflow: -moz-scrollbars-none;
-  -ms-overflow-style: none;
-  scrollbar-width: none; /* Firefox */
-}
-html::-webkit-scrollbar,
-body::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
-}
 h1 {
   font-family: "PP Right", sans-serif;
   font-weight: 700;

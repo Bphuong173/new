@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import Smiley from "./image/icon-smiley.svg";
 import backgroundImage from "./image/background-grid.svg";
-import { AnimatedSection } from "./animatedsection";
-import "./section2.css";
+
 import Promise1 from "./image/promise_1.webp";
 import Promise2 from "./image/promise_2.webp";
 import Promise3 from "./image/promise_3.webp";
@@ -10,7 +9,7 @@ import Promise4 from "./image/promise_4.webp";
 import Promise5 from "./image/promise_5.webp";
 import Promise6 from "./image/promise_6.webp";
 import Promise7 from "./image/promise_7.webp";
-export default function Section2() {
+export const Section2 = () => {
   const images = [
     Promise1,
     Promise2,
@@ -28,7 +27,6 @@ export default function Section2() {
   const handleMouseLeave = () => {
     setHoveredImage(1);
   };
-
   return (
     <>
       <div
@@ -39,10 +37,9 @@ export default function Section2() {
         <div id="promise nav-blue locked" className="w-full     ">
           <div id="grid" className=" flex justify-between">
             <div id="col" className="w-[339px] h-[1673px]">
-              <AnimatedSection
-                id="block-sectionBlock-anima-in"
+              <div
+                id="block sectionBlock anima in"
                 className="bg-white border border-[black] rounded-md w-[339px] h-[153.4px]"
-                animationClass="slide-in-left"
               >
                 <div
                   id="sectionBlock-top"
@@ -77,7 +74,7 @@ export default function Section2() {
                     covered.
                   </p>
                 </div>
-              </AnimatedSection>
+              </div>
               <div
                 id="promise-images"
                 className="w-[339px] h-[414px] mt-[14px] bg-[#fff] rounded-[5px] border border-[black] sticky top-[50px]"
@@ -97,7 +94,7 @@ export default function Section2() {
               >
                 <div id="section-couter">
                   <h1 className="font-pp-right text-[27px] absolute bottom-[5px] left-[5px] overflow-hidden">
-                    01
+                    02
                   </h1>
                   <p className=""></p>
                 </div>
@@ -194,4 +191,4 @@ export default function Section2() {
       </div>
     </>
   );
-}
+};

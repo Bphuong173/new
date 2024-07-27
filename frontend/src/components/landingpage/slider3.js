@@ -33,10 +33,10 @@ export const Slider3 = () => {
                     id="testimonial-quote"
                     className="font-pp-right text-[38px] leading-[43px] tracking-[1.5px] uppercase"
                   >
-                    <h1>
+                    <p>
                       We actually have a pulse on our business health, have our
                       systems in order, and our client communication streamlined
-                    </h1>
+                    </p>
                   </h1>
                   <div
                     id="testimonial-author"
