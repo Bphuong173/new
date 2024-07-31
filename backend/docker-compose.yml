@@ -1,0 +1,20 @@
+version: "3"
+services:
+  app:
+    build: .
+    ports:
+      - 5500:8080
+    environment:
+      - DATABASE_URL=postgresql://postgres:Ksv1404@@db:5432/apptodo
+    depends_on:
+      - db
+  db:
+    image: postgres:13
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=Ksv1404@
+      - POSTGRES_DB=apptodo
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+volumes:
+  postgres-data:
