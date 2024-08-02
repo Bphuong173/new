@@ -1,14 +1,13 @@
 FROM node:17-alpine
 
-WORKDIR /app
+WORKDIR /backend
 
+# ENV DATABASE_URL="postgresql://postgres:Ksv1404@@localhost:5432/apptodo"
 COPY package*.json ./
-
+COPY prisma ./prisma
+RUN npm install
 RUN npm install -g prisma
-
-COPY ./prisma prisma
-
-RUN npm ci
+RUN prisma generate
 
 COPY . .
 

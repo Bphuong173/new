@@ -5,7 +5,7 @@ services:
     ports:
       - 5500:8080
     environment:
-      - DATABASE_URL=postgresql://postgres:Ksv1404@@db:5432/apptodo
+      - DATABASE_URL="postgresql://postgres:Ksv1404@@db:5432/apptodo"
     depends_on:
       - db
   db:
