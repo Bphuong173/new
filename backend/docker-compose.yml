@@ -5,9 +5,9 @@ services:
     ports:
       - 5500:5500
     env_file:
-      - .env
-    # environment:
-    #   - DATABASE_URL="postgresql://postgres:Ksv1404@@localhost:5432/apptodo"
+      - .env.docker
+    networks:
+      - vb
     depends_on:
       - postgres
   postgres:
@@ -17,7 +17,6 @@ services:
     env_file:
       - .env
     environment:
-      - POSTGRES_HOST=postgres
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=Ksv1404@
       - POSTGRES_DB=apptodo
@@ -25,5 +24,10 @@ services:
       - postgres-data:/var/lib/postgresql/data
     ports:
       - 5432:5432
+    networks:
+      - vb
 volumes:
   postgres-data:
+networks:
+  vb:
+    name: vb
