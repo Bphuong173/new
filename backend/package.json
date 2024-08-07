@@ -4,7 +4,7 @@
   "description": "",
   "main": "sever.ts",
   "scripts": {
-    "start": "ts-node sever.ts"
+    "start": "prisma generate && prisma migrate dev && ts-node sever.ts"
   },
   "author": "",
   "license": "ISC",
