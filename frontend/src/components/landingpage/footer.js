@@ -1,10 +1,16 @@
 import React from "react";
 import LogoPatch from "./image/logo-patch.svg";
 import "./footer.css";
+import backgroundImage from "./image/background-grid.svg";
+
 export default function Footer() {
   return (
     <>
-      <div id="footer" className="px-[4.7px] pb-[4.7px] text-[#ffff] block">
+      <div
+        id="footer"
+        className="px-[4.7px] pb-[4.7px] text-[#ffff] block top-0 left-0 right-0 bottom-0 bg-[position:6.35rem_0rem] bg-[#989696]"
+        style={{ backgroundImage: `url(${backgroundImage})` }}
+      >
         <div id="footer-inner">
           <div id="footer-top" className="flex h-[323.8px] gap-[4.7px]">
             <div
