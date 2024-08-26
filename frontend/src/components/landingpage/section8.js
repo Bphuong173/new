@@ -25,21 +25,24 @@ export default function Section8() {
       <div
         id="products-nav-blue-locked"
         style={{ backgroundImage: `url(${BackGroundWhite})` }}
-        className=" w-full h-full relative top-0 left-0 right-0 bottom-0 pt-[217px] pb-[95px]  bg-[position:6.35rem_0rem]"
+        className=" w-full h-full relative top-0 left-0 right-0 bottom-0 lg:pt-[217px] pt-[100px] pb-[95px]  bg-[position:6.35rem_0rem]"
       >
         <div id="products-top" className="relative">
           <div>
-            <h2 id="h2 h-anima" className="pl-[45.7px]">
+            <h2
+              id="h2 h-anima"
+              className="lg:pl-[45.7px] pl-[20px] lg:pt-0 pt-[50px]"
+            >
               <AnimatedSection
                 id="h-line"
-                className="uppercase pr-[47.6px] text-[133.33px] leading-[125px] tracking-wide"
+                className="uppercase pr-[47.6px] lg:text-[133.33px] text-[50px] lg:leading-[125px] leading-[70px] tracking-wide"
                 animationClass="fade-in"
               >
                 <AnimatedText text="Patch Service" />
               </AnimatedSection>
               <AnimatedSection
                 id="h-line"
-                className="uppercase pr-[47.6px] text-[133.33px] leading-[125px] tracking-wide"
+                className="uppercase pr-[47.6px] lg:text-[133.33px] text-[50px] lg:leading-[125px] leading-[70px] tracking-wide"
                 animationClass="fade-in"
               >
                 <AnimatedText text="Offerings" />
@@ -101,11 +104,11 @@ export default function Section8() {
           </div>
           <div
             id="products-sticky"
-            className="top-[19px]; w-[1062px] ml-[359px] z-[2] sticky pl-[20px] top-0"
+            className=" lg:w-[1062px] w-auto lg:ml-[359px] lg:mr-0 mr-[14px] z-[2] sticky pl-[20px] top-0"
           >
             <div
               id="products-stickyInner-block "
-              className="relative flex flex-1 overflow-hidden will-change-height bg-[#fff] border border-[black] rounded-[5px] min-h-[223px]"
+              className="relative flex flex-1 flex-col lg:flex-row overflow-hidden will-change-height bg-[#fff] border border-[black] rounded-[5px] min-h-[223px]"
             >
               <div
                 id="products-productHeader-1"
@@ -162,7 +165,7 @@ export default function Section8() {
           </div>
           <div
             id="products-features"
-            className="relative flex justify-evenly  mt-[47.6px] py-[28.5px] mb-0"
+            className="relative  justify-evenly  mt-[47.6px] py-[28.5px] mb-0 hidden sm:flex"
           >
             <Features1 />
             <Features2 />

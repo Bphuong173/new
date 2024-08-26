@@ -26,11 +26,11 @@ export default function Section5() {
             >
               <div
                 id="h1 h-anim anima- in"
-                className=" h-[340px] mb-[70px] leading-[133px]"
+                className=" h-[340px] lg:mb-[70px] lg:mr-0 mr-[16px] mb-[50px] leading-[133px]"
               >
                 <motion.h1
                   id="h-line"
-                  className="text-[133px]"
+                  className="text-[45px] lg:text-[133px]"
                   initial={{ y: -30 }}
                   animate={{ y: [0, -30, 0] }}
                   transition={{
@@ -43,7 +43,7 @@ export default function Section5() {
                 </motion.h1>
                 <motion.h1
                   id="h-line1"
-                  className="text-[133px]"
+                  className="text-[50px] lg:text-[133px]"
                   initial={{ y: -30 }}
                   animate={{ y: [0, -30, 0] }}
                   transition={{
@@ -55,7 +55,7 @@ export default function Section5() {
                 >
                   TO WHAT
                 </motion.h1>
-                <div id="h-line2" className="text-[133px] flex">
+                <div id="h-line2" className="text-[50px] lg:text-[133px] flex">
                   <motion.h1
                     initial={{ y: -30 }}
                     animate={{ y: [0, -30, 0] }}
@@ -86,7 +86,7 @@ export default function Section5() {
 
               <h1
                 id="subeading"
-                className="text-[47.6px] leading-[52px] pt-[40px]"
+                className="lg:text-[47.6px] text-[30px] leading-[52px] lg:pt-[40px]"
               >
                 SPEND TIME WITH YOUR PATIENTS.
                 <br></br>
@@ -96,7 +96,7 @@ export default function Section5() {
             <AnimatedSection
               animationClass="slide-in-right"
               id="love-blockWrap"
-              className="w-[361px] h-[277px] bg-[#fff] rounded-[5px] border border-[black] absolute right-[70px] top-[630px]"
+              className="w-[361px] h-[277px] bg-[#fff] rounded-[5px] border border-[black] absolute lg:right-[70px] top-[750px] lg:ml-0 ml-[34px]  lg:top-[630px]"
             >
               <div
                 id="sectionBlock-top"

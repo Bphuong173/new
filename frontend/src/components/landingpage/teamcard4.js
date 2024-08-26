@@ -7,7 +7,7 @@ export const Teamcard4 = () => {
   return (
     <div
       id="teamCard block-4"
-      class="w-[448px] h-[633px] relative overflow-hidden cursor-pointer p-[25.7px] bg-white rounded-[5px] mt-[-300px] border border-[black]"
+      class="w-[448px] h-[633px] relative overflow-hidden cursor-pointer p-[25.7px] bg-white rounded-[5px] lg:mt-[-300px] mt-[40px] border border-[black]"
     >
       <div
         id="teamCard-side  "

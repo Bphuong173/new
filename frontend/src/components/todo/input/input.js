@@ -57,10 +57,10 @@ export const Input = ({
           </div>
 
           <input
-            className="h-12  p-0 w-full text-[14px] rounded-xl pl-12"
+            className="h-12  p-0 w-full lg:text-[14px text-[10px] rounded-xl lg:pl-12 pl-[34px]"
             onChange={(e) => setValue(e.target.value)}
             value={value}
-            placeholder="Thêm công việc theo nhãn tương ứng"
+            placeholder="Thêm công việc "
           />
           <div className="flex  absolute right-12 items-center pt-0 pl-0 pr-3 pb-3">
             <ClockIcon

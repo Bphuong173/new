@@ -42,14 +42,14 @@ export default function Section2() {
             <div id="col" className="w-full lg:w-[339px] h-auto lg:h-[1673px]">
               <AnimatedSection
                 id="block-sectionBlock-anima-in"
-                className="bg-white border border-black rounded-md  w-[339px] h-[153.4px] "
+                className="bg-white border border-black rounded-md  w-[300px] lg:w-[339px] h-[153.4px] "
                 animationClass="slide-in-left"
               >
                 <div
                   id="sectionBlock-top"
-                  className="w-[337px] h-[55px] flex justify-between border-b border-black"
+                  className="lg:w-[337px] w-auto h-[55px] flex justify-between border-b border-black lg:pl-0 pl-[15px"
                 >
-                  <div className="flex items-center justify-center w-[253px]">
+                  <div className="flex items-center justify-center w-auto lg:w-[253px] lg:pl-0 pl-[20px">
                     <h1 className="font-pp-right  text-[24px]">
                       THE PATCH PROMISE
                     </h1>
@@ -67,11 +67,11 @@ export default function Section2() {
                 </div>
                 <div
                   id="sectionBlock-bottom"
-                  className="w-[337px] h-[96px] flex items-center justify-center"
+                  className="lg:w-[337px] w-auto h-[96px] flex items-center justify-center"
                 >
                   <p
                     style={{ fontFamily: "Archivo, sans-serif" }}
-                    className="w-[295px] h-[57px] text-[19px]"
+                    className="lg:w-[295px] w-auto lg:pl-0 pl-[5px] h-[57px] text-[19px]"
                   >
                     Never worry about having enough customers. We got you
                     covered.

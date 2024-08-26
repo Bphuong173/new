@@ -15,15 +15,15 @@ export default function Section7() {
         className=" w-full h-full bg-[#989696] top-0 left-0 right-0 bottom-0 bg-[position:6.35rem_0rem] pb-[333px]"
         style={{ backgroundImage: `url(${backgroundImage})` }}
       >
-        <div id="team nav-blue locked">
+        <div id="team nav-blue locked" className="flex flex-col">
           <div
             id="team-top"
-            className="relative pt-[160px] pl-[90.5px] pr-[90.5px] mb-[12px]"
+            className="relative pt-[160px]  lg:pl-[90.5px] pl-[20px] lg:pr-[90.5px] pr-[10px] mb-[12px]"
           >
             <h2 id="h2 h-anima">
               <h1
                 id="h-line"
-                className=" flex uppercase  pr-[47.6px] text-[133.33px] leading-[125px] tracking-wide"
+                className=" flex uppercase  pr-[47.6px] text-[60px] lg:text-[133.33px] leading-[125px] tracking-wide"
               >
                 <span>
                   <AnimatedSection
@@ -45,13 +45,13 @@ export default function Section7() {
             </h2>
             <p
               id="body body-large"
-              className="mt-[66.6px] w-[533px] text-[23.8px] leading-[30.95px]"
+              className="lg:mt-[66.6px] mt-0 lg:w-[533px] w-auto text-[23.8px] leading-[30.95px]"
               style={{ fontFamily: "Archivo, sans-serif" }}
             >
               We know that this system works because we’ve used it to grow our
               own PT clinic. Now, we’re here to help you with yours.
             </p>
-            <div id="section-couter2" className=" top-[74px]">
+            <div id="section-couter2" className="">
               <h1 className="font-pp-right text-[27px] absolute bottom-[5px] left-[5px]">
                 05
               </h1>
@@ -101,7 +101,7 @@ export default function Section7() {
           </div>
           <div
             id="team-cards"
-            className="flex flex-wrap flex-row-reverse gap-x-[14px] mr-[32px] "
+            className="flex flex-wrap flex-row-reverse gap-x-[14px] lg:mr-[32px] mr-[14px] lg:ml-0 ml-[14px] "
           >
             <Teamcard1 />
             <Teamcard2 />

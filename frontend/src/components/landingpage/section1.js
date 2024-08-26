@@ -83,7 +83,7 @@ export default function Section1() {
             </AnimatedSection>
             <AnimatedSection
               id="homedeader-image"
-              className="h-[23.5rem] w-full md:w-[23.5rem] bg-[#ffff] rounded-[0.5rem] flex items-center justify-center"
+              className="lg:h-[23.5rem] h-[220px] w-full md:w-[23.5rem] bg-[#ffff] rounded-[0.5rem] flex items-center justify-center"
               animationClass="slide-in-bottom"
             >
               <img

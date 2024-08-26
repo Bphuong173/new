@@ -46,8 +46,8 @@ export function Main() {
     <>
       <QueryClientProvider client={queryClient}>
         <UploadAvatar />
-        <div className="flex w-full h-[100vh]">
-          <div className=" w-1/4 mt-12 relative h[90%] flex flex-col ">
+        <div className="flex w-full lg:h-[100vh] h-full">
+          <div className=" w-1/2 mt-12 relative h[90%] flex flex-col ">
             <TodoLabel reloadAll={reloadAll} loadTodolabel={loadTodolabel} />
           </div>
           <div className=" w-3/4 mt-12 bg-[#F5F5F9]">
