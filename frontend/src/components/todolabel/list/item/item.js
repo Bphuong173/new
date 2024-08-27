@@ -24,7 +24,7 @@ export const Item = ({
         className={`items-center lg:ml-2 ml-0 rounded-md  pt-1 lg:pl-3 pl-0 pb-1 h-[38px] flex text-sm text-[14px] text-[#414141] ${
           isSelected ? "bg-[#F2F2F2]" : ""
         }`}
-        onClick={() => onClick(todoLabel._id)}
+        onClick={() => onClick(todoLabel.id)}
       >
         <p
           style={{

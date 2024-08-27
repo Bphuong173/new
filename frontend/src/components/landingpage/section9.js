@@ -5,11 +5,9 @@ import "./section9.css";
 import { AnimatedSection } from "./animatedsection";
 export default function Section9() {
   const [expandedIndex, setExpandedIndex] = useState(null);
-
   const handleToggle = (index) => {
     setExpandedIndex(expandedIndex === index ? null : index);
   };
-
   const faqs = [
     {
       title: "What does Patch do?",

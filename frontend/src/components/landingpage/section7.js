@@ -7,7 +7,6 @@ import { Teamcard4 } from "./teamcard4";
 import backgroundImage from "./image/background-grid.svg";
 import { AnimatedSection } from "./animatedsection";
 import Iconpeople from "./image/icon-people.svg";
-
 export default function Section7() {
   return (
     <>
@@ -73,7 +72,6 @@ export default function Section7() {
                     THE USUAL SUSPECTS
                   </h1>
                 </div>
-
                 <div
                   id="sectionBlock-icon-2"
                   className="w-[83.8px] h-[54px] border-l border-[black] flex items-center justify-center"

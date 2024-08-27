@@ -7,7 +7,7 @@ export const HeaderModal = ({ updateTaskLabel, todoLabel }) => {
     // prevent default action
     e.preventDefault();
     // edit todo
-    updateTaskLabel(value, todoLabel._id);
+    updateTaskLabel(value, todoLabel.id);
   };
   return (
     <div className=" p-8">

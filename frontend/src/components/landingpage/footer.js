@@ -1,25 +1,15 @@
 import React from "react";
 import LogoPatch from "./image/logo-patch.svg";
 import "./footer.css";
-import backgroundImage from "./image/background-grid.svg";
-
 export default function Footer() {
   return (
     <>
-      <div
-        id="footer"
-        className="px-[4.7px] pb-[4.7px] text-[#ffff] block top-0 left-0 right-0 bottom-0 bg-[position:6.35rem_0rem] bg-[#989696] relative
-        "
-        style={{ backgroundImage: `url(${backgroundImage})` }}
-      >
+      <div id="footer" className="px-[4.7px] pb-[4.7px] text-[#ffff] block">
         <div id="footer-inner">
-          <div
-            id="footer-top"
-            className="flex lg:flex-row flex-col h-[323.8px] gap-[4.7px]"
-          >
+          <div id="footer-top" className="flex h-[323.8px] gap-[4.7px]">
             <div
               id="footer-topleft"
-              className="h-full lg:w-[323px] w-auto px-[38px] py-[38px] rounded-[5px] bg-[#212121] text-[#fff]"
+              className="h-full w-[323px] px-[38px] py-[38px] rounded-[5px] bg-[#212121] text-[#fff]"
             >
               <div
                 id="footer-logo"
@@ -61,7 +51,7 @@ export default function Footer() {
               </div>
             </div>
             <div class="footer-topRight">
-              <div className="bg-[#212121] text-[#fff] rounded-[5px] flex flex-1 gap-x-[114px] p-[20px] sm:gap-x-0">
+              <div class="footer-row ">
                 <div class="footer-subscribe flex-1">
                   <p class=" mb-[4.7px]">
                     {" "}
@@ -79,7 +69,7 @@ export default function Footer() {
                   </div>
                 </div>
               </div>
-              <div className="bg-[#212121] min-h-[115px] text-[#fff] rounded-[5px] flex flex-1 lg:gap-x-[114px] p-[20px] gap-x-0">
+              <div class="footer-row min-h-[115px] ">
                 <div class="footer-col">
                   <h1 class="footer-header">More Info</h1>
                   <p>
@@ -107,18 +97,18 @@ export default function Footer() {
                     </a>
                   </p>
                 </div>
-                <div class="footer-col lg:pr-0 pr-[14px]">
+                <div class="footer-col">
                   <h1 class="footer-header">SAY HELLO</h1>
                   <p>
                     <a
                       href="mailto:hello@patchsystem.com"
-                      class="footer-link underlink break-all"
+                      class="footer-link underlink"
                     >
                       hello@patchsystem.com
                     </a>
                   </p>
                 </div>
-                <div class="footer-col lg:pb-0 pb-[40px] text-[15px] ">
+                <div class="footer-col">
                   <h1 class="footer-header">Free Downloads</h1>
                   <p>
                     <a
@@ -141,9 +131,9 @@ export default function Footer() {
                   <h1 class="footer-header">Let's Patch it up</h1>
                   <a
                     href="https://thepatchsystem.com/demo-schedule"
-                    className="bg-[#ff622b] h-[47.6px] inline-flex items-center justify-center rounded-[5px] whitespace-nowrap px-[33px] sm:px-[14px] sm:w-auto relative overflow-hidden cursor-pointer"
+                    class="button"
                   >
-                    <h1 class=" text-[14px] lg:text-[19px] uppercase tracking-[0.5px] text-[black]">
+                    <h1 class="text-[19px] uppercase tracking-[0.5px] text-[black]">
                       Book a call
                     </h1>
                   </a>
@@ -151,7 +141,7 @@ export default function Footer() {
               </div>
             </div>
           </div>
-          <div className=" flex justify-between items-center  p-[9.5px_38px] text-[9.5px] uppercase tracking-[0.95px] leading-[14.2px] bg-[#212121] text-[#fff] rounded-[5px] w-auto h-[47.62px] mt-[4.7px] lg:w-full absolute lg:relative lg:top-0 top-[710px]">
+          <div class="footer-bottom">
             <a
               href="https://thepatchsystem.com/terms-privacy"
               class="underlink "

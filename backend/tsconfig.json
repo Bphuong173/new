@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "ES6", // chỉ định phiên bản
+    "module": "CommonJS", // chỉ định dạng module Ecmascript
+    "outDir": "dist", // ts sẽ tạo ra các tệp js đc biên dịch và lưu vào thư mục dist
+    "strict": true, //bật chế độ kiểm tra nghiêm ngặt
+    "rootDir": ".",
+    "esModuleInterop": true, //tự động xử lí tương tác giữa module commonJs và ES6
+    "noImplicitAny": true, // KO cần suy luận kiểu any 1 cách ngầm định(false)
+     //Đây là đường dẫn tương đối từ vị trí file tsconfig.json đến thư mục gốc của dự án
+    "moduleResolution": "node" //fix lỗi bên file authen.ts dòng 1 TypeScript hoạt động phù hợp với cách Node.js tìm kiếm và phân giải module.
+  },
+
+ "files":["types.d.ts"]
+}

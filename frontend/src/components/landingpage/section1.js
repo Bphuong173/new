@@ -11,15 +11,12 @@ import { AnimatedSection } from "./animatedsection.js";
 import { motion } from "framer-motion";
 import "./section1.css";
 import "./home.css";
-
 export default function Section1() {
   const navigate = useNavigate();
-
   const handleSignInClick = (e) => {
     e.preventDefault();
     navigate("/login");
   };
-
   return (
     <>
       <div

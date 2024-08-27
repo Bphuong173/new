@@ -7,7 +7,6 @@ import { Features2 } from "./features2";
 import { Features3 } from "./features3";
 import { Features4 } from "./features4";
 import { AnimatedSection } from "./animatedsection";
-
 export default function Section8() {
   const AnimatedText = ({ text }) => {
     return (

@@ -68,7 +68,7 @@ export const Todomodal = ({
     const newClockCompletedArray = new Array(clockCompleted).fill(25);
     updateTasktodo(
       value,
-      todo._id,
+      todo.id,
       newClockCompletedArray,
       selectedLabelId._id,
       notes
@@ -86,7 +86,7 @@ export const Todomodal = ({
                   <Updatemodal
                     updateTasktodo={updateTasktodo}
                     todo={todo}
-                    key={todo._id}
+                    key={todo.id}
                     loadTodo={loadTodo}
                   />
                 ) : (

@@ -24,7 +24,6 @@ export default function Section6() {
       setCurrentSlide(currentSlide - 1);
     }
   };
-
   return (
     <>
       <section

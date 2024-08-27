@@ -2,13 +2,12 @@ import React from "react";
 import RootIcon from "./image/icon-root.svg";
 import Bullet from "./image/bullet.svg";
 import Star from "./image/star.svg";
-import { AnimatedSection } from "./animatedsection";
 import { motion } from "framer-motion";
 
-export default function Section5() {
+export const Section5 = () => {
   return (
     <>
-      <section id="section-5" className="">
+      <section id="section-5" className="mr-[-14px] ml-[14px]">
         <div
           id="love nav-blue locked"
           className="w-full relative bg-[#ececec]  "
@@ -30,7 +29,7 @@ export default function Section5() {
               >
                 <motion.h1
                   id="h-line"
-                  className="text-[45px] lg:text-[133px]"
+                  className="text-[133px]"
                   initial={{ y: -30 }}
                   animate={{ y: [0, -30, 0] }}
                   transition={{
@@ -43,7 +42,7 @@ export default function Section5() {
                 </motion.h1>
                 <motion.h1
                   id="h-line1"
-                  className="text-[50px] lg:text-[133px]"
+                  className="text-[133px]"
                   initial={{ y: -30 }}
                   animate={{ y: [0, -30, 0] }}
                   transition={{
@@ -55,7 +54,7 @@ export default function Section5() {
                 >
                   TO WHAT
                 </motion.h1>
-                <div id="h-line2" className="text-[50px] lg:text-[133px] flex">
+                <div id="h-line2" className="text-[133px] flex">
                   <motion.h1
                     initial={{ y: -30 }}
                     animate={{ y: [0, -30, 0] }}
@@ -93,8 +92,7 @@ export default function Section5() {
                 NOT WITH YOUR EMAIL.
               </h1>
             </div>
-            <AnimatedSection
-              animationClass="slide-in-right"
+            <div
               id="love-blockWrap"
               className="w-[361px] h-[277px] bg-[#fff] rounded-[5px] border border-[black] absolute lg:right-[70px] top-[750px] lg:ml-0 ml-[34px]  lg:top-[630px]"
             >
@@ -128,65 +126,65 @@ export default function Section5() {
                   </div>
 
                   <ul className="pl-[19px] mt-[17px]  h-[104px] w-[317px] leading-[36px]">
-                    <ul>
+                    <li>
                       <img
                         src={Bullet}
                         alt="Bullet Icon"
                         className="w-[9.5px] h-[9.5px] absolute left-[20px] top-[93px]"
                       />
-                      <l1>Quarterly Marketing Campaigns</l1>
-                    </ul>
-                    <ul>
+                      Quarterly Marketing Campaigns
+                    </li>
+                    <li>
                       <img
                         src={Bullet}
                         alt="Bullet Icon"
                         className="w-[9.5px] h-[9.5px] absolute left-[20px] top-[130px]"
                       />
-                      <l1>Email Nurture Sequences</l1>
-                    </ul>
-                    <ul>
+                      Email Nurture Sequences
+                    </li>
+                    <li>
                       <img
                         src={Bullet}
                         alt="Bullet Icon"
                         className="w-[9.5px] h-[9.5px] absolute left-[20px] top-[167px]"
                       />
-                      <l1>Funnel Builds for Local Events</l1>
-                    </ul>
+                      Funnel Builds for Local Events
+                    </li>
                   </ul>
                 </div>
               </div>
-            </AnimatedSection>
+            </div>
           </div>
           <div
             id="love-banner"
-            className="w-full  h-[294px] absolute top-[1056px] overflow-hidden"
+            className="w-full ml-[-14px] h-[294px] absolute top-[1056px] overflow-hidden"
           >
             <div
               id="rollingBanner1"
-              className="h-[98px] w-full bg-[#212121] border-b border-[#fff] relative flex items-center uppercase "
+              className="h-[98px] w-full bg-[#212121] border-b border-[#fff] relative flex items-center"
             >
               <div
                 id="rollingBanner-rail1"
                 className="max-w[1440px] flex items-center text-uppercase"
               >
                 <h1>GET OFF THE COMPUTER * AND INTO A SAUNA</h1>
-                <img src={Star} alt="Star Icon"></img>
+                <img src={Star} alt="Star Icon" />
                 <h1>PRACTICE YOGA * NOT YOUR ELEVATOR PITCH</h1>
-                <img src={Star} alt="Star Icon"></img>
+                <img src={Star} alt="Star Icon" />
                 <h1>GO SKIING * NOT SKIMMING EMAILS</h1>
-                <img src={Star} alt="Star Icon"></img>
+                <img src={Star} alt="Star Icon" />
                 <h1>RETURN TO HIKING * NOT HUSTLING</h1>
-                <img src={Star} alt="Star Icon"></img>
+                <img src={Star} alt="Star Icon" />
                 <h1>DIVE INTO THE POOL * NOT SPREADSHEETS</h1>
-                <img src={Star} alt="Star Icon"></img>
+                <img src={Star} alt="Star Icon" />
                 <h1>HIT THE GYM * NOT THE GRIND</h1>
-                <img src={Star} alt="Star Icon"></img>
+                <img src={Star} alt="Star Icon" />
                 <h1>EXPLORE NATURE * NOT SALES FUNNELS</h1>
-                <img src={Star} alt="Star Icon"></img>
+                <img src={Star} alt="Star Icon" />
                 <h1>Swim in the ocean * not in objectives</h1>
-                <img src={Star} alt="Star Icon"></img>
+                <img src={Star} alt="Star Icon" />
                 <h1>Go paddleboarding * not profit-chasing</h1>
-                <img src={Star} alt="Star Icon"></img>
+                <img src={Star} alt="Star Icon" />
                 <h1>GET OFF THE COMPUTER * AND INTO A SAUNA</h1>
                 <img src={Star} alt="Star Icon" />
                 <h1>Practice yoga * Not Your Elevator Pitch</h1>
@@ -209,30 +207,30 @@ export default function Section5() {
             </div>
             <div
               id="rollingBanner-2"
-              className="h-[98px] w-full bg-[#989696]   border-b border-[#fff] relative flex items-center uppercase"
+              className="h-[98px] w-full bg-[#989696]   border-b border-[#fff] relative flex items-center"
             >
               <div
                 id="rollingBanner-rail-2"
                 className=" max-w-[1440px] flex items-center text-uppercase"
               >
                 <h1>GET OFF THE COMPUTER * AND INTO A SAUNA</h1>
-                <img src={Star} alt="Star Icon"></img>
+                <img src={Star} alt="Star Icon" />
                 <h1>PRACTICE YOGA * NOT YOUR ELEVATOR PITCH</h1>
-                <img src={Star} alt="Star Icon"></img>
+                <img src={Star} alt="Star Icon" />
                 <h1>GO SKIING * NOT SKIMMING EMAILS</h1>
-                <img src={Star} alt="Star Icon"></img>
+                <img src={Star} alt="Star Icon" />
                 <h1>RETURN TO HIKING * NOT HUSTLING</h1>
-                <img src={Star} alt="Star Icon"></img>
+                <img src={Star} alt="Star Icon" />
                 <h1>DIVE INTO THE POOL * NOT SPREADSHEETS</h1>
-                <img src={Star} alt="Star Icon"></img>
+                <img src={Star} alt="Star Icon" />
                 <h1>HIT THE GYM * NOT THE GRIND</h1>
-                <img src={Star} alt="Star Icon"></img>
+                <img src={Star} alt="Star Icon" />
                 <h1>EXPLORE NATURE * NOT SALES FUNNELS</h1>
-                <img src={Star} alt="Star Icon"></img>
+                <img src={Star} alt="Star Icon" />
                 <h1>Swim in the ocean * not in objectives</h1>
-                <img src={Star} alt="Star Icon"></img>
+                <img src={Star} alt="Star Icon" />
                 <h1>Go paddleboarding * not profit-chasing</h1>
-                <img src={Star} alt="Star Icon"></img>
+                <img src={Star} alt="Star Icon" />
                 <h1>GET OFF THE COMPUTER * AND INTO A SAUNA</h1>
                 <img src={Star} alt="Star Icon" />
                 <h1>Practice yoga * Not Your Elevator Pitch</h1>
@@ -255,30 +253,30 @@ export default function Section5() {
             </div>
             <div
               id="rollingBanner-3"
-              className="h-[98px] w-full bg-[#212121] border-b border-[#fff] relative flex items-center uppercase"
+              className="h-[98px] w-full bg-[#212121] border-b border-[#fff] relative flex items-center"
             >
               <div
                 id="rollingBanner-rail1"
                 className=" max-2-[1440px] flex items-center text-uppercase"
               >
                 <h1>GET OFF THE COMPUTER * AND INTO A SAUNA</h1>
-                <img src={Star} alt="Star Icon"></img>
+                <img src={Star} alt="Star Icon" />
                 <h1>PRACTICE YOGA * NOT YOUR ELEVATOR PITCH</h1>
-                <img src={Star} alt="Star Icon"></img>
+                <img src={Star} alt="Star Icon" />
                 <h1>GO SKIING * NOT SKIMMING EMAILS</h1>
-                <img src={Star} alt="Star Icon"></img>
+                <img src={Star} alt="Star Icon" />
                 <h1>RETURN TO HIKING * NOT HUSTLING</h1>
-                <img src={Star} alt="Star Icon"></img>
+                <img src={Star} alt="Star Icon" />
                 <h1>DIVE INTO THE POOL * NOT SPREADSHEETS</h1>
-                <img src={Star} alt="Star Icon"></img>
+                <img src={Star} alt="Star Icon" />
                 <h1>HIT THE GYM * NOT THE GRIND</h1>
-                <img src={Star} alt="Star Icon"></img>
+                <img src={Star} alt="Star Icon" />
                 <h1>EXPLORE NATURE * NOT SALES FUNNELS</h1>
-                <img src={Star} alt="Star Icon"></img>
+                <img src={Star} alt="Star Icon" />
                 <h1>Swim in the ocean * not in objectives</h1>
-                <img src={Star} alt="Star Icon"></img>
+                <img src={Star} alt="Star Icon" />
                 <h1>Go paddleboarding * not profit-chasing</h1>
-                <img src={Star} alt="Star Icon"></img>
+                <img src={Star} alt="Star Icon" />
                 <h1>GET OFF THE COMPUTER * AND INTO A SAUNA</h1>
                 <img src={Star} alt="Star Icon" />
                 <h1>Practice yoga * Not Your Elevator Pitch</h1>
@@ -304,4 +302,4 @@ export default function Section5() {
       </section>
     </>
   );
-}
+};
