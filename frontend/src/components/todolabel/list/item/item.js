@@ -21,7 +21,7 @@ export const Item = ({
   return (
     <>
       <div
-        className={`items-center ml-2 rounded-md  pt-1 pl-3 pb-1 h-[38px] flex text-sm text-[14px] text-[#414141] ${
+        className={`items-center lg:ml-2 ml-0 rounded-md  pt-1 lg:pl-3 pl-0 pb-1 h-[38px] flex text-sm text-[14px] text-[#414141] ${
           isSelected ? "bg-[#F2F2F2]" : ""
         }`}
         onClick={() => onClick(todoLabel._id)}
@@ -42,7 +42,7 @@ export const Item = ({
           onClick={() => handleLabelClick(todoLabel._id)}
           onMouseLeave={() => setIsHovered(false)}
         >
-          <li className="block break-all pl-2">{todoLabel.task}</li>
+          <li className="block break-work pl-2">{todoLabel.task}</li>
 
           {isHovered && (
             <Action

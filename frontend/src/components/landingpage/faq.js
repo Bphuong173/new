@@ -14,17 +14,17 @@ export const FAQItem = ({ index, title, content, isExpanded, onClick }) => {
       >
         <div
           id={`faq-header-${index}`}
-          className="w-full h-[87px - 1px] text-[28px] py-[20px] px-[88px] leading-1"
+          className="w-full h-[87px - 1px] lg:text-[28px] text-[20px] py-[20px] lg:px-[88px] pl-[50px] pr-0 h-[100px] flex items-center justify-center leading-1"
         >
           <div className="flex items-center justify-center absolute top-0 left-0 w-[42px] h-[38px] border-r text-[11.2px] border-b border-[black] [border-bottom-right-radius:10px]">
-            <span>{index + 1}</span>
+            <span className="">{index + 1}</span>
           </div>
           <span>{title}</span>
         </div>
         {isExpanded && (
           <div className="accordion-content w-full overflow-hidden relative">
-            <div className="accordion-inner pt-[4.7px] pl-[90.5px] pr-[90.5px] pb-[33px]">
-              <div className="body text-[17px] leading-[28.5px] w-[638px]">
+            <div className="accordion-inner pt-[4.7px] lg:pl-[90.5px] pl-[14px] lg:pr-[90.5px] pr-[14px] lg:pb-[33px] pb-[14px]">
+              <div className="body text-[17px] leading-[28.5px] lg:w-[638px] w-auto">
                 {content}
               </div>
             </div>

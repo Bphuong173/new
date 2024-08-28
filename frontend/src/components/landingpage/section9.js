@@ -102,19 +102,22 @@ export default function Section9() {
       className="relative overflow-hidden h-auto pt-[219px] pb-[85px] top-0 left-0 right-0 bottom-0 bg-[position:6.35rem_0rem] bg-[#989696]"
       style={{ backgroundImage: `url(${backgroundImage})` }}
     >
-      <div id="products-top" className="relative">
+      <div id="products-top" className="relative pt-[50px]">
         <div>
-          <h2 id="h2 h-anima" className="ml-[85.7px] mb-[161px]">
+          <h2
+            id="h2 h-anima"
+            className="lg:ml-[85.7px] ml-[14px] lg:mt-0 mt-[70px] lg:mb-[161px] mb-0"
+          >
             <AnimatedSection
               id="h-line"
-              className="uppercase pr-[47.6px] text-[133.33px] leading-[125px] tracking-wide"
+              className="uppercase lg:pr-[47.6px] pr-0 text-[50px] lg:text-[133.33px] lg:leading-[125px] leading-[50px] tracking-wide"
               animationClass="fade-in"
             >
               <AnimatedText text="FREQUENTLY" />
             </AnimatedSection>
             <AnimatedSection
               id="h-line"
-              className="uppercase pr-[47.6px] text-[133.33px] leading-[125px] tracking-wide"
+              className="uppercase lg:pr-[47.6px] pr-0 lg:text-[133.33px] text-[50px] lg:leading-[125px]  leading-[50px] tracking-wide"
               animationClass="fade-in"
             >
               <AnimatedText text="ASKED QUESTIONS" />
@@ -128,7 +131,10 @@ export default function Section9() {
           </h2>
         </div>
       </div>
-      <div id="faqs-inner" className="ml-[177px] mb-[17px] w-[1062px]">
+      <div
+        id="faqs-inner"
+        className="lg:ml-[177px] ml-[14px] lg:mr-0 mr-[14px] mb-[17px] lg:w-[1062px] w-auto lg:mt-0 mt-[120px]"
+      >
         {faqs.map((faq, index) => (
           <FAQItem
             key={index}

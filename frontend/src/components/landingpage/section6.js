@@ -34,25 +34,24 @@ export default function Section6() {
       >
         <div
           id="people nav-blue locked"
-          className="w-full  ml-[-14px]  pt-[190px] pr-[14px] pl-[14px] pb-[142px]"
+          className="w-full  ml-[-14px]  pt-[190px] lg:pr-[14px] pr-0 pl-[14px] pb-[142px]"
         >
-          <div id="people-top grid" className=" mb-[57px]">
-            <div className="flex pl-[14px] pr-[14px]">
+          <div id="people-top grid" className="mb-[57px]">
+            <div className="flex flex-col md:flex-row pl-[14px] pr-0 lg:pr-[14px]">
               <AnimatedSection
                 animationClass="slide-in-left"
                 id="block-sectionBlock-anima-in-2"
-                className="bg-white border border-[black] rounded-md max-w-[339px]  h-[153.4px]"
+                className="bg-white border border-[black] rounded-md w-[275px] lg:max-w-[339px] h-[153.4px] mb-6 md:mb-0"
               >
                 <div
                   id="sectionBlock-top-2"
-                  className=" h-[55px] justify-between flex border-b border-[black] pl-[21px] "
+                  className="h-[55px] justify-between flex border-b border-[black] pl-[21px]"
                 >
-                  <div className="flex items-center justify-center ">
-                    <h1 className="font-pp-right  text-[24px]">
+                  <div className="flex items-center justify-center">
+                    <h1 className="font-pp-right text-[18px] md:text-[24px]">
                       CLIENT RESULTS
                     </h1>
                   </div>
-
                   <div
                     id="sectionBlock-icon-2"
                     className="w-[83.8px] h-[54px] border-l border-[black] flex items-center justify-center"
@@ -60,42 +59,45 @@ export default function Section6() {
                     <img
                       src={Bubble}
                       alt="Bubble Icon"
-                      className="w-[60px] h-[31px]"
+                      className="w-[50px] md:w-[60px] h-[31px]"
                     />
                   </div>
                 </div>
                 <div
                   id="sectionBlock-bottom-2"
-                  className=" pt-[17px] pr-[21px] pl-[21px] pb-[22px] h-[96px] flex items-center justify-center"
+                  className="pt-[17px] pr-[21px] pl-[21px] pb-[22px] h-[96px] flex items-center justify-center"
                 >
                   <p
                     style={{ fontFamily: "Archivo, sans-serif" }}
-                    className=" h-[57px] text-[19px]"
+                    className="h-[57px] text-[16px] md:text-[19px]"
                   >
                     Our system works, and we’re proud to share success stories.
                   </p>
                 </div>
               </AnimatedSection>
-              <div id="block-2" className=" flex-1 h-[300px] pl-[14px]   ">
+              <div
+                id="block-2"
+                className="flex-1 h-auto md:h-[300px] pl-0 lg:pl-[14px]"
+              >
                 <h1
                   id="h1-anima-in-2"
-                  className=" h-[300px] border border-[black] rounded-[5px] pl-[33.33px]  bg-[#fff]"
+                  className="h-auto md:h-[300px] border border-[black] rounded-[5px] pl-[20px] md:pl-[33.33px] bg-[#fff]"
                 >
                   <div
-                    className="pl-[29.5px] h-[146.66px]  border-b border-[black] relative text-[133px] flex items-center"
-                    style={{ letterSpacing: "2.66px" }}
+                    className="pl-[10px] md:pl-[29.5px] h-auto md:h-[146.66px] border-b border-[black] relative   md:text-[133px] text-[50px] flex items-center"
+                    style={{ letterSpacing: "1.5px md:2.66px" }}
                   >
                     REAL PEOPLE.
                     <div id="section-couter3">
-                      <h1 className="font-pp-right text-[27px] absolute bottom-[5px] left-[5px]">
-                        02
+                      <h1 className="font-pp-right text-[20px] md:text-[27px] absolute bottom-[5px] left-[5px]">
+                        04
                       </h1>
                       <p className=""></p>
                     </div>
                   </div>
                   <div
-                    className=" h-[147.66px] text-[133px] flex items-center justify-end bg-[#fff] pr-[19px]"
-                    style={{ letterSpacing: "2.66px" }}
+                    className="h-auto md:h-[147.66px] text-[50px] md:text-[133px] flex items-center justify-end bg-[#fff] pr-[10px] md:pr-[19px]"
+                    style={{ letterSpacing: "1.5px md:2.66px" }}
                   >
                     REAL RESULTS.
                   </div>
@@ -105,7 +107,7 @@ export default function Section6() {
           </div>
           <div
             id="people-slider first-slide init"
-            className=" relative mb-[191px]"
+            className="relative mb-[191px]"
           >
             {currentSlide === 1 && (
               <Slieder1
@@ -118,19 +120,19 @@ export default function Section6() {
             {currentSlide === 3 && <Slider3 />}
             <div
               id="people-nav"
-              className=" absolute right-0 top-0 flex pr-[14px]"
+              className="absolute right-0 top-[-285px] lg:top-0 flex lg:pr-[14px]"
             >
               <span
                 id="people-navButton-left"
-                className={`w-[76px] mr-[12px] h-[76px] relative inline-flex items-center justify-center cursor-pointer rounded-[5px] bg-[#ececec] ${
+                className={`w-[40px] md:w-[50px] mr-[8px] h-[40px] md:h-[50px] relative inline-flex items-center justify-center cursor-pointer rounded-[5px] bg-[#ececec] ${
                   currentSlide === 1 ? "opacity-50 cursor-not-allowed" : ""
                 }`}
                 onClick={handlePrevious}
                 disabled={currentSlide === 1}
               >
                 <svg
-                  width="33"
-                  height="33"
+                  width="20"
+                  height="20"
                   viewBox="0 0 33 33"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -146,15 +148,15 @@ export default function Section6() {
               </span>
               <span
                 id="people-navButton-right"
-                className={`w-[76px] h-[76px] relative inline-flex items-center justify-center cursor-pointer rounded-[5px] bg-[#363639] ${
+                className={`w-[40px] md:w-[50px] h-[40px] md:h-[50px] relative inline-flex items-center justify-center cursor-pointer rounded-[5px] bg-[#363639] ${
                   currentSlide === 3 ? "opacity-50 cursor-not-allowed" : ""
                 }`}
                 onClick={handleNext}
                 disabled={currentSlide === 3}
               >
                 <svg
-                  width="33"
-                  height="33"
+                  width="20"
+                  height="20"
                   viewBox="0 0 33 33"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -169,9 +171,10 @@ export default function Section6() {
               </span>
             </div>
           </div>
+
           <div
             id="people-bottom"
-            className="h-[232px] overflow-hidden mr-[-27px] ml-[-13px]"
+            className="h-[232px] overflow-hidden lg:mr-[-27px] mr-[-12px] ml-[-13px]"
           >
             <div id="people-client-1" className="h-[110.4px]  mb-[11.4px]">
               <div
