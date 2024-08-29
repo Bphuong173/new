@@ -33,9 +33,10 @@ export const Slieder1 = ({ currentSlide, handleNext, handlePrevious }) => {
                   className="font-pp-right lg:pt-0 lg:pl-0 lg:pr-0 pt-[14px] pl-[14px] pr-[14px] lg:text-[38px] text-[20px] lg:leading-[43px] leading-[25px] lg:tracking-[1.5px] tracking-0 uppercase"
                 >
                   <h1>
-                    Patch helped us with our Google Ads and now we've seen a
-                    huge return. compared to who we were previously Patch is
-                    miles ahead more effective!
+                    "appTodo has transformed the way I manage my daily tasks.
+                    I’m more organized and productive than ever! Compared to my
+                    previous methods, appTodo has made my workflow significantly
+                    smoother and more efficient."
                   </h1>
                 </h1>
                 <div

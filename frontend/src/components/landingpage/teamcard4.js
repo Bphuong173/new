@@ -2,7 +2,7 @@ import React from "react";
 
 import DownRightIcon from "./image/arrow-down-right.svg";
 import StarBlueIcon from "./image/star-blue-circle.svg";
-import Jeremy from "./image/team_Jeremy.webp";
+import Jeremy from "./image/team-TrungAnh.png";
 export const Teamcard4 = () => {
   return (
     <div
@@ -25,13 +25,15 @@ export const Teamcard4 = () => {
           id="subheading"
           className=" mb-[11.4px] text-[30.4px] block tracking-[0.9px] leading-[28.6px] uppercase"
         >
-          Jeremy Dupont
+          Trung Anh - Marketing Specialist
         </h1>
         <p
           className=" text-[19px] leading-[28.5px]"
           style={{ fontFamily: "Archivo, sans-serif" }}
         >
-          Founder & CEO
+          Brings creativity and strategy to our marketing efforts, ensuring that
+          appTodo reaches those who need it most. Her background in digital
+          marketing helps us stay ahead of the curve.
         </p>
       </div>
       <div id="teamCard-backContent"></div>

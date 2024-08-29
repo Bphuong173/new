@@ -223,41 +223,41 @@ export default function Section5() {
                 id="rollingBanner-rail-2"
                 className=" max-w-[1440px] flex items-center text-uppercase"
               >
-                <h1>GET OFF THE COMPUTER * AND INTO A SAUNA</h1>
+                <h1>FOLLOW THROUGHT ON TASKS</h1>
                 <img src={Star} alt="Star Icon"></img>
-                <h1>PRACTICE YOGA * NOT YOUR ELEVATOR PITCH</h1>
+                <h1>Execute your tasks efficiently</h1>
                 <img src={Star} alt="Star Icon"></img>
-                <h1>GO SKIING * NOT SKIMMING EMAILS</h1>
+                <h1>Keep your tasks on track</h1>
                 <img src={Star} alt="Star Icon"></img>
-                <h1>RETURN TO HIKING * NOT HUSTLING</h1>
+                <h1>Monitor your ongoing tasks</h1>
                 <img src={Star} alt="Star Icon"></img>
-                <h1>DIVE INTO THE POOL * NOT SPREADSHEETS</h1>
+                <h1>Carry out your scheduled tasks</h1>
                 <img src={Star} alt="Star Icon"></img>
-                <h1>HIT THE GYM * NOT THE GRIND</h1>
+                <h1>Finish tasks as planned</h1>
                 <img src={Star} alt="Star Icon"></img>
-                <h1>EXPLORE NATURE * NOT SALES FUNNELS</h1>
+                <h1>Optimize task execution</h1>
                 <img src={Star} alt="Star Icon"></img>
-                <h1>Swim in the ocean * not in objectives</h1>
+                <h1>Achieve tasks seamlessly</h1>
                 <img src={Star} alt="Star Icon"></img>
-                <h1>Go paddleboarding * not profit-chasing</h1>
+                <h1> Control the pace of your work</h1>
                 <img src={Star} alt="Star Icon"></img>
-                <h1>GET OFF THE COMPUTER * AND INTO A SAUNA</h1>
+                <h1> Enhance how you finish tasks</h1>
                 <img src={Star} alt="Star Icon" />
-                <h1>Practice yoga * Not Your Elevator Pitch</h1>
+                <h1>Ensure tasks are completed</h1>
                 <img src={Star} alt="Star Icon" />
-                <h1>Go Skiing * Not Skimming Emails</h1>
+                <h1>Keep your focus on goals</h1>
                 <img src={Star} alt="Star Icon" />
-                <h1>Return to hiking * Not Hustling</h1>
+                <h1>Meet your daily task goals</h1>
                 <img src={Star} alt="Star Icon" />
-                <h1>Dive into the pool * Not Spreadsheets</h1>
+                <h1>Keep tabs on progress</h1>
                 <img src={Star} alt="Star Icon" />
-                <h1>Hit the gym * Not the Grind</h1>
+                <h1> Organize your task efforts</h1>
                 <img src={Star} alt="Star Icon" />
-                <h1>Explore Nature * Not Sales Funnels</h1>
+                <h1>Put your plans into action</h1>
                 <img src={Star} alt="Star Icon" />
-                <h1>Swim in the ocean * not in objectives</h1>
+                <h1>Put your plans into action</h1>
                 <img src={Star} alt="Star Icon" />
-                <h1>Go paddleboarding * not profit-chasing</h1>
+                <h1> Complete tasks accurately and efficiently</h1>
                 <img src={Star} alt="Star Icon" />
               </div>
             </div>
@@ -269,41 +269,41 @@ export default function Section5() {
                 id="rollingBanner-rail1"
                 className=" max-2-[1440px] flex items-center text-uppercase"
               >
-                <h1>GET OFF THE COMPUTER * AND INTO A SAUNA</h1>
+                <h1>FOLLOW THROUGHT ON TASKS</h1>
                 <img src={Star} alt="Star Icon"></img>
-                <h1>PRACTICE YOGA * NOT YOUR ELEVATOR PITCH</h1>
+                <h1>Execute your tasks efficiently</h1>
                 <img src={Star} alt="Star Icon"></img>
-                <h1>GO SKIING * NOT SKIMMING EMAILS</h1>
+                <h1>Keep your tasks on track</h1>
                 <img src={Star} alt="Star Icon"></img>
-                <h1>RETURN TO HIKING * NOT HUSTLING</h1>
+                <h1>Monitor your ongoing tasks</h1>
                 <img src={Star} alt="Star Icon"></img>
-                <h1>DIVE INTO THE POOL * NOT SPREADSHEETS</h1>
+                <h1>Carry out your scheduled tasks</h1>
                 <img src={Star} alt="Star Icon"></img>
-                <h1>HIT THE GYM * NOT THE GRIND</h1>
+                <h1>Finish tasks as planned</h1>
                 <img src={Star} alt="Star Icon"></img>
-                <h1>EXPLORE NATURE * NOT SALES FUNNELS</h1>
+                <h1>Optimize task execution</h1>
                 <img src={Star} alt="Star Icon"></img>
-                <h1>Swim in the ocean * not in objectives</h1>
+                <h1>Achieve tasks seamlessly</h1>
                 <img src={Star} alt="Star Icon"></img>
-                <h1>Go paddleboarding * not profit-chasing</h1>
+                <h1> Control the pace of your work</h1>
                 <img src={Star} alt="Star Icon"></img>
-                <h1>GET OFF THE COMPUTER * AND INTO A SAUNA</h1>
+                <h1> Enhance how you finish tasks</h1>
                 <img src={Star} alt="Star Icon" />
-                <h1>Practice yoga * Not Your Elevator Pitch</h1>
+                <h1>Ensure tasks are completed</h1>
                 <img src={Star} alt="Star Icon" />
-                <h1>Go Skiing * Not Skimming Emails</h1>
+                <h1>Keep your focus on goals</h1>
                 <img src={Star} alt="Star Icon" />
-                <h1>Return to hiking * Not Hustling</h1>
+                <h1>Meet your daily task goals</h1>
                 <img src={Star} alt="Star Icon" />
-                <h1>Dive into the pool * Not Spreadsheets</h1>
+                <h1>Keep tabs on progress</h1>
                 <img src={Star} alt="Star Icon" />
-                <h1>Hit the gym * Not the Grind</h1>
+                <h1> Organize your task efforts</h1>
                 <img src={Star} alt="Star Icon" />
-                <h1>Explore Nature * Not Sales Funnels</h1>
+                <h1>Put your plans into action</h1>
                 <img src={Star} alt="Star Icon" />
-                <h1>Swim in the ocean * not in objectives</h1>
+                <h1>Put your plans into action</h1>
                 <img src={Star} alt="Star Icon" />
-                <h1>Go paddleboarding * not profit-chasing</h1>
+                <h1> Complete tasks accurately and efficiently</h1>
                 <img src={Star} alt="Star Icon" />
               </div>
             </div>

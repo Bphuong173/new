@@ -34,8 +34,11 @@ export const Slider2 = () => {
                     className="font-pp-right text-[38px] leading-[43px] tracking-[1.5px] uppercase"
                   >
                     <h1>
-                      Patch has been great for streamlining our process and
-                      knowing where patients are in our Method Timeline.
+                      "Since I started using appTodo, my productivity has
+                      soared! I was struggling to keep track of multiple
+                      projects, but now I can prioritize my tasks effectively.
+                      The reminders help me meet deadlines without stress, and I
+                      can finally focus on my creativity."
                     </h1>
                   </h1>
                   <div

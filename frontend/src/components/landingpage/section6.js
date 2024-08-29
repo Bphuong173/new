@@ -71,7 +71,10 @@ export default function Section6() {
                     style={{ fontFamily: "Archivo, sans-serif" }}
                     className="h-[57px] text-[16px] md:text-[19px]"
                   >
-                    Our system works, and we’re proud to share success stories.
+                    Our appTodo system works, and we’re proud to share the
+                    success stories of our users. From increased productivity to
+                    better task management. Here’s what
+                    they have to say about their journey with appTodo.
                   </p>
                 </div>
               </AnimatedSection>

@@ -97,7 +97,7 @@ export default function Section8() {
                   className="text-19px] leading-[28.5px]"
                   style={{ fontFamily: "Archivo, sans-serif" }}
                 >
-                  Find what you need for your business
+                  Find what you need for your productivity needs.
                 </div>
               </div>
             </AnimatedSection>

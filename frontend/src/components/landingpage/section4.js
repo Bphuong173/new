@@ -72,7 +72,7 @@ export default function Section4() {
                         and don't have the time. Customers are slipping through
                         the cracks and we don't ever have time to notice. */}
                         To begin using the app, simply sign up with your email
-                        address and create a secure password. Follow the prompts
+                        address or create an account. Follow the prompts
                         to complete your profile and customize your experience.
                         Once you're set up, you're ready to add tasks and stay
                         organized!
@@ -134,7 +134,7 @@ export default function Section4() {
                         button. Define each project with a clear title. For each
                         project, you can create smaller tasks with specific
                         names and set time duration to ensure every detail is
-                        managed effectively.
+                        managed effectively. In addition, you can also upload your avatar to the application.
                       </p>
                     </div>
                   </div>

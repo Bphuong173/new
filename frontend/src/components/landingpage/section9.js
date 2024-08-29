@@ -12,28 +12,15 @@ export default function Section9() {
 
   const faqs = [
     {
-      title: "What does Patch do?",
+      title: "What does AppTodo do?",
       content: (
         <>
           <p>
-            Patch makes it easier for your clinics to get new patients in the
-            door. We do this in 3 ways. The first thing we do is build out your
-            back-end sales and marketing systems. We utilize technology to help
-            organize your leads, send out the right message to your potential
-            patients based on where they’re in the customer journey, and help
-            you follow up with lost leads. The second, and probably most
-            important thing we do is teach you how to utilize the software. It’s
-            one thing to have a badass system. It's a whole other thing to know
-            how to use it.
-          </p>
-          <p className="mt-[25.7px]">
-            Technology is scary. We make it easy to use with 1-on-1 onboarding
-            calls, a private Slack channel, and all the training videos. The
-            last thing we do is <strong>done for you</strong> marketing. We run
-            your Google Ads. Create quarterly email marketing campaigns. Reach
-            out to lost patients. Get your new Staff PT to 25+ sessions in under
-            2 months. Build landing pages and follow-up email sequences for your
-            local marketing events. You name it, we do it.
+            AppTodo is a comprehensive task management tool that helps you
+            organize your daily activities. With features like task
+            prioritization, deadline tracking, and collaborative options, it
+            empowers you to stay focused and productive. Whether for personal
+            use or team projects, appTodo adapts to your workflow.
           </p>
         </>
       ),
@@ -42,45 +29,34 @@ export default function Section9() {
       title: "What’s the time commitment during the program?",
       content: (
         <p>
-          There are 5 tasks you need to do on day 1. These are important. From
-          there, you’ll have a weekly 1-on-1 30-minute onboarding call
-          <em>(that you schedule during your free time)</em> where we teach you
-          exactly what you need to be doing. From there, you get weekly
-          onboarding where we build off what you learned each week. That
-          30-minute call, plus 5 to 10 minutes per day (<em>every day)</em> is
-          what’s expected from you.
+          The time commitment varies based on your goals and the complexity of
+          your tasks. On average, users spend about 15-30 minutes daily to
+          update and manage their tasks effectively. appTodo is designed to
+          integrate smoothly into your routine, making it easy to stay on track
+          without feeling overwhelmed.
         </p>
       ),
     },
     {
-      title: "Do you write all the email marketing for our business?",
+      title: "How does appTodo help with time management",
       content: (
         <>
           <p>
-            100%. Well, usually what we tell people is that we’ll write 95% of
-            the emails, but we want you to go in and put your brand and voice
-            spin on them. The hardest part of creating emails is just getting
-            started. We do all the heavy lifting, you just finish the project.
-          </p>
-          <p className="mt-[25.7px]">
-            Whats the typical Google Ads spend you suggest when getting started?
-            500$/mo is what we typically recommend. If you’re not willing to
-            invest anything more than that, your money might be best spent
-            elsewhere. Google needs a certain amount of money each month to
-            properly learn and understand what you’re trying to convert for.
-            500$ to start seems to be the sweet spot.
+            AppTodo includes features like deadline reminders, priority
+            settings, and progress tracking, which help you manage your time
+            effectively. By visualizing your tasks, you can allocate your time
+            better and focus on what’s most important.
           </p>
         </>
       ),
     },
     {
-      title: "How long until my system is up and running?",
+      title: "Can I access appTodo on mobile devices?",
       content: (
         <p>
-          If you complete all your onboarding tasks, we can get the system built
-          within the first month. The key is your onboarding. If you’re
-          committed to the 1-on-1 calls and put in your 5-10 minutes of work a
-          day, your system will be ready to go by the end of month 1.
+          Absolutely! appTodo is available on both desktop and mobile platforms,
+          allowing you to manage your tasks on the go. Whether you're at the
+          office or traveling, you can access your task list anytime, anywhere.
         </p>
       ),
     },

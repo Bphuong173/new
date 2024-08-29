@@ -93,8 +93,8 @@ export default function Section7() {
                   style={{ fontFamily: "Archivo, sans-serif" }}
                   className=" h-[57px] text-[19px]"
                 >
-                  Our band of merry marketers, assembled to make your life
-                  easier
+                  Meet our dedicated team of professionals, assembled to make
+                  your life easier.
                 </p>
               </div>
             </AnimatedSection>

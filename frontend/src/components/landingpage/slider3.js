@@ -34,8 +34,11 @@ export const Slider3 = () => {
                     className="font-pp-right text-[38px] leading-[43px] tracking-[1.5px] uppercase"
                   >
                     <h1>
-                      We actually have a pulse on our business health, have our
-                      systems in order, and our client communication streamlined
+                      "appTodo has transformed our team's workflow. We can
+                      collaborate in real time, assign tasks, and monitor
+                      progress all in one place. Our project completion rate has
+                      improved by 30%, and communication has never been
+                      smoother."
                     </h1>
                   </h1>
                   <div

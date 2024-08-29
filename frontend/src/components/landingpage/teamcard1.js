@@ -2,7 +2,7 @@ import React from "react";
 
 import DownRightIcon from "./image/arrow-down-right.svg";
 import StarBlueIcon from "./image/star-blue-circle.svg";
-import Kelly from "./image/team-Kelly.webp";
+import Kelly from "./image/team-Do.jfif";
 export const Teamcard1 = () => {
   return (
     <div
@@ -25,13 +25,14 @@ export const Teamcard1 = () => {
           id="subheading"
           className=" mb-[11.4px] text-[30.4px] block tracking-[0.9px] leading-[28.6px] uppercase"
         >
-          KELLY michal
+          Binh Do - Product Developer And Customer Success Manager
         </h1>
         <p
           className=" text-[19px] leading-[28.5px]"
           style={{ fontFamily: "Archivo, sans-serif" }}
         >
-          Client Retention & Marketing Lead
+          With a strong background in software engineering, he focuses on
+          building robust features that enhance user experience.
         </p>
       </div>
       <div id="teamCard-backContent"></div>

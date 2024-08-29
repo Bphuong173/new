@@ -9,13 +9,13 @@ export const Features2 = () => {
           <img src={Tick} alt="Tick Icon" />
         </div>
         <div className="px-[38px] flex min-w-[238px]  max-w-[238px] justify-center items-center h-[65px] pt-[20px]  align-text-left border-b border-[#ffff] pb-[20px] ">
-          <img src={Cross} alt="Tick Icon" />
+          <img src={Tick} alt="Tick Icon" />
         </div>
         <div className="px-[38px] flex min-w-[238px] max-w-[238px]  justify-center items-center h-[65px] pt-[20px]  align-text-left border-b border-[#ffff] pb-[20px] ">
           <img src={Tick} alt="Tick Icon" />
         </div>
         <div className="px-[38px] flex min-w-[238px] max-w-[238px] justify-center items-center h-[65px] pt-[20px]  align-text-left border-b border-[#ffff] pb-[20px] ">
-          <img src={Tick} alt="Tick Icon" />
+          <img src={Cross} alt="Tick Icon" />
         </div>
         <div className="px-[38px] flex min-w-[238px] max-w-[238px] justify-center items-center h-[65px] pt-[20px]  align-text-left border-b border-[#ffff] pb-[20px] ">
           <img src={Cross} alt="Tick Icon" />
