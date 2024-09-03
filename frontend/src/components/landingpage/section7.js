@@ -48,8 +48,8 @@ export default function Section7() {
               className="lg:mt-[66.6px] mt-0 lg:w-[533px] w-auto text-[23.8px] leading-[30.95px]"
               style={{ fontFamily: "Archivo, sans-serif" }}
             >
-              We know that this system works because we’ve used it to grow our
-              own PT clinic. Now, we’re here to help you with yours.
+              Our team used this system to manage tasks effectively. Now, we’re
+              ready to help you organize and complete your tasks efficiently.
             </p>
             <div id="section-couter2" className="">
               <h1 className="font-pp-right text-[27px] absolute bottom-[5px] left-[5px]">
@@ -93,8 +93,8 @@ export default function Section7() {
                   style={{ fontFamily: "Archivo, sans-serif" }}
                   className=" h-[57px] text-[19px]"
                 >
-                  Meet our dedicated team of professionals, assembled to make
-                  your life easier.
+                  Meet our team of professionals, dedicated to make your life
+                  easier.
                 </p>
               </div>
             </AnimatedSection>

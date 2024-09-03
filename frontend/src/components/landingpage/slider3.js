@@ -31,14 +31,12 @@ export const Slider3 = () => {
                 >
                   <h1
                     id="testimonial-quote"
-                    className="font-pp-right text-[38px] leading-[43px] tracking-[1.5px] uppercase"
+                    className="font-pp-right text-[29px] leading-[43px] tracking-[1.5px] uppercase"
                   >
                     <h1>
-                      "appTodo has transformed our team's workflow. We can
-                      collaborate in real time, assign tasks, and monitor
-                      progress all in one place. Our project completion rate has
-                      improved by 30%, and communication has never been
-                      smoother."
+                      "appTodo revolutionized our teamwork. Its intuitive
+                      interface lets us manage projects, set goals, and achieve
+                      faster results."
                     </h1>
                   </h1>
                   <div

@@ -16,11 +16,11 @@ export default function Section9() {
       content: (
         <>
           <p>
-            AppTodo is a comprehensive task management tool that helps you
-            organize your daily activities. With features like task
-            prioritization, deadline tracking, and collaborative options, it
-            empowers you to stay focused and productive. Whether for personal
-            use or team projects, appTodo adapts to your workflow.
+            AppTodo is a comprehensive task management tool designed to help you
+            organize daily activities. With features like task prioritization,
+            deadline tracking, and collaboration options, it empowers you to
+            stay focused and productive. Whether for personal use or team
+            projects, AppTodo adapts seamlessly to your workflow.
           </p>
         </>
       ),

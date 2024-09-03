@@ -51,7 +51,7 @@ export default function Section2() {
                 >
                   <div className="flex items-center justify-center w-auto lg:w-[253px] lg:pl-0 pl-[20px">
                     <h1 className="font-pp-right  text-[24px]">
-                      {/* THE PATCH PROMISE */} THE TODO PROMISE
+                      THE TODO PROMISE
                     </h1>
                   </div>
                   <div
@@ -120,7 +120,7 @@ export default function Section2() {
                       onMouseEnter={() => handleMouseEnter(1)}
                       onMouseLeave={handleMouseLeave}
                     >
-                      {/* BUILD YOUR MARKETING MACHINE */} EASILY ARRANGE AND MANAGE TASKS
+                      STAY FOCUSED ON GOALS
                     </h1>
                     {hoveredImage === 1 && (
                       <img
@@ -147,7 +147,7 @@ export default function Section2() {
                       onMouseEnter={() => handleMouseEnter(2)}
                       onMouseLeave={handleMouseLeave}
                     >
-                      {/* FIND MORE PATIENTS */}EASILY TRACK YOUR PROGRESS 
+                      EASILY TRACK YOUR PROGRESS
                     </h1>
                     {hoveredImage === 2 && (
                       <img
@@ -173,7 +173,7 @@ export default function Section2() {
                       onMouseEnter={() => handleMouseEnter(3)}
                       onMouseLeave={handleMouseLeave}
                     >
-                      {/* AUTOMATE YOUR CUSTOMER JOURNEY */} PLAN PROJECTS EFFECTIVELY
+                      PLAN PROJECTS EFFECTIVELY
                     </h1>
                     {hoveredImage === 3 && (
                       <img
@@ -225,7 +225,7 @@ export default function Section2() {
                       onMouseEnter={() => handleMouseEnter(5)}
                       onMouseLeave={handleMouseLeave}
                     >
-                      STAY FOCUSED ON GOALS
+                      EASILY ARRANGE AND MANAGE TASKS
                     </h1>
                     {hoveredImage === 5 && (
                       <img
@@ -277,7 +277,7 @@ export default function Section2() {
                       onMouseEnter={() => handleMouseEnter(7)}
                       onMouseLeave={handleMouseLeave}
                     >
-                      {/* SAVE 5 HOURS A WEEK */} BUILD GOOD HABITS DAILY
+                      BUILD GOOD HABITS DAILY
                     </h1>
                     {hoveredImage === 7 && (
                       <img

@@ -25,15 +25,16 @@ export const Teamcard3 = () => {
           id="subheading"
           className=" mb-[11.4px] text-[30.4px] block tracking-[0.9px] leading-[28.6px] uppercase"
         >
-          Bao Phuong - Founder & Product Developer
+          Bao Phuong
         </h1>
         <p
           className=" text-[19px] leading-[28.5px]"
           style={{ fontFamily: "Archivo, sans-serif" }}
         >
-          With experience in project management. Mr. Phuong is
+          {/* With experience in project management. Mr. Phuong is
           passionate about helping others achieve their goals through effective
-          task management.
+          task management. */}
+          Founder & Product Developer
         </p>
       </div>
       <div id="teamCard-backContent"></div>

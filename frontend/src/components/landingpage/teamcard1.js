@@ -25,14 +25,13 @@ export const Teamcard1 = () => {
           id="subheading"
           className=" mb-[11.4px] text-[30.4px] block tracking-[0.9px] leading-[28.6px] uppercase"
         >
-          Binh Do - Product Developer And Customer Success Manager
+          Binh Do
         </h1>
         <p
           className=" text-[19px] leading-[28.5px]"
           style={{ fontFamily: "Archivo, sans-serif" }}
         >
-          With a strong background in software engineering, he focuses on
-          building robust features that enhance user experience.
+          Product Developer
         </p>
       </div>
       <div id="teamCard-backContent"></div>

@@ -50,7 +50,7 @@ export default function Section4() {
                       </h1>
                     </div>
                     <h1 className="text-[50px] lg:text-[66.66px] pt-[34px] pr-[31px] pb-[34px] pl-[31px]">
-                      {/* STOP THE LEAK */} CREATE ACCOUNT
+                      CREATE ACCOUNT
                     </h1>
                   </div>
                   <div
@@ -61,21 +61,16 @@ export default function Section4() {
                       id="subheading"
                       className="lg:mb-[19px] text-[23px] lg:text-[28.5px] "
                     >
-                      {/* CUSTOM MARKETING PLAN */} GET STARTED EASILY
+                      GET STARTED EASILY
                     </h1>
                     <div id="body body-large" className="">
                       <p
                         style={{ fontFamily: "Archivo, sans-serif" }}
-                        className="text-[16px] lg:leading-0 leading-[20px] lg:text-[23.8px]"
+                        className="lg:text-[23.8px] text-[16px]"
                       >
-                        {/* Most business owners are too busy to focus on marketing
-                        and don't have the time. Customers are slipping through
-                        the cracks and we don't ever have time to notice. */}
-                        To begin using the app, simply sign up with your email
-                        address or create an account. Follow the prompts
-                        to complete your profile and customize your experience.
-                        Once you're set up, you're ready to add tasks and stay
-                        organized!
+                        Sign up with your email, complete your profile,
+                        customize your experience. Once set up, add tasks and
+                        stay organized with the app!
                       </p>
                     </div>
                   </div>
@@ -112,7 +107,7 @@ export default function Section4() {
                       </h1>
                     </div>
                     <h1 className="lg:text-[66.66px] text-[50px] pt-[34px] pr-[31px] pb-[34px] pl-[31px] leading-[57px]">
-                      {/* BUILD A BETTER BUCKET */} ADD YOUR TASKS
+                      ADD YOUR TASKS
                     </h1>
                   </div>
                   <div
@@ -120,21 +115,17 @@ export default function Section4() {
                     className="lg:pt-[30px] pr-[25px] pb-[30px] pl-[25px]"
                   >
                     <h1 id="subheading-1" className="mb-[19px] text-[28.5px]">
-                      {/* BUILDING THE SYSTEM */} ORGANIZING YOUR WORKFLOW
+                      ORGANIZING YOUR WORKFLOW
                     </h1>
                     <div id="body body-large-1" className="w">
                       <p
                         style={{ fontFamily: "Archivo, sans-serif" }}
                         className="lg:text-[23.8px] text-[16px]"
                       >
-                        {/* Quarterly marketing campaigns, email nurture sequences,
-                        and customer funnels all built for you 100% hands off.
-                        We'll find the customers, you focus on your business. */}
-                        Easily input your tasks by clicking the "Add Project"
-                        button. Define each project with a clear title. For each
-                        project, you can create smaller tasks with specific
-                        names and set time duration to ensure every detail is
-                        managed effectively. In addition, you can also upload your avatar to the application.
+                        Easily add tasks by clicking "Add Project." Define each
+                        project with a clear title and create smaller tasks with
+                        specific names and durations to manage details
+                        effectively.
                       </p>
                     </div>
                   </div>
@@ -176,7 +167,7 @@ export default function Section4() {
                       </h1>
                     </div>
                     <h1 className="lg:text-[66.66px] text-[50px] pt-[34px] pr-[31px] pb-[34px] pl-[31px] leading-[57px]">
-                      {/* OVERFILL THE BUCKET */} TRACK YOUR TASKS
+                      TRACK YOUR TASKS
                     </h1>
                   </div>
                   <div
@@ -184,21 +175,17 @@ export default function Section4() {
                     className="lg:pt-[30px] pr-[25px] pb-[30px] pl-[25px]"
                   >
                     <h1 id="subheading-2" className="mb-[19px] text-[28.5px]">
-                      {/* REACH NEW HEIGHTS */} STAY ON TOP OF YOUR PROGRESS
+                      STAY ON TOP OF YOUR PROGRESS
                     </h1>
                     <div id="body body-large-2" className="">
                       <p
                         style={{ fontFamily: "Archivo, sans-serif" }}
                         className="lg:text-[23.8px] text-[16px]"
                       >
-                        {/* With the Patch system in place, ads, marketing, and SEO
-                        will be flowing. You can expect a lot of new faces to
-                        walk in the door. */}
-                        Monitor your task completion with ease. Use the
-                        dashboard to view all tasks, check off completed ones,
-                        and see what's still pending. Regularly reviewing your
-                        progress will help you identify areas for improvement
-                        and keep you motivated.
+                        Easily monitor task completion using the dashboard to
+                        view, check off completed tasks, and see pending ones.
+                        Regular reviews help identify improvement areas and
+                        maintain motivation.
                       </p>
                     </div>
                   </div>

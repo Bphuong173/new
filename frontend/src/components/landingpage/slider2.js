@@ -31,14 +31,11 @@ export const Slider2 = () => {
                 >
                   <h1
                     id="testimonial-quote"
-                    className="font-pp-right text-[38px] leading-[43px] tracking-[1.5px] uppercase"
+                    className="font-pp-right text-[29px] leading-[43px] tracking-[1.5px] uppercase"
                   >
                     <h1>
-                      "Since I started using appTodo, my productivity has
-                      soared! I was struggling to keep track of multiple
-                      projects, but now I can prioritize my tasks effectively.
-                      The reminders help me meet deadlines without stress, and I
-                      can finally focus on my creativity."
+                      "Since using appTodo, my productivity soared! I prioritize
+                      tasks, meet deadlines, and focus on creativity."
                     </h1>
                   </h1>
                   <div

@@ -25,15 +25,16 @@ export const Teamcard2 = () => {
           id="subheading"
           className=" mb-[11.4px] text-[30.4px] block tracking-[0.9px] leading-[28.6px] uppercase"
         >
-          Nhat Tanh - Product Developer
+          Nhat Tanh
         </h1>
         <p
           className=" text-[19px] leading-[28.5px]"
           style={{ fontFamily: "Archivo, sans-serif" }}
         >
-          Mr. Tanh is the mastermind behind appTodo’s features. His technical expertise
+          {/* Mr. Tanh is the mastermind behind appTodo’s features. His technical expertise
           and user-focused design approach ensure that our app remains intuitive
-          and efficient. 
+          and efficient.  */}
+          Product Developer
         </p>
       </div>
       <div id="teamCard-backContent"></div>

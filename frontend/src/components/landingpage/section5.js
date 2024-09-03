@@ -39,7 +39,7 @@ export default function Section5() {
                     repeatType: "loop",
                   }}
                 >
-                  {/* GET BACK */} MANAGE YOUR TASKS
+                  MANAGE YOUR
                 </motion.h1>
                 <motion.h1
                   id="h-line1"
@@ -53,7 +53,7 @@ export default function Section5() {
                     delay: 0.1,
                   }}
                 >
-                  {/* TO WHAT */} EASILY ADD, EDIT
+                  TASKS MASTER
                 </motion.h1>
                 <div id="h-line2" className="text-[50px] lg:text-[133px] flex">
                   <motion.h1
@@ -66,7 +66,7 @@ export default function Section5() {
                       delay: 0.2,
                     }}
                   >
-                    {/* YOU */} AND
+                    {/* YOU */}YOUR
                   </motion.h1>
                   <motion.h1
                     className="w-[275px] h-[113px] bg-[#fff] flex items-center justify-center rounded-[10px]"
@@ -79,7 +79,7 @@ export default function Section5() {
                       delay: 0.3,
                     }}
                   >
-                    {/* LOVE */} DELETE
+                    TIME
                   </motion.h1>
                 </div>
               </div>
@@ -88,14 +88,9 @@ export default function Section5() {
                 id="subeading"
                 className="lg:text-[47.6px] text-[30px] leading-[52px] lg:pt-[40px]"
               >
-                {/* SPEND TIME WITH YOUR PATIENTS. */}
-                Stay organized by managing your tasks effortlessly. You can
-                easily add new tasks, edit existing ones, or delete tasks that
-                are no longer needed. 
+                Manage tasks and upload avatar.
                 <br></br>
-                {/* NOT WITH YOUR EMAIL. */}
-                This flexibility ensures your task list is
-                always up to date, allowing you to focus on what truly matters.
+                Keep tasks up to date.
               </h1>
             </div>
             <AnimatedSection
@@ -108,7 +103,7 @@ export default function Section5() {
                 className="w-[359px] h-[55px] border-b border-[black] flex"
               >
                 <h1 className="text-[23.8px] w-[277.5px] flex items-center justify-center">
-                  {/* 100% DONE FOR YOU. */} FULLY MANAGED FOR YOU
+                  FULLY MANAGED FOR YOU
                 </h1>
                 <div
                   id="sectionBlock-Icon"
@@ -126,11 +121,7 @@ export default function Section5() {
                   style={{ fontFamily: "Archivo, sans-serif" }}
                   className="text-[19px]"
                 >
-                  <div className="">
-                    {" "}
-                    {/* Our team of experts will create custom content made just for
-                    you: */} YOUR TASK MANAGEMENT MADE SIMPLE:
-                  </div>
+                  <div className=""> YOUR TASK MANAGEMENT MADE SIMPLE:</div>
 
                   <ul className="pl-[19px] mt-[17px]  h-[104px] w-[317px] leading-[36px]">
                     <ul>
@@ -139,8 +130,8 @@ export default function Section5() {
                         alt="Bullet Icon"
                         className="w-[9.5px] h-[9.5px] absolute left-[20px] top-[93px]"
                       />
-                      {/* <l1>Quarterly Marketing Campaigns</l1> */}
-                      <li>Add new Task: enter new tasks</li>
+
+                      <li>Add new Task</li>
                     </ul>
                     <ul>
                       <img
@@ -148,8 +139,8 @@ export default function Section5() {
                         alt="Bullet Icon"
                         className="w-[9.5px] h-[9.5px] absolute left-[20px] top-[130px]"
                       />
-                      {/* <l1>Email Nurture Sequences</l1> */}
-                      <l1>Edit Tasks: Update details task </l1>
+
+                      <l1> Update details task </l1>
                     </ul>
                     <ul>
                       <img
@@ -157,8 +148,10 @@ export default function Section5() {
                         alt="Bullet Icon"
                         className="w-[9.5px] h-[9.5px] absolute left-[20px] top-[167px]"
                       />
-                      {/* <l1>Funnel Builds for Local Events</l1> */}
-                      <l1>Delete Task: Remove completed or unnecessary tasks</l1>
+
+                      <l1>
+                        Remove completed or unnecessary tasks
+                      </l1>
                     </ul>
                   </ul>
                 </div>
