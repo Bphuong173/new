@@ -75,7 +75,11 @@ export default function Section1() {
                 className="w-[3.5rem] h-[1.8rem]"
               />
               <h1 className="uppercase tracking-[0.03em] text-[1.2rem] text-[aliceblue] h-[1.5rem] font-pp-right">
+
                 MANAGE YOUR TIME EFFORTLESSLY
+
+                PATCH UP YOUR MARKETING
+
               </h1>
             </AnimatedSection>
             <AnimatedSection
@@ -95,7 +99,11 @@ export default function Section1() {
               animationClass="slide-in-right"
             >
               <h1 className="uppercase tracking-[0.03em] text-[1.2rem] text-[aliceblue] h-[1.5rem] font-pp-right">
+
                 LIVE MORE EFFECTIVELY
+
+                GROW YOUR BUSINESS
+
               </h1>
               <img
                 src={VenIcon}
