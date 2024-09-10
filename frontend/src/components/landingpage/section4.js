@@ -50,7 +50,11 @@ export default function Section4() {
                       </h1>
                     </div>
                     <h1 className="text-[50px] lg:text-[66.66px] pt-[34px] pr-[31px] pb-[34px] pl-[31px]">
+
+                      CREATE ACCOUNT
+
                       STOP THE LEAK
+
                     </h1>
                   </div>
                   <div
@@ -61,16 +65,24 @@ export default function Section4() {
                       id="subheading"
                       className="lg:mb-[19px] text-[23px] lg:text-[28.5px] "
                     >
+
+                      GET STARTED EASILY
+
                       CUSTOM MARKETING PLAN
+
                     </h1>
                     <div id="body body-large" className="">
                       <p
                         style={{ fontFamily: "Archivo, sans-serif" }}
+
+                        className="lg:text-[23.8px] text-[16px]"
+
                         className="text-[16px] lg:leading-0 leading-[20px] lg:text-[23.8px]"
+
                       >
-                        Most business owners are too busy to focus on marketing
-                        and don't have the time. Customers are slipping through
-                        the cracks and we don't ever have time to notice.
+                        Sign up with your email, complete your profile,
+                        customize your experience. Once set up, add tasks and
+                        stay organized with the app!
                       </p>
                     </div>
                   </div>
@@ -107,7 +119,11 @@ export default function Section4() {
                       </h1>
                     </div>
                     <h1 className="lg:text-[66.66px] text-[50px] pt-[34px] pr-[31px] pb-[34px] pl-[31px] leading-[57px]">
+
+                      ADD YOUR TASKS
+
                       BUILD A BETTER BUCKET
+
                     </h1>
                   </div>
                   <div
@@ -115,16 +131,21 @@ export default function Section4() {
                     className="lg:pt-[30px] pr-[25px] pb-[30px] pl-[25px]"
                   >
                     <h1 id="subheading-1" className="mb-[19px] text-[28.5px]">
+
+                      ORGANIZING YOUR WORKFLOW
+
                       BUILDING THE SYSTEM
+
                     </h1>
                     <div id="body body-large-1" className="w">
                       <p
                         style={{ fontFamily: "Archivo, sans-serif" }}
                         className="lg:text-[23.8px] text-[16px]"
                       >
-                        Quarterly marketing campaigns, email nurture sequences,
-                        and customer funnels all built for you 100% hands off.
-                        We'll find the customers, you focus on your business.
+                        Easily add tasks by clicking "Add Project." Define each
+                        project with a clear title and create smaller tasks with
+                        specific names and durations to manage details
+                        effectively.
                       </p>
                     </div>
                   </div>
@@ -166,7 +187,11 @@ export default function Section4() {
                       </h1>
                     </div>
                     <h1 className="lg:text-[66.66px] text-[50px] pt-[34px] pr-[31px] pb-[34px] pl-[31px] leading-[57px]">
+
+                      TRACK YOUR TASKS
+
                       OVERFILL THE BUCKET
+
                     </h1>
                   </div>
                   <div
@@ -174,16 +199,21 @@ export default function Section4() {
                     className="lg:pt-[30px] pr-[25px] pb-[30px] pl-[25px]"
                   >
                     <h1 id="subheading-2" className="mb-[19px] text-[28.5px]">
+
+                      STAY ON TOP OF YOUR PROGRESS
+
                       REACH NEW HEIGHTS
+
                     </h1>
                     <div id="body body-large-2" className="">
                       <p
                         style={{ fontFamily: "Archivo, sans-serif" }}
                         className="lg:text-[23.8px] text-[16px]"
                       >
-                        With the Patch system in place, ads, marketing, and SEO
-                        will be flowing. You can expect a lot of new faces to
-                        walk in the door.
+                        Easily monitor task completion using the dashboard to
+                        view, check off completed tasks, and see pending ones.
+                        Regular reviews help identify improvement areas and
+                        maintain motivation.
                       </p>
                     </div>
                   </div>

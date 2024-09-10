@@ -51,7 +51,7 @@ export default function Section2() {
                 >
                   <div className="flex items-center justify-center w-auto lg:w-[253px] lg:pl-0 pl-[20px">
                     <h1 className="font-pp-right  text-[24px]">
-                      THE PATCH PROMISE
+                      THE TODO PROMISE
                     </h1>
                   </div>
                   <div
@@ -73,8 +73,7 @@ export default function Section2() {
                     style={{ fontFamily: "Archivo, sans-serif" }}
                     className="lg:w-[295px] w-auto lg:pl-0 pl-[5px] h-[57px] text-[19px]"
                   >
-                    Never worry about having enough customers. We got you
-                    covered.
+                    "Stay organized and achieve your goals easily!"
                   </p>
                 </div>
               </AnimatedSection>
@@ -121,7 +120,7 @@ export default function Section2() {
                       onMouseEnter={() => handleMouseEnter(1)}
                       onMouseLeave={handleMouseLeave}
                     >
-                      BUILD YOUR MARKETING MACHINE
+                      STAY FOCUSED ON GOALS
                     </h1>
                     {hoveredImage === 1 && (
                       <img
@@ -148,7 +147,7 @@ export default function Section2() {
                       onMouseEnter={() => handleMouseEnter(2)}
                       onMouseLeave={handleMouseLeave}
                     >
-                      FIND MORE PATIENTS
+                      EASILY TRACK YOUR PROGRESS
                     </h1>
                     {hoveredImage === 2 && (
                       <img
@@ -174,7 +173,7 @@ export default function Section2() {
                       onMouseEnter={() => handleMouseEnter(3)}
                       onMouseLeave={handleMouseLeave}
                     >
-                      AUTOMATE YOUR CUSTOMER JOURNEY
+                      PLAN PROJECTS EFFECTIVELY
                     </h1>
                     {hoveredImage === 3 && (
                       <img
@@ -200,7 +199,7 @@ export default function Section2() {
                       onMouseEnter={() => handleMouseEnter(4)}
                       onMouseLeave={handleMouseLeave}
                     >
-                      DOUBLE YOUR MONTHLY REVENUE
+                      BOOST PRODUCTIVITY LEVELS
                     </h1>
                     {hoveredImage === 4 && (
                       <img
@@ -226,7 +225,7 @@ export default function Section2() {
                       onMouseEnter={() => handleMouseEnter(5)}
                       onMouseLeave={handleMouseLeave}
                     >
-                      DONE FOR YOUR EMAIL MARKETING
+                      EASILY ARRANGE AND MANAGE TASKS
                     </h1>
                     {hoveredImage === 5 && (
                       <img
@@ -252,7 +251,7 @@ export default function Section2() {
                       onMouseEnter={() => handleMouseEnter(6)}
                       onMouseLeave={handleMouseLeave}
                     >
-                      5X YOUR GOOGLE ADS SPEND
+                      CUSTOMIZABLE TASK LISTS
                     </h1>
                     {hoveredImage === 6 && (
                       <img
@@ -278,7 +277,7 @@ export default function Section2() {
                       onMouseEnter={() => handleMouseEnter(7)}
                       onMouseLeave={handleMouseLeave}
                     >
-                      SAVE 5 HOURS A WEEK
+                      BUILD GOOD HABITS DAILY
                     </h1>
                     {hoveredImage === 7 && (
                       <img

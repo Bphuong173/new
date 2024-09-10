@@ -57,7 +57,11 @@ export default function Section3() {
                   className="border border-black rounded-[5px] pr-[17px] leading-[146.3px] bg-[#fff]"
                 >
                   <div className="pl-[29.5px] border-b border-black relative text-[100px] lg:text-[133px] flex items-center">
+
+                    THE TODO APP
+
                     THE PATCH
+
                     <div id="section-couter1">
                       <h1 className="font-pp-right">02</h1>
                       <p className=""></p>
@@ -72,7 +76,11 @@ export default function Section3() {
 
             <div
               id="col-1-image"
+
+              className="w-full ml-[14px] lg:w-[429.5px] bg-[#FFFF] flex items-center rounded-[5px] mt-4 lg:mt-0"
+
               className="w-full lg:w-[429.5px] bg-[#FFFF] flex items-center rounded-[5px] mt-4 lg:mt-0"
+
             >
               <img
                 src={Process}

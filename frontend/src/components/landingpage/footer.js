@@ -65,7 +65,7 @@ export default function Footer() {
                 <div class="footer-subscribe flex-1">
                   <p class=" mb-[4.7px]">
                     {" "}
-                    Stay up to date with all things Patch
+                    Stay up to date with all things AppTodo
                   </p>
                   <div class="subscribe h-[81px] w-full relative flex">
                     <input
@@ -114,7 +114,7 @@ export default function Footer() {
                       href="mailto:hello@patchsystem.com"
                       class="footer-link underlink break-all"
                     >
-                      hello@patchsystem.com
+                      hello@apptodo.com
                     </a>
                   </p>
                 </div>
@@ -125,7 +125,7 @@ export default function Footer() {
                       href="https://thepatchsystem.com/marketing-freebie"
                       class="footer-link underlink"
                     >
-                      Year Marketing Calender
+                      Your Productivity Calendar
                     </a>
                   </p>
                   <p>
@@ -133,7 +133,7 @@ export default function Footer() {
                       href="https://thepatchsystem.com/phone-sales-course"
                       class="footer-link underlink"
                     >
-                      Phone Sales Course
+                      Task Management Guide
                     </a>
                   </p>
                 </div>
@@ -158,7 +158,7 @@ export default function Footer() {
             >
               <p>Terms and Privacy</p>
             </a>
-            <p>Copyright Patch System 2024</p>
+            <p>Copyright AppTodo System 2024</p>
             <a href="https://thepatchsystem.com/#top" class="underlink ">
               <p>back to top</p>
             </a>

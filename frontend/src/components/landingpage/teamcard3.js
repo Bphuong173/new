@@ -2,7 +2,7 @@ import React from "react";
 
 import DownRightIcon from "./image/arrow-down-right.svg";
 import StarBlueIcon from "./image/star-blue-circle.svg";
-import Ally from "./image/team_Ally.webp";
+import Ally from "./image/team-Phuong.jpg";
 export const Teamcard3 = () => {
   return (
     <div
@@ -25,13 +25,16 @@ export const Teamcard3 = () => {
           id="subheading"
           className=" mb-[11.4px] text-[30.4px] block tracking-[0.9px] leading-[28.6px] uppercase"
         >
-          ALLY MILLS
+          Bao Phuong
         </h1>
         <p
           className=" text-[19px] leading-[28.5px]"
           style={{ fontFamily: "Archivo, sans-serif" }}
         >
-          Chief Operating Officer
+          {/* With experience in project management. Mr. Phuong is
+          passionate about helping others achieve their goals through effective
+          task management. */}
+          Founder & Product Developer
         </p>
       </div>
       <div id="teamCard-backContent"></div>

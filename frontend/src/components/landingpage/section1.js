@@ -49,7 +49,7 @@ export default function Section1() {
               animate={{ scale: 1 }}
               transition={{ duration: 1 }}
             >
-              THE EASIEST WAY TO
+              SIMPLIFY YOUR TASKS
             </motion.span>
             <motion.span
               className="text-[10vw] text-[aliceblue]  leading-tight"
@@ -57,7 +57,7 @@ export default function Section1() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.5 }}
             >
-              GET MORE PATIENTS
+              ACHIEVE MORE
             </motion.span>
           </h1>
           <div
@@ -75,7 +75,11 @@ export default function Section1() {
                 className="w-[3.5rem] h-[1.8rem]"
               />
               <h1 className="uppercase tracking-[0.03em] text-[1.2rem] text-[aliceblue] h-[1.5rem] font-pp-right">
+
+                MANAGE YOUR TIME EFFORTLESSLY
+
                 PATCH UP YOUR MARKETING
+
               </h1>
             </AnimatedSection>
             <AnimatedSection
@@ -95,7 +99,11 @@ export default function Section1() {
               animationClass="slide-in-right"
             >
               <h1 className="uppercase tracking-[0.03em] text-[1.2rem] text-[aliceblue] h-[1.5rem] font-pp-right">
+
+                LIVE MORE EFFECTIVELY
+
                 GROW YOUR BUSINESS
+
               </h1>
               <img
                 src={VenIcon}
@@ -121,8 +129,8 @@ export default function Section1() {
               animationClass="slide-in-bottom"
               style={{ fontFamily: "Archivo, sans-serif" }}
             >
-              Automate your marketing with our custom built CRM systems for
-              clinic owners.
+              Set goals to pave your path, achieve dreams to fulfill your
+              potential.
             </AnimatedSection>
             <AnimatedSection
               id="homeHeader-bottom-iconRight"

@@ -2,7 +2,7 @@ import React from "react";
 
 import DownRightIcon from "./image/arrow-down-right.svg";
 import StarBlueIcon from "./image/star-blue-circle.svg";
-import Angel from "./image/team_Angel.webp";
+import Angel from "./image/team-Tanh.jpg";
 export const Teamcard2 = () => {
   return (
     <div
@@ -25,13 +25,16 @@ export const Teamcard2 = () => {
           id="subheading"
           className=" mb-[11.4px] text-[30.4px] block tracking-[0.9px] leading-[28.6px] uppercase"
         >
-          Ángel lópez
+          Nhat Tanh
         </h1>
         <p
           className=" text-[19px] leading-[28.5px]"
           style={{ fontFamily: "Archivo, sans-serif" }}
         >
-          Hubspot Ninja
+          {/* Mr. Tanh is the mastermind behind appTodo’s features. His technical expertise
+          and user-focused design approach ensure that our app remains intuitive
+          and efficient.  */}
+          Product Developer
         </p>
       </div>
       <div id="teamCard-backContent"></div>
