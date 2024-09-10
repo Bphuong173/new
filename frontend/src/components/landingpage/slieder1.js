@@ -30,7 +30,11 @@ export const Slieder1 = ({ currentSlide, handleNext, handlePrevious }) => {
               >
                 <h1
                   id="testimonial-quote"
+
                   className="font-pp-right lg:pt-0 lg:pl-0 lg:pr-0 pt-[14px] pl-[14px] pr-[14px] lg:text-[29px] text-[20px] lg:leading-[43px] leading-[25px] lg:tracking-[1.5px] tracking-0 uppercase"
+
+                  className="font-pp-right lg:pt-0 lg:pl-0 lg:pr-0 pt-[14px] pl-[14px] pr-[14px] lg:text-[38px] text-[20px] lg:leading-[43px] leading-[25px] lg:tracking-[1.5px] tracking-0 uppercase"
+
                 >
                   <h1>
                     "appTodo transformed our workflow. Real-time collaboration,
