@@ -151,7 +151,7 @@ export default function Footer() {
               </div>
             </div>
           </div>
-          <div className=" flex justify-between items-center  p-[9.5px_38px] text-[9.5px] uppercase tracking-[0.95px] leading-[14.2px] bg-[#212121] text-[#fff] rounded-[5px] w-auto h-[47.62px] mt-[4.7px] lg:w-full absolute lg:relative lg:top-0 top-[710px]">
+          <div className=" flex justify-between items-center  p-[9.5px_38px] text-[9.5px] uppercase tracking-[0.95px] leading-[14.2px] bg-[#212121] text-[#fff] rounded-[5px] w-auto h-[47.62px] mt-[4.7px] lg:w-full lg:mr-0 mr-[5px] absolute lg:relative lg:top-0 top-[710px]">
             <a
               href="https://thepatchsystem.com/terms-privacy"
               class="underlink "

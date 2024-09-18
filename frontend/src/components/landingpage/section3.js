@@ -56,18 +56,18 @@ export default function Section3() {
                   id="h1-anima-in"
                   className="border border-black rounded-[5px] pr-[17px] leading-[146.3px] bg-[#fff]"
                 >
-                  <div className="pl-[29.5px] border-b border-black relative text-[100px] lg:text-[133px] flex items-center">
-
-                    THE TODO APP
-
-                    THE PATCH
+                  <div className="pl-[20px] border-b border-black relative text-[90px] lg:text-[133px] flex items-center">
+                    <div className="lg:flex">
+                      <h1 className="lg:h-0 h-[100px]">TODO </h1>
+                      <h1 className="lg:pl-0 pl-[100px]">APP</h1>
+                    </div>
 
                     <div id="section-couter1">
                       <h1 className="font-pp-right">02</h1>
                       <p className=""></p>
                     </div>
                   </div>
-                  <div className="lg:text-[133px] text-[120px] flex items-center justify-end bg-[#fff]">
+                  <div className="lg:text-[133px] text-[100px] flex items-center justify-end bg-[#fff]">
                     SYSTEM
                   </div>
                 </h1>
@@ -76,11 +76,7 @@ export default function Section3() {
 
             <div
               id="col-1-image"
-
-              className="w-full ml-[14px] lg:w-[429.5px] bg-[#FFFF] flex items-center rounded-[5px] mt-4 lg:mt-0"
-
-              className="w-full lg:w-[429.5px] bg-[#FFFF] flex items-center rounded-[5px] mt-4 lg:mt-0"
-
+              className="w-full lg:ml-[14px] lg:w-[429.5px] bg-[#FFFF] flex items-center rounded-[5px] mt-4 lg:mt-0"
             >
               <img
                 src={Process}

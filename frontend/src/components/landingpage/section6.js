@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Bubble from "./image/icon-bubble.svg";
 import backgroundImage from "./image/background-grid.svg";
-import { Slieder1 } from "./slieder1";
+import { Slider1 } from "./slider1";
 import { Slider2 } from "./slider2";
 import { Slider3 } from "./slider3";
 import Logo1 from "./image/logo1.webp";
@@ -69,9 +69,10 @@ export default function Section6() {
                 >
                   <p
                     style={{ fontFamily: "Archivo, sans-serif" }}
-                    className="h-[57px] text-[16px] md:text-[19px]"
+                    className="h-[57px] text-[16px] "
                   >
-                    Our appTodo system boosts productivity through better task management.
+                    Our appTodo system boosts productivity through better task
+                    management.
                   </p>
                 </div>
               </AnimatedSection>
@@ -110,7 +111,7 @@ export default function Section6() {
             className="relative mb-[191px]"
           >
             {currentSlide === 1 && (
-              <Slieder1
+              <Slider1
                 currentSlide={currentSlide}
                 handleNext={handleNext}
                 handlePrevious={handlePrevious}

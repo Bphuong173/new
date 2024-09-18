@@ -49,7 +49,7 @@ export default function Section2() {
                   id="sectionBlock-top"
                   className="lg:w-[337px] w-auto h-[55px] flex justify-between border-b border-black lg:pl-0 pl-[15px"
                 >
-                  <div className="flex items-center justify-center w-auto lg:w-[253px] lg:pl-0 pl-[20px">
+                  <div className="flex items-center justify-center w-auto lg:w-[253px] lg:pl-0 pl-[20px]">
                     <h1 className="font-pp-right  text-[24px]">
                       THE TODO PROMISE
                     </h1>
@@ -110,7 +110,7 @@ export default function Section2() {
                   >
                     <h1
                       id="inside"
-                      className="font-pp-right w-[36px] h-[36px] border border-black text-sm lg:text-[19px] flex items-center justify-center absolute top-[160px] left-[75px] lg:-ml-0 -ml-[50px]"
+                      className="font-pp-right w-[36px] h-[36px] border border-black text-sm lg:text-[19px] flex items-center justify-center absolute lg:top-[175px] left-[75px] lg:-ml-0 -ml-[50px] top-[179px]"
                     >
                       01
                     </h1>
@@ -126,7 +126,7 @@ export default function Section2() {
                       <img
                         src={images[0]}
                         alt="Promise 1"
-                        className=" absolute w-[200px] h-[230px] right-[10px] top-[110px] lg:hidden sm:block"
+                        className=" absolute w-[180px] lg:pl-0 pl-[20px] h-[200px] right-[10px] lg:top-[110px] top-[127px] lg:hidden sm:block"
                       />
                     )}
                   </div>
@@ -137,7 +137,7 @@ export default function Section2() {
                   >
                     <h1
                       id="inside1"
-                      className="font-pp-right w-[36px] h-[36px] border border-black text-sm lg:text-[19px] flex items-center justify-center absolute left-[75px] top-[390px] lg:-ml-0 -ml-[50px]"
+                      className="font-pp-right w-[36px] h-[36px] border border-black text-sm lg:text-[19px] flex items-center justify-center absolute left-[75px] top-[380px] lg:-ml-0 -ml-[50px]"
                     >
                       02
                     </h1>
@@ -153,7 +153,7 @@ export default function Section2() {
                       <img
                         src={images[1]}
                         alt="Promise 2"
-                        className=" absolute w-[200px] h-[230px] right-[10px] top-[270px] lg:hidden sm:block"
+                        className=" absolute w-[180px] h-[200px] lg:pl-0 pl-[20px] right-[10px] lg:top-[270px] top-[315px] lg:hidden sm:block"
                       />
                     )}
                   </div>
@@ -163,7 +163,7 @@ export default function Section2() {
                   >
                     <h1
                       id="inside2"
-                      className="font-pp-right w-[36px] h-[36px] border border-black text-sm lg:text-[19px] flex items-center justify-center absolute left-[75px] top-[550px] lg:-ml-0 -ml-[50px]"
+                      className="font-pp-right w-[36px] h-[36px] border border-black text-sm lg:text-[19px] flex items-center justify-center absolute left-[75px] lg:top-[587px] lg:-ml-0 -ml-[50px] top-[580px]"
                     >
                       03
                     </h1>
@@ -179,7 +179,7 @@ export default function Section2() {
                       <img
                         src={images[2]}
                         alt="Promise 3"
-                        className=" absolute w-[200px] h-[230px] right-[10px] top-[490px] lg:hidden sm:block"
+                        className=" absolute w-[180px] h-[200px] right-[10px] lg:top-[490px] lg:pl-0 pl-[20px] top-[520px] lg:hidden sm:block"
                       />
                     )}
                   </div>
@@ -189,7 +189,7 @@ export default function Section2() {
                   >
                     <h1
                       id="inside3"
-                      className="font-pp-right w-[36px] h-[36px] border border-black text-sm lg:text-[19px] flex items-center justify-center absolute left-[75px] top-[780px] lg:-ml-0 -ml-[50px]"
+                      className="font-pp-right w-[36px] h-[36px] border border-black text-sm lg:text-[19px] flex items-center justify-center absolute left-[75px] lg:top-[794px] lg:-ml-0 -ml-[50px] top-[780px]"
                     >
                       04
                     </h1>
@@ -205,7 +205,7 @@ export default function Section2() {
                       <img
                         src={images[3]}
                         alt="Promise 4"
-                        className=" absolute w-[200px] h-[230px] right-[10px] top-[700px] lg:hidden sm:block"
+                        className=" absolute w-[160px] h-[180px] right-[10px] lg:pl-0 pl-[20px] top-[720px] lg:top-[700px] lg:hidden sm:block"
                       />
                     )}
                   </div>
@@ -215,7 +215,7 @@ export default function Section2() {
                   >
                     <h1
                       id="inside4"
-                      className="font-pp-right w-[36px] h-[36px] border border-black text-sm lg:text-[19px] flex items-center justify-center absolute left-[75px] top-[980px] lg:-ml-0 -ml-[50px]"
+                      className="font-pp-right w-[36px] h-[36px] border border-black text-sm lg:text-[19px] flex items-center justify-center absolute left-[75px] lg:top-[999px] lg:-ml-0 -ml-[50px] top-[982px]"
                     >
                       05
                     </h1>
@@ -231,7 +231,7 @@ export default function Section2() {
                       <img
                         src={images[4]}
                         alt="Promise 5"
-                        className=" absolute w-[200px] h-[230px] right-[10px] top-[930px] lg:hidden sm:block"
+                        className=" absolute w-[180px] h-[200px] right-[10px] top-[955px] lg:top-[930px] lg:hidden sm:block"
                       />
                     )}
                   </div>
@@ -241,7 +241,7 @@ export default function Section2() {
                   >
                     <h1
                       id="inside5"
-                      className="font-pp-right w-[36px] h-[36px] border border-black text-sm lg:text-[19px] flex items-center justify-center absolute left-[75px] top-[1190px] lg:-ml-0 -ml-[50px]"
+                      className="font-pp-right w-[36px] h-[36px] border border-black text-sm lg:text-[19px] flex items-center justify-center absolute left-[75px] lg:top-[1206px] lg:-ml-0 -ml-[50px] top-[1274px]"
                     >
                       06
                     </h1>
@@ -257,7 +257,7 @@ export default function Section2() {
                       <img
                         src={images[5]}
                         alt="Promise 6"
-                        className=" absolute w-[200px] h-[230px] right-[10px] top-[1150px] lg:hidden sm:block"
+                        className=" absolute w-[170px] h-[200px] right-[10px] top-[1200px] lg:pl-0 pl-[25px] lg:top-[1150px] lg:hidden sm:block"
                       />
                     )}
                   </div>
@@ -267,7 +267,7 @@ export default function Section2() {
                   >
                     <h1
                       id="inside6"
-                      className="font-pp-right w-[36px] h-[36px] border border-black text-sm lg:text-[19px] flex items-center justify-center absolute left-[75px] top-[1370px] lg:-ml-0 -ml-[50px]"
+                      className="font-pp-right w-[36px] h-[36px] border border-black text-sm lg:text-[19px] flex items-center justify-center absolute left-[75px] lg:top-[1410px] lg:-ml-0 -ml-[50px] top-[1430px]"
                     >
                       07
                     </h1>
@@ -283,7 +283,7 @@ export default function Section2() {
                       <img
                         src={images[6]}
                         alt="Promise 7"
-                        className=" absolute w-[200px] h-[230px] right-[10px] top-[1350px] lg:hidden sm:block"
+                        className=" absolute w-[180px] h-[200px] right-[10px] lg:pl-0 pl-[25px] top-[1350px] lg:hidden sm:block"
                       />
                     )}
                   </div>

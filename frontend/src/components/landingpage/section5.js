@@ -86,7 +86,7 @@ export default function Section5() {
 
               <h1
                 id="subeading"
-                className="lg:text-[47.6px] text-[30px] leading-[52px] lg:pt-[40px]"
+                className="lg:text-[47.6px] text-[28.5px] lg:ml-0 ml-[-38px] leading-[52px] pt-[30px] lg:pt-[40px]"
               >
                 Manage tasks and upload avatar.
                 <br></br>
@@ -149,9 +149,7 @@ export default function Section5() {
                         className="w-[9.5px] h-[9.5px] absolute left-[20px] top-[167px]"
                       />
 
-                      <l1>
-                        Remove completed or unnecessary tasks
-                      </l1>
+                      <l1>Remove completed or unnecessary tasks</l1>
                     </ul>
                   </ul>
                 </div>

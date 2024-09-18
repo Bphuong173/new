@@ -49,12 +49,8 @@ export default function Section4() {
                         01
                       </h1>
                     </div>
-                    <h1 className="text-[50px] lg:text-[66.66px] pt-[34px] pr-[31px] pb-[34px] pl-[31px]">
-
+                    <h1 className="text-[40px] lg:text-[66.66px] pt-[34px] pr-[31px] pb-[34px] pl-[31px]">
                       CREATE ACCOUNT
-
-                      STOP THE LEAK
-
                     </h1>
                   </div>
                   <div
@@ -63,22 +59,14 @@ export default function Section4() {
                   >
                     <h1
                       id="subheading"
-                      className="lg:mb-[19px] text-[23px] lg:text-[28.5px] "
+                      className="lg:mb-[19px] text-[19px] lg:pt-0 pt-[5px] lg:text-[28.5px] "
                     >
-
-                      GET STARTED EASILY
-
-                      CUSTOM MARKETING PLAN
-
+                      GET STARTED EASILY CUSTOM MARKETING PLAN
                     </h1>
                     <div id="body body-large" className="">
                       <p
                         style={{ fontFamily: "Archivo, sans-serif" }}
-
                         className="lg:text-[23.8px] text-[16px]"
-
-                        className="text-[16px] lg:leading-0 leading-[20px] lg:text-[23.8px]"
-
                       >
                         Sign up with your email, complete your profile,
                         customize your experience. Once set up, add tasks and
@@ -118,24 +106,19 @@ export default function Section4() {
                         02
                       </h1>
                     </div>
-                    <h1 className="lg:text-[66.66px] text-[50px] pt-[34px] pr-[31px] pb-[34px] pl-[31px] leading-[57px]">
-
+                    <h1 className="lg:text-[66.66px] text-[40px] pt-[34px] pr-[31px] pb-[34px] pl-[31px] leading-[57px]">
                       ADD YOUR TASKS
-
-                      BUILD A BETTER BUCKET
-
                     </h1>
                   </div>
                   <div
                     id="bottom-1"
                     className="lg:pt-[30px] pr-[25px] pb-[30px] pl-[25px]"
                   >
-                    <h1 id="subheading-1" className="mb-[19px] text-[28.5px]">
-
+                    <h1
+                      id="subheading-1"
+                      className="lg:mb-[19px] mb-[5px] lg:text-[28.5px] text-[19px] lg:pt-0 pt-[5px]"
+                    >
                       ORGANIZING YOUR WORKFLOW
-
-                      BUILDING THE SYSTEM
-
                     </h1>
                     <div id="body body-large-1" className="w">
                       <p
@@ -186,24 +169,19 @@ export default function Section4() {
                         03
                       </h1>
                     </div>
-                    <h1 className="lg:text-[66.66px] text-[50px] pt-[34px] pr-[31px] pb-[34px] pl-[31px] leading-[57px]">
-
+                    <h1 className="lg:text-[66.66px] text-[40px] pt-[34px] pr-[31px] pb-[34px] pl-[31px] leading-[57px]">
                       TRACK YOUR TASKS
-
-                      OVERFILL THE BUCKET
-
                     </h1>
                   </div>
                   <div
                     id="bottom-2"
                     className="lg:pt-[30px] pr-[25px] pb-[30px] pl-[25px]"
                   >
-                    <h1 id="subheading-2" className="mb-[19px] text-[28.5px]">
-
+                    <h1
+                      id="subheading-2"
+                      className="lg:mb-[19px] mb-[5px lg:mt-0 mt-[5px] lg:text-[28.5px] text-[19px]"
+                    >
                       STAY ON TOP OF YOUR PROGRESS
-
-                      REACH NEW HEIGHTS
-
                     </h1>
                     <div id="body body-large-2" className="">
                       <p

@@ -1,7 +1,7 @@
 import React from "react";
 import Client from "./image/client_1.webp";
 import ClientLogo from "./image/clientLogo_1.webp";
-export const Slieder1 = ({ currentSlide, handleNext, handlePrevious }) => {
+export const Slider1 = ({ currentSlide, handleNext, handlePrevious }) => {
   return (
     <>
       <div id="people-slides" className="pl-[14px]">
@@ -30,11 +30,7 @@ export const Slieder1 = ({ currentSlide, handleNext, handlePrevious }) => {
               >
                 <h1
                   id="testimonial-quote"
-
-                  className="font-pp-right lg:pt-0 lg:pl-0 lg:pr-0 pt-[14px] pl-[14px] pr-[14px] lg:text-[29px] text-[20px] lg:leading-[43px] leading-[25px] lg:tracking-[1.5px] tracking-0 uppercase"
-
-                  className="font-pp-right lg:pt-0 lg:pl-0 lg:pr-0 pt-[14px] pl-[14px] pr-[14px] lg:text-[38px] text-[20px] lg:leading-[43px] leading-[25px] lg:tracking-[1.5px] tracking-0 uppercase"
-
+                  className="font-pp-right lg:pt-0 lg:pl-0 lg:pr-0 pt-[14px] pl-[14px] pr-[14px] lg:text-[29px] text-[16px] lg:leading-[43px] leading-[25px] lg:tracking-[1.5px] tracking-0 uppercase"
                 >
                   <h1>
                     "appTodo transformed our workflow. Real-time collaboration,
@@ -45,11 +41,11 @@ export const Slieder1 = ({ currentSlide, handleNext, handlePrevious }) => {
                 </h1>
                 <div
                   id="testimonial-author"
-                  class="lg:m-w-[620px] w-auto absolute bottom-0 border-t border-[black] pb-[43.2px] h-[89px] border-opacity-30 lg:pt-[24px] lg:pl-0 pl-[5px] pt-[5px] text-[14.2px]"
+                  class="lg:w-[620px] w-auto absolute bottom-0 border-t border-[black] pb-[43.2px] h-[89px] border-opacity-30 lg:pt-[24px] lg:pl-0 pl-[5px] pt-[5px] text-[14.2px]"
                 >
                   <h1 className="lg:text-[19px] text-[14px] leading-[22.85px]">
                     Amy Hooper
-                    <span className="text-[12.3px] tracking-[0.6px]">
+                    <span className="text-[12.3px] tracking-[0.6px] pl-[5px]">
                       PT, DPT
                     </span>
                   </h1>
