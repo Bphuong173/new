@@ -86,14 +86,14 @@ export default function Section9() {
           >
             <AnimatedSection
               id="h-line"
-              className="uppercase lg:pr-[47.6px] pr-0 text-[50px] lg:text-[133.33px] lg:leading-[125px] leading-[50px] tracking-wide"
+              className="uppercase lg:pr-[47.6px] pr-0 text-[40px] xs:text-[50px] lg:text-[133.33px] lg:leading-[125px] leading-[50px] tracking-wide"
               animationClass="fade-in"
             >
               <AnimatedText text="FREQUENTLY" />
             </AnimatedSection>
             <AnimatedSection
               id="h-line"
-              className="uppercase lg:pr-[47.6px] pr-0 lg:text-[133.33px] text-[50px] lg:leading-[125px]  leading-[50px] tracking-wide"
+              className="uppercase lg:pr-[47.6px] pr-0 lg:text-[133.33px] xs:text-[50px] text-[40px] lg:leading-[125px]  leading-[50px] tracking-wide"
               animationClass="fade-in"
             >
               <AnimatedText text="ASKED QUESTIONS" />

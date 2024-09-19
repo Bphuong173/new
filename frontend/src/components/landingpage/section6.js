@@ -41,7 +41,7 @@ export default function Section6() {
               <AnimatedSection
                 animationClass="slide-in-left"
                 id="block-sectionBlock-anima-in-2"
-                className="bg-white border border-[black] rounded-md w-[275px] lg:max-w-[339px] h-[153.4px] mb-6 md:mb-0"
+                className="bg-white border border-[black] rounded-md w-[275px] lg:max-w-[339px] h-[153.4px]  mb-6 md:mb-0 md:block hidden"
               >
                 <div
                   id="sectionBlock-top-2"
@@ -89,11 +89,13 @@ export default function Section6() {
                     style={{ letterSpacing: "1.5px md:2.66px" }}
                   >
                     REAL PEOPLE.
-                    <div id="section-couter3">
-                      <h1 className="font-pp-right text-[20px] md:text-[27px] absolute bottom-[5px] left-[5px]">
-                        04
-                      </h1>
-                      <p className=""></p>
+                    <div className="sm:block absolute sm:top-0 sm:left-0 top-[155px] left-[-50px]">
+                      <div id="section-couter3">
+                        <h1 className="font-pp-right lg:top-0  xl:top-[50px] text-[20px] md:text-[27px] absolute bottom-[5px] left-[5px]">
+                          04
+                        </h1>
+                        <p className=""></p>
+                      </div>
                     </div>
                   </div>
                   <div

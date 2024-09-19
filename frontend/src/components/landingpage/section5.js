@@ -96,7 +96,7 @@ export default function Section5() {
             <AnimatedSection
               animationClass="slide-in-right"
               id="love-blockWrap"
-              className="w-[361px] h-[277px] bg-[#fff] rounded-[5px] border border-[black] absolute lg:right-[70px] top-[750px] lg:ml-0 ml-[34px]  lg:top-[630px]"
+              className="w-[361px] h-[277px] bg-[#fff] rounded-[5px] border border-[black] absolute lg:right-[70px] top-[750px] lg:ml-0 xs:ml-[34px] ml-[14px]  lg:top-[630px]"
             >
               <div
                 id="sectionBlock-top"

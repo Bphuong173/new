@@ -35,14 +35,14 @@ export default function Section8() {
             >
               <AnimatedSection
                 id="h-line"
-                className="uppercase pr-[47.6px] lg:text-[133.33px] text-[50px] lg:leading-[125px] leading-[70px] tracking-wide"
+                className="uppercase pr-[47.6px] lg:text-[133.33px] xs:text-[50px] text-[45px] lg:leading-[125px] leading-[70px] tracking-wide"
                 animationClass="fade-in"
               >
                 <AnimatedText text="Patch Service" />
               </AnimatedSection>
               <AnimatedSection
                 id="h-line"
-                className="uppercase pr-[47.6px] lg:text-[133.33px] text-[50px] lg:leading-[125px] leading-[70px] tracking-wide"
+                className="uppercase pr-[47.6px] lg:text-[133.33px] xs:text-[50px] text-[45px] lg:leading-[125px] leading-[70px] tracking-wide"
                 animationClass="fade-in"
               >
                 <AnimatedText text="Offerings" />
@@ -104,7 +104,7 @@ export default function Section8() {
           </div>
           <div
             id="products-sticky"
-            className=" lg:w-[1062px] w-auto lg:ml-[359px] lg:mr-0 mr-[14px] z-[2] sticky pl-[20px] top-0"
+            className=" lg:w-[1062px] 2xl:ml-[820px] w-auto lg:ml-[359px] lg:mr-0 mr-[14px] z-[2] sticky pl-[20px] top-0"
           >
             <div
               id="products-stickyInner-block "

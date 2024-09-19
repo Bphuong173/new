@@ -1,0 +1,6 @@
+/* src/custom.css */
+@media (max-width: 390px) {
+  .custom-width-12pro {
+    width: 250px;
+  }
+}

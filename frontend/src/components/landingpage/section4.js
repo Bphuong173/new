@@ -20,7 +20,7 @@ export default function Section4() {
               <div id="block-custom-1" className="flex flex-col lg:flex-row">
                 <div
                   id="block block-white nav-black"
-                  className="max-w-[695px] max-h-[480px] border mt-[14px] ml-[14px] border-[black] bg-[#fff] rounded-[5px] mb-8 mr-[14px] lg:mr-0 lg:mb-0"
+                  className="max-w-[695px] 2xl:min-w-[970px] max-h-[480px] border mt-[14px] ml-[14px] border-[black] bg-[#fff] rounded-[5px] mb-8 mr-[14px] lg:mr-0 lg:mb-0"
                 >
                   <div
                     id="top step-top"
@@ -77,7 +77,7 @@ export default function Section4() {
                 </div>
                 <div
                   id="block block-white nav-black-1"
-                  className="lg:mt-[400px] mt-[10px] ml-[21px] max-w-[695px] max-h-[480px] border border-[black] bg-[#fff] rounded-[5px] right-[14px] lg:mr-0 mr-[14px]  lg:mb-0 mb-[140px]"
+                  className="lg:mt-[400px] 2xl:min-w-[900px] mt-[10px] ml-[21px] max-w-[695px] max-h-[480px] border border-[black] bg-[#fff] rounded-[5px] right-[14px] lg:mr-0 mr-[14px]  lg:mb-0 mb-[140px]"
                 >
                   <div
                     id="top step-top-1"
@@ -140,7 +140,7 @@ export default function Section4() {
               >
                 <div
                   id="block block-white nav-black-2"
-                  className="max-w-[695px] max-h-[480px] mt-[-100px] border border-[black] bg-[#fff] rounded-[5px] ml-[14px] lg:mr-0 mr-[14px]"
+                  className="max-w-[695px] 2xl:min-w-[970px] max-h-[480px] mt-[-100px] border border-[black] bg-[#fff] rounded-[5px] ml-[14px] lg:mr-0 mr-[14px]"
                 >
                   <div
                     id="top step-top-2"

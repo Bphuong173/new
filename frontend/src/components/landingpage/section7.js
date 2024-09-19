@@ -101,7 +101,7 @@ export default function Section7() {
           </div>
           <div
             id="team-cards"
-            className="flex flex-wrap flex-row-reverse gap-x-[14px] lg:mr-[32px] mr-[14px] lg:ml-0 ml-[14px] "
+            className="flex flex-wrap flex-col md:flex-row-reverse gap-x-[14px] lg:mr-[32px] mr-[14px] lg:ml-0 ml-[14px] "
           >
             <Teamcard1 />
             <Teamcard2 />

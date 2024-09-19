@@ -59,7 +59,9 @@ export default function Section3() {
                   <div className="pl-[20px] border-b border-black relative text-[90px] lg:text-[133px] flex items-center">
                     <div className="lg:flex">
                       <h1 className="lg:h-0 h-[100px]">TODO </h1>
-                      <h1 className="lg:pl-0 pl-[100px]">APP</h1>
+                      <h1 className="xs:pl-[100px] sm:pl-[20px] pl-[85px]">
+                        APP
+                      </h1>
                     </div>
 
                     <div id="section-couter1">

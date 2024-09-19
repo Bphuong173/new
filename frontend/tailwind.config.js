@@ -2,7 +2,11 @@
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      screens: {
+        xs: "391px", // Thêm breakpoint xs với kích thước 390px
+      },
+    },
   },
   plugins: [],
 };

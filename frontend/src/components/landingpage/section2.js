@@ -3,6 +3,8 @@ import Smiley from "./image/icon-smiley.svg";
 import backgroundImage from "./image/background-grid.svg";
 import { AnimatedSection } from "./animatedsection";
 import "./section2.css";
+import "./custom.css";
+
 import Promise1 from "./image/promise_1.webp";
 import Promise2 from "./image/promise_2.webp";
 import Promise3 from "./image/promise_3.webp";
@@ -42,15 +44,15 @@ export default function Section2() {
             <div id="col" className="w-full lg:w-[339px] h-auto lg:h-[1673px]">
               <AnimatedSection
                 id="block-sectionBlock-anima-in"
-                className="bg-white border border-black rounded-md  w-[300px] lg:w-[339px] h-[153.4px] "
+                className="bg-white border border-black rounded-md  w-[300px] lg:w-[339px] h-[153.4px] custom-width-12pro "
                 animationClass="slide-in-left"
               >
                 <div
                   id="sectionBlock-top"
                   className="lg:w-[337px] w-auto h-[55px] flex justify-between border-b border-black lg:pl-0 pl-[15px"
                 >
-                  <div className="flex items-center justify-center w-auto lg:w-[253px] lg:pl-0 pl-[20px]">
-                    <h1 className="font-pp-right  text-[24px]">
+                  <div className=" contents xs:flex items-center justify-center w-auto lg:w-[253px] lg:pl-0 xs:pl-[20px]  pl-[10px]">
+                    <h1 className="font-pp-right text-[20px]  xs:text-[24px] xs:pl-0 xs:pt-0 pl-[10px] pt-[10px]  ">
                       THE TODO PROMISE
                     </h1>
                   </div>
@@ -97,7 +99,7 @@ export default function Section2() {
             </div>
             <div
               id="col1"
-              className="bg-white rounded-[5px] mt-6 lg:mt-0 lg:ml-[14px]"
+              className="bg-white rounded-[5px] mt-6 lg:mt-0 lg:ml-[14px] relative 2xl:min-w-[1539px]"
             >
               <div
                 id="promise-text"
@@ -126,7 +128,7 @@ export default function Section2() {
                       <img
                         src={images[0]}
                         alt="Promise 1"
-                        className=" absolute w-[180px] lg:pl-0 pl-[20px] h-[200px] right-[10px] lg:top-[110px] top-[127px] lg:hidden sm:block"
+                        className=" absolute xs:w-[180px] w-[160px] xs:pl-0 pl-[30px] xs:h-[200px] h-[180px] right-[10px] xs:top-[110px] top-[140px] lg:hidden sm:block"
                       />
                     )}
                   </div>
@@ -143,7 +145,7 @@ export default function Section2() {
                     </h1>
                     <h1
                       id="letter1"
-                      className="font-pp-right text-4xl lg:text-[90.5px] leading-tight lg:leading-[70px]"
+                      className=" 2xl:absolute 2xl:top-[380px] font-pp-right text-4xl lg:text-[90.5px] leading-tight lg:leading-[70px]"
                       onMouseEnter={() => handleMouseEnter(2)}
                       onMouseLeave={handleMouseLeave}
                     >
@@ -153,7 +155,7 @@ export default function Section2() {
                       <img
                         src={images[1]}
                         alt="Promise 2"
-                        className=" absolute w-[180px] h-[200px] lg:pl-0 pl-[20px] right-[10px] lg:top-[270px] top-[315px] lg:hidden sm:block"
+                        className=" absolute xs:w-[180px] w-[160px] xs:h-[200px] h-[180px] xs:pl-0 pl-[30px] right-[10px] xs:top-[270px] top-[325px] lg:hidden sm:block"
                       />
                     )}
                   </div>
@@ -169,7 +171,7 @@ export default function Section2() {
                     </h1>
                     <h1
                       id="letter2"
-                      className="font-pp-right text-4xl lg:text-[90.5px] leading-tight lg:leading-[70px]"
+                      className="2xl:absolute 2xl:top-[587px] font-pp-right text-4xl lg:text-[90.5px] leading-tight lg:leading-[70px]"
                       onMouseEnter={() => handleMouseEnter(3)}
                       onMouseLeave={handleMouseLeave}
                     >
@@ -179,7 +181,7 @@ export default function Section2() {
                       <img
                         src={images[2]}
                         alt="Promise 3"
-                        className=" absolute w-[180px] h-[200px] right-[10px] lg:top-[490px] lg:pl-0 pl-[20px] top-[520px] lg:hidden sm:block"
+                        className=" absolute xs:w-[180px] w-[160px] xs:h-[200px] h-[180px] right-[10px] xs:top-[490px] xs:pl-0 pl-[30px] top-[533px] lg:hidden sm:block"
                       />
                     )}
                   </div>
@@ -195,7 +197,7 @@ export default function Section2() {
                     </h1>
                     <h1
                       id="letter3"
-                      className="font-pp-right text-4xl lg:text-[90.5px] leading-tight lg:leading-[70px]"
+                      className=" 2xl:absolute 2xl:top-[794px] font-pp-right text-4xl lg:text-[90.5px] leading-tight lg:leading-[70px]"
                       onMouseEnter={() => handleMouseEnter(4)}
                       onMouseLeave={handleMouseLeave}
                     >
@@ -205,7 +207,7 @@ export default function Section2() {
                       <img
                         src={images[3]}
                         alt="Promise 4"
-                        className=" absolute w-[160px] h-[180px] right-[10px] lg:pl-0 pl-[20px] top-[720px] lg:top-[700px] lg:hidden sm:block"
+                        className=" absolute w-[160px] xs:h-[180px] h-[170px] right-[10px] xs:pl-0 pl-[30px] top-[752px] xs:top-[700px] lg:hidden sm:block"
                       />
                     )}
                   </div>
@@ -221,7 +223,7 @@ export default function Section2() {
                     </h1>
                     <h1
                       id="letter4"
-                      className="font-pp-right text-4xl lg:text-[90.5px] leading-tight lg:leading-[70px]"
+                      className=" 2xl:absolute 2xl:top-[999px] font-pp-right text-4xl lg:text-[90.5px] leading-tight lg:leading-[70px]"
                       onMouseEnter={() => handleMouseEnter(5)}
                       onMouseLeave={handleMouseLeave}
                     >
@@ -231,7 +233,7 @@ export default function Section2() {
                       <img
                         src={images[4]}
                         alt="Promise 5"
-                        className=" absolute w-[180px] h-[200px] right-[10px] top-[955px] lg:top-[930px] lg:hidden sm:block"
+                        className=" absolute w-[180px] h-[200px] xs:pl-0 pl-[30px] right-[10px] top-[955px] lg:top-[930px] lg:hidden sm:block"
                       />
                     )}
                   </div>
@@ -247,7 +249,7 @@ export default function Section2() {
                     </h1>
                     <h1
                       id="letter5"
-                      className="font-pp-right text-4xl lg:text-[90.5px] leading-tight lg:leading-[70px]"
+                      className=" 2xl:absolute 2xl:top-[1206px] font-pp-right text-4xl lg:text-[90.5px] leading-tight lg:leading-[70px]"
                       onMouseEnter={() => handleMouseEnter(6)}
                       onMouseLeave={handleMouseLeave}
                     >
@@ -257,7 +259,7 @@ export default function Section2() {
                       <img
                         src={images[5]}
                         alt="Promise 6"
-                        className=" absolute w-[170px] h-[200px] right-[10px] top-[1200px] lg:pl-0 pl-[25px] lg:top-[1150px] lg:hidden sm:block"
+                        className=" absolute xs:w-[170px] w-[150px] xs:h-[200px] h-[160px] right-[10px] top-[1220px] xs:pl-0 pl-[50px] xs:top-[1150px] lg:hidden sm:block"
                       />
                     )}
                   </div>
@@ -273,7 +275,7 @@ export default function Section2() {
                     </h1>
                     <h1
                       id="letter6"
-                      className="font-pp-right text-4xl lg:text-[90.5px] leading-tight lg:leading-[70px]"
+                      className=" 2xl:absolute 2xl:top-[1410px] font-pp-right text-4xl lg:text-[90.5px] leading-tight lg:leading-[70px]"
                       onMouseEnter={() => handleMouseEnter(7)}
                       onMouseLeave={handleMouseLeave}
                     >
@@ -283,7 +285,7 @@ export default function Section2() {
                       <img
                         src={images[6]}
                         alt="Promise 7"
-                        className=" absolute w-[180px] h-[200px] right-[10px] lg:pl-0 pl-[25px] top-[1350px] lg:hidden sm:block"
+                        className=" absolute xs:w-[180px] w-[160px] xs:h-[200px] h-[180px] right-[10px] xs:pl-0 pl-[40px] xs:top-[1350px] top-[1360px] lg:hidden sm:block"
                       />
                     )}
                   </div>
