@@ -1,6 +1,5 @@
 import React from "react";
 import Tick from "./image/tick.svg";
-import Cross from "./image/cross.svg";
 export const Features4 = () => {
   return (
     <>
@@ -9,7 +8,7 @@ export const Features4 = () => {
           <img src={Tick} alt="Tick Icon" />
         </div>
         <div className="px-[38px] flex min-w-[238px]  max-w-[238px] justify-center items-center h-[65px] pt-[20px]  align-text-left border-b border-[#ffff] pb-[20px] ">
-        <img src={Tick} alt="Tick Icon" />
+          <img src={Tick} alt="Tick Icon" />
         </div>
         <div className="px-[38px] flex min-w-[238px] max-w-[238px]  justify-center items-center h-[65px] pt-[20px]  align-text-left border-b border-[#ffff] pb-[20px] ">
           <img src={Tick} alt="Tick Icon" />
@@ -18,16 +17,16 @@ export const Features4 = () => {
           <img src={Tick} alt="Tick Icon" />
         </div>
         <div className="px-[38px] flex min-w-[238px] max-w-[238px] justify-center items-center h-[65px] pt-[20px]  align-text-left border-b border-[#ffff] pb-[20px] ">
-        <img src={Tick} alt="Tick Icon" />
+          <img src={Tick} alt="Tick Icon" />
         </div>
         <div className="px-[38px] flex min-w-[238px] max-w-[238px] justify-center items-center h-[65px] pt-[20px]  align-text-left border-b border-[#ffff] pb-[20px] ">
-        <img src={Tick} alt="Tick Icon" />
+          <img src={Tick} alt="Tick Icon" />
         </div>
         <div className="px-[38px] flex min-w-[238px] max-w-[238px] justify-center items-center h-[65px] pt-[20px]  align-text-left border-b border-[#ffff] pb-[20px] ">
-        <img src={Tick} alt="Tick Icon" />
+          <img src={Tick} alt="Tick Icon" />
         </div>
         <div className="px-[38px] flex min-w-[238px] max-w-[238px] justify-center items-center h-[65px] pt-[20px]  align-text-left border-b border-[#ffff] pb-[20px] ">
-        <img src={Tick} alt="Tick Icon" />
+          <img src={Tick} alt="Tick Icon" />
         </div>
         <div className=" flex min-w-[238px] max-w-[238px] justify-center items-center h-[65px] pt-[10px]  align-text-left  pb-[20px] text-center ">
           <p
@@ -38,7 +37,7 @@ export const Features4 = () => {
           </p>
         </div>
         <div className="px-[38px] flex items-center min-w-[238px] justify-center max-w-[238px] pt-[30px]  align-text-left border-t border-[#ffff] pb-[20px] ">
-        <img src={Tick} alt="Tick Icon" />
+          <img src={Tick} alt="Tick Icon" />
         </div>
       </div>
     </>

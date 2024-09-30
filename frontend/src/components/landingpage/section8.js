@@ -104,7 +104,7 @@ export default function Section8() {
           </div>
           <div
             id="products-sticky"
-            className=" lg:w-[1062px] 2xl:ml-[820px] w-auto lg:ml-[359px] lg:mr-0 mr-[14px] z-[2] sticky pl-[20px] top-0"
+            className=" lg:w-[1062px] 2xl:ml-[820px] w-auto lg:ml-[359px] lg:mr-0 mr-[14px] z-[2] sticky pl-[14px] top-0"
           >
             <div
               id="products-stickyInner-block "

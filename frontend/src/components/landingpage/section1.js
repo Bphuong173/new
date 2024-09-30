@@ -94,7 +94,7 @@ export default function Section1() {
               className="h-[6rem] w-full md:w-[23rem] flex justify-around overflow-hidden relative will-change-height items-center mt-[2rem] border-t border-b border-white border-opacity-50 "
               animationClass="slide-in-right"
             >
-              <h1 className="uppercase tracking-[0.03em] text-[1.2rem] text-[aliceblue] h-[1.5rem] font-pp-right contents">
+              <h1 className="uppercase tracking-[0.03em] xs:text-[1.2rem] text-[17px] text-[aliceblue] h-[1.5rem] font-pp-right contents">
                 LIVE MORE EFFECTIVELY
               </h1>
               <img

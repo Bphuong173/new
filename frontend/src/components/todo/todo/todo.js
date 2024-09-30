@@ -11,7 +11,7 @@ import {
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { useData } from "../../main/mainstate";
 export const Todo = ({ loadTodo }) => {
-  const { todos, setTodos, filteredLabel, todoLabels } = useData();
+  const { todos, setTodos, filteredLabel } = useData();
   const queryClient = useQueryClient();
   const query = useQuery({ queryKey: ["todos"], queryFn: fetchTodos });
   const containerRef = useRef(null);
