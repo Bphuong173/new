@@ -14,15 +14,18 @@ import Promise6 from "./image/promise_6.webp";
 import Promise7 from "./image/promise_7.webp";
 
 export default function Section2() {
-  const images = [
-    Promise1,
-    Promise2,
-    Promise3,
-    Promise4,
-    Promise5,
-    Promise6,
-    Promise7,
-  ];
+  const images = useMemo(
+    () => [
+      Promise1,
+      Promise2,
+      Promise3,
+      Promise4,
+      Promise5,
+      Promise6,
+      Promise7,
+    ],
+    []
+  );
   const [hoveredImage, setHoveredImage] = useState(1);
   const [imagesLoaded, setImagesLoaded] = useState(false);
 
@@ -41,12 +44,8 @@ export default function Section2() {
       .catch((err) => console.error("Error loading images", err));
   }, []);
 
-  const handleMouseEnter = (imageNumber) => {
+  const handleImageChange = (imageNumber) => {
     setHoveredImage(imageNumber);
-  };
-
-  const handleMouseLeave = () => {
-    setHoveredImage(1);
   };
 
   const promiseContent = [
@@ -90,7 +89,36 @@ export default function Section2() {
                 className="bg-white border border-black rounded-md w-[240px] xs:w-[275px] sm:w-[300px] lg:w-full max-w-[339px] h-[153.4px] mr-[60px] sm:mr-[80px] lg:mr-0"
                 animationClass="slide-in-left"
               >
-                {/* ... (rest of the AnimatedSection content remains unchanged) ... */}
+                <div
+                  id="sectionBlock-top"
+                  className="h-[55px] justify-between flex border-b border-[black] pl-[21px]"
+                >
+                  <div className="flex items-center justify-center">
+                    <h1 className="font-pp-right text-[24px]">OUR PROMISE</h1>
+                  </div>
+
+                  <div
+                    id="sectionBlock-icon"
+                    className="w-[83.8px] h-[54px] border-l border-[black] flex items-center justify-center"
+                  >
+                    <img
+                      src={Smiley}
+                      alt="Smiley Icon"
+                      className="w-[60px] h-[31px]"
+                    />
+                  </div>
+                </div>
+                <div
+                  id="sectionBlock-bottom"
+                  className="pt-[17px] pr-[21px] pl-[21px] pb-[22px] h-[96px] flex items-center justify-center"
+                >
+                  <p
+                    style={{ fontFamily: "Archivo, sans-serif" }}
+                    className="h-[57px] text-[19px]"
+                  >
+                    We promise to make your life easier and more productive.
+                  </p>
+                </div>
               </AnimatedSection>
               <div
                 id="promise-images"
@@ -131,9 +159,10 @@ export default function Section2() {
                       </h1>
                       <h1
                         id={`letter${index > 0 ? index : ""}`}
-                        className="font-pp-right text-3xl lg:text-[90.5px] leading-tight lg:leading-[70px] ml-[50px] lg:ml-0"
-                        onMouseEnter={() => handleMouseEnter(index + 1)}
-                        onMouseLeave={handleMouseLeave}
+                        className="font-pp-right text-3xl lg:text-[90.5px] leading-tight lg:leading-[70px] ml-[50px] lg:ml-0 cursor-pointer"
+                        onMouseEnter={() => handleImageChange(index + 1)}
+                        onTouchStart={() => handleImageChange(index + 1)}
+                        onClick={() => handleImageChange(index + 1)}
                       >
                         {content.title}
                       </h1>
