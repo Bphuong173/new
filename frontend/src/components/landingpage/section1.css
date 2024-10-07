@@ -66,3 +66,8 @@
     transform: translateY(0);
   }
 }
+@media (min-width: 768px) {
+  .custom-mt-32 {
+    margin-top: 32px !important;
+  }
+}

@@ -10,6 +10,7 @@ import Logo3 from "./image/logo3.webp";
 import Logo4 from "./image/logo4.webp";
 import Logo5 from "./image/logo5.webp";
 import { AnimatedSection } from "./animatedsection";
+import "./section6.css";
 export default function Section6() {
   const [currentSlide, setCurrentSlide] = useState(1);
   const handleNext = (e) => {
@@ -88,7 +89,7 @@ export default function Section6() {
                     className="pl-[10px] md:pl-[29.5px] h-auto md:h-[146.66px] border-b border-[black] relative   md:text-[133px] text-[50px] flex items-center"
                     style={{ letterSpacing: "1.5px md:2.66px" }}
                   >
-                    REAL PEOPLE.
+                    REAL PEOPLE
                     <div className="sm:block absolute sm:top-0 sm:left-0 top-[155px] left-[-50px]">
                       <div id="section-couter3">
                         <h1 className="font-pp-right lg:top-0  xl:top-[50px] text-[20px] md:text-[27px] absolute bottom-[5px] left-[5px]">

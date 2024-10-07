@@ -3,6 +3,7 @@ import Step1 from "./image/icon-step-1.svg";
 import Step2 from "./image/icon-step-2.svg";
 import Step3 from "./image/icon-step-3.svg";
 import backgroundImage from "./image/background-grid.svg";
+import "./section4.css";
 
 export default function Section4() {
   return (
@@ -20,7 +21,7 @@ export default function Section4() {
               <div id="block-custom-1" className="flex flex-col lg:flex-row">
                 <div
                   id="block block-white nav-black"
-                  className="max-w-[695px] 2xl:min-w-[970px] max-h-[full] border mt-[14px] ml-[14px] border-[black] bg-[#fff] rounded-[5px] mb-8 mr-[14px] lg:mr-0 lg:mb-0"
+                  className="max-w-[695px] 2xl:min-w-[970px] max-h-[full] lg:h-[470px] border mt-[14px] ml-[14px] border-[black] bg-[#fff] rounded-[5px] mb-8 mr-[14px] lg:mr-0 lg:mb-0"
                 >
                   <div
                     id="top step-top"
@@ -49,7 +50,7 @@ export default function Section4() {
                         01
                       </h1>
                     </div>
-                    <h1 className="text-[40px] lg:text-[66.66px] pt-[34px] pr-[31px] pb-[34px] pl-[31px]">
+                    <h1 className="create-account-heading  text-[35px] lg:text-[66.66px] pt-[34px]  pb-[34px] pl-[31px]">
                       CREATE ACCOUNT
                     </h1>
                   </div>
@@ -106,7 +107,7 @@ export default function Section4() {
                         02
                       </h1>
                     </div>
-                    <h1 className="lg:text-[66.66px] text-[40px] pt-[34px] pr-[31px] pb-[34px] pl-[31px] leading-[57px]">
+                    <h1 className="create-account-heading  lg:text-[66.66px] text-[35px] pt-[34px] pr-[31px] pb-[34px] pl-[31px] leading-[57px]">
                       ADD YOUR TASKS
                     </h1>
                   </div>
@@ -169,7 +170,7 @@ export default function Section4() {
                         03
                       </h1>
                     </div>
-                    <h1 className="lg:text-[66.66px] text-[40px] pt-[34px] pr-[31px] pb-[34px] pl-[31px] leading-[57px]">
+                    <h1 className=" create-account-heading  lg:text-[66.66px] text-[35px] pt-[34px] pr-[31px] pb-[34px] pl-[31px] leading-[57px]">
                       TRACK YOUR TASKS
                     </h1>
                   </div>

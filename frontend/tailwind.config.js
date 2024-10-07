@@ -4,7 +4,8 @@ module.exports = {
   theme: {
     extend: {
       screens: {
-        xs: "394px", // Thêm breakpoint xs với kích thước 390px
+        xs: "396px", // Thêm breakpoint xs với kích thước 390px
+        xxs: "376px",
       },
     },
   },

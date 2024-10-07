@@ -12,18 +12,18 @@ export default function Section7() {
   return (
     <>
       <div
-        className=" w-full h-full bg-[#989696] top-0 left-0 right-0 bottom-0 bg-[position:6.35rem_0rem] pb-[333px]"
+        className="w-full h-full bg-[#989696] top-0 left-0 right-0 bottom-0 bg-[position:6.35rem_0rem] pb-[333px]"
         style={{ backgroundImage: `url(${backgroundImage})` }}
       >
         <div id="team nav-blue locked" className="flex flex-col">
           <div
             id="team-top"
-            className="relative pt-[160px]  lg:pl-[90.5px] pl-[20px] lg:pr-[90.5px] pr-[10px] mb-[12px]"
+            className="relative pt-[160px] lg:pl-[90.5px] pl-[20px] lg:pr-[90.5px] pr-[10px] mb-[12px]"
           >
             <h2 id="h2 h-anima">
               <h1
                 id="h-line"
-                className=" flex uppercase  pr-[47.6px] text-[60px] lg:text-[133.33px] leading-[125px] tracking-wide"
+                className="flex uppercase pr-[47.6px]  text-[60px] lg:text-[133.33px] leading-[125px] tracking-wide"
               >
                 <span>
                   <AnimatedSection
@@ -48,7 +48,7 @@ export default function Section7() {
               className="lg:mt-[66.6px] mt-0 lg:w-[533px] w-auto text-[23.8px] leading-[30.95px]"
               style={{ fontFamily: "Archivo, sans-serif" }}
             >
-              Our team used this system to manage tasks effectively. Now, we’re
+              Our team used this system to manage tasks effectively. Now, we're
               ready to help you organize and complete your tasks efficiently.
             </p>
             <div id="section-couter2" className="">
@@ -58,18 +58,18 @@ export default function Section7() {
               <p className=""></p>
             </div>
           </div>
-          <div id="team-bottom" className=" relative  pr-[20px] ">
+          <div id="team-bottom" className="relative pr-[20px]">
             <AnimatedSection
               animationClass="slide-in-left"
               id="block-sectionBlock-anima-in-2"
-              className="bg-white border border-[black] rounded-md max-w-[339px]  h-[153.4px] absolute top-[150px] ml-[36px]"
+              className="hidden sm:block bg-white border border-[black] rounded-md max-w-[339px] h-[153.4px] absolute top-[150px] ml-[36px]"
             >
               <div
                 id="sectionBlock-top-2"
-                className=" h-[55px] justify-between flex border-b border-[black] pl-[21px] "
+                className="h-[55px] justify-between flex border-b border-[black] pl-[21px]"
               >
-                <div className="flex items-center justify-center ">
-                  <h1 className="font-pp-right  text-[24px]">
+                <div className="flex items-center justify-center">
+                  <h1 className="font-pp-right text-[24px]">
                     THE USUAL SUSPECTS
                   </h1>
                 </div>
@@ -87,11 +87,11 @@ export default function Section7() {
               </div>
               <div
                 id="sectionBlock-bottom-2"
-                className=" pt-[17px] pr-[21px] pl-[21px] pb-[22px] h-[96px] flex items-center justify-center"
+                className="pt-[17px] pr-[21px] pl-[21px] pb-[22px] h-[96px] flex items-center justify-center"
               >
                 <p
                   style={{ fontFamily: "Archivo, sans-serif" }}
-                  className=" h-[57px] text-[19px]"
+                  className="h-[57px] text-[19px]"
                 >
                   Meet our team of professionals, dedicated to make your life
                   easier.
@@ -101,12 +101,31 @@ export default function Section7() {
           </div>
           <div
             id="team-cards"
-            className="flex flex-wrap flex-col md:flex-row-reverse gap-x-[14px] lg:mr-[32px] mr-[14px] lg:ml-0 ml-[14px] "
+            className="flex flex-wrap flex-col md:flex-row-reverse gap-x-[14px] lg:mr-[32px] mr-[14px] lg:ml-0 ml-[14px]"
           >
-            <Teamcard1 />
-            <Teamcard2 />
-            <Teamcard3 />
-            <Teamcard4 />
+            {/* Small screen layout (320px - 600px) */}
+            <div className="sm:hidden flex flex-col items-center gap-y-4 mt-[50px]">
+              <div className="w-full max-w-[300px] px-4">
+                <Teamcard1 />
+              </div>
+              <div className="w-full max-w-[300px] px-4">
+                <Teamcard2 />
+              </div>
+              <div className="w-full max-w-[300px] px-4">
+                <Teamcard3 />
+              </div>
+              <div className="w-full max-w-[300px] px-4">
+                <Teamcard4 />
+              </div>
+            </div>
+
+            {/* Original layout for screens larger than 600px */}
+            <div className="hidden sm:flex sm:flex-wrap sm:flex-row-reverse sm:gap-x-[14px] sm:mt-[200px]">
+              <Teamcard1 />
+              <Teamcard2 />
+              <Teamcard3 />
+              <Teamcard4 />
+            </div>
           </div>
         </div>
       </div>

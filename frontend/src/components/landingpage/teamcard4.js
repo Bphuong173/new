@@ -7,7 +7,7 @@ export const Teamcard4 = () => {
   return (
     <div
       id="teamCard block-4"
-      class="lg:w-[448px] 2xl:mt-[400px] w-auto h-[633px] relative overflow-hidden cursor-pointer p-[25.7px] bg-white rounded-[5px] lg:mt-[-300px] mt-[40px] border border-[black]"
+      class="lg:w-[448px] 2xl:mt-[400px] w-auto lg:h-[633px] h-auto relative overflow-hidden cursor-pointer p-[25.7px] bg-white rounded-[5px] lg:mt-[-300px] mt-[40px] border border-[black]"
     >
       <div
         id="teamCard-side  "
@@ -20,7 +20,7 @@ export const Teamcard4 = () => {
           <img src={Jeremy} alt="Kelly" />
         </picture>
       </div>
-      <div id="teamCard-frontContent" className="pt-[22px]">
+      <div id="teamCard-frontContent" className="pt-[22px] lg:pb-0 pb-[50px]">
         <h1
           id="subheading"
           className=" mb-[11.4px] text-[30.4px] block tracking-[0.9px] leading-[28.6px] uppercase"

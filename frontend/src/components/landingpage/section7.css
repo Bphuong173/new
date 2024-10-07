@@ -2,3 +2,10 @@
   width: 303px;
   height: 395px;
 }
+
+@media screen and (min-width: 320px) and (max-width: 600px) {
+  #teamCard-image {
+    width: auto;
+    height: auto;
+  }
+}

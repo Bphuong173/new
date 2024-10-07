@@ -4,8 +4,12 @@
 #section-couter2,
 #section-couter3,
 #section-couter4 {
-  width: 90px;
-  height: 90px;
+  width: calc(10vw + 20px);
+  height: calc(10vw + 20px);
+  min-width: 80px; /* Increased from 60px */
+  min-height: 80px; /* Increased from 60px */
+  max-width: 140px; /* Increased from 120px */
+  max-height: 140px; /* Increased from 120px */
   border: 1px solid black;
   position: absolute;
 }
@@ -16,7 +20,8 @@
 #section-couter3 h1,
 #section-couter4 h1 {
   position: absolute;
-  font-size: 27px;
+  font-size: calc(3vw + 2px); /* Slightly increased font size */
+  font-size: clamp(20px, 3vw, 30px); /* Increased from 27px */
 }
 
 #section-couter p,
@@ -41,7 +46,7 @@
   margin-top: -0.5px;
   top: 0;
   right: 0;
-  width: 125px;
+  width: 140%;
   height: 100%;
   border-top: 1px solid black;
   transform-origin: top right;
@@ -50,8 +55,8 @@
 
 /* Specific positions for each counter */
 #section-couter {
-  right: 20px;
-  top: 20px;
+  right: 2vw;
+  top: 2vw;
 }
 #section-couter h1 {
   bottom: 5px;
@@ -59,16 +64,17 @@
 }
 
 #section-couter1 {
-  right: 0px;
-  bottom: 0px;
+  right: 0;
+  bottom: 0;
 }
 #section-couter1 h1 {
   left: 5px;
+  top: -10px;
 }
 
 #section-couter2 {
-  top: 10rem;
-  right: 5rem;
+  top: 15vh;
+  right: 5vw;
 }
 
 #section-couter2 h1 {
@@ -107,8 +113,8 @@
 
 @media (min-width: 431px) {
   #section-couter2 {
-    top: 10rem;
-    right: 5rem;
+    top: 15vh;
+    right: 5vw;
     border-left: 1px solid black;
     border-bottom: 1px solid black;
     border-right: 1px solid black;
@@ -188,7 +194,7 @@
 }
 
 #rollingBanner-rail-2 {
-  animation: scroll-reverse 10s linear infinite;
+  animation: scroll-reverse 30s linear infinite;
 }
 
 #people-client-1,
@@ -219,4 +225,3 @@
 #people-clientRail-2 img {
   display: inline-block;
 }
-/* style={{ fontFamily: "Archivo, sans-serif" }} */

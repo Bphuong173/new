@@ -1,0 +1,9 @@
+@media screen and (width: 360px) {
+  .create-account-heading {
+    display: flex;
+    padding: 5px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+}

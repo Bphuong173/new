@@ -35,7 +35,7 @@ export default function Section8() {
             >
               <AnimatedSection
                 id="h-line"
-                className="uppercase pr-[47.6px] lg:text-[133.33px] xs:text-[50px] text-[45px] lg:leading-[125px] leading-[70px] tracking-wide"
+                className="uppercase lg:pr-[47.6px] pr-0 lg:text-[133.33px] xs:text-[50px] text-[45px] lg:leading-[125px] leading-[70px] tracking-wide"
                 animationClass="fade-in"
               >
                 <AnimatedText text="Patch Service" />

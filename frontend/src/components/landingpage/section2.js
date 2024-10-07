@@ -32,6 +32,16 @@ export default function Section2() {
     setHoveredImage(1);
   };
 
+  const promiseContent = [
+    { title: "STAY FOCUSED ON GOALS" },
+    { title: "EASILY TRACK YOUR PROGRESS" },
+    { title: "PLAN PROJECTS EFFECTIVELY" },
+    { title: "BOOST PRODUCTIVITY LEVELS" },
+    { title: "EASILY ARRANGE AND MANAGE TASKS" },
+    { title: "CUSTOMIZABLE TASK LISTS" },
+    { title: "BUILD GOOD HABITS DAILY" },
+  ];
+
   return (
     <>
       <div
@@ -40,19 +50,22 @@ export default function Section2() {
         style={{ backgroundImage: `url(${backgroundImage})` }}
       >
         <div id="promise nav-blue locked" className="w-full">
-          <div id="grid" className="flex flex-col lg:flex-row justify-between">
+          <div
+            id="grid"
+            className="flex flex-col lg:flex-row justify-between relative"
+          >
             <div id="col" className="w-full lg:w-[339px] h-auto lg:h-[1673px]">
               <AnimatedSection
                 id="block-sectionBlock-anima-in"
-                className="bg-white border border-black rounded-md  w-[300px] lg:w-[339px] h-[153.4px] custom-width-12pro "
+                className="bg-white border border-black rounded-md w-[240px] xs:w-[275px] sm:w-[300px] lg:w-full max-w-[339px] h-[153.4px]  mr-[60px] sm:mr-[80px] lg:mr-0"
                 animationClass="slide-in-left"
               >
                 <div
                   id="sectionBlock-top"
-                  className="lg:w-[337px] w-auto h-[55px] flex justify-between border-b border-black lg:pl-0 pl-[15px"
+                  className="lg:w-[337px] w-auto h-[55px] flex justify-between border-b border-black lg:pl-0"
                 >
-                  <div className=" contents xs:flex items-center justify-center w-auto lg:w-[253px] lg:pl-0 xs:pl-[20px]  pl-[10px]">
-                    <h1 className="font-pp-right text-[20px]  xs:text-[24px] xs:pl-0 xs:pt-0 pl-[10px] pt-[10px]  ">
+                  <div className="contents xs:flex items-center justify-center w-auto lg:w-[253px] lg:pl-0 xs:pl-[20px] pl-[10px]">
+                    <h1 className="  font-pp-right text-[20px] xs:text-[24px] xs:pl-0 xs:pt-0 pl-[5px] pt-[10px]">
                       THE TODO PROMISE
                     </h1>
                   </div>
@@ -91,8 +104,11 @@ export default function Section2() {
                 )}
               </div>
             </div>
-            <div id="section-couter" className="bg-white">
-              <h1 className="font-pp-right text-xl lg:text-[27px] absolute bottom-[5px] left-[5px] overflow-hidden ">
+            <div
+              id="section-couter"
+              className="bg-white absolute top-0 right-0 lg:static lg:z-[1000]"
+            >
+              <h1 className="font-pp-right text-xl lg:text-[27px] overflow-hidden">
                 01
               </h1>
               <p className=""></p>
@@ -103,192 +119,38 @@ export default function Section2() {
             >
               <div
                 id="promise-text"
-                className="relative pt-[138px] pr-[124px] pb-[142px] pl-[167px]"
+                className="relative pt-[50px] px-[20px] pb-[50px] lg:pt-[138px] lg:pr-[124px] lg:pb-[142px] lg:pl-[167px]"
               >
                 <div>
-                  <div
-                    id="content-block"
-                    className="pt-[33px] pb-[33px]  lg:w-auto w-[181px] lg:ml-0 -ml-[100px]"
-                  >
-                    <h1
-                      id="inside"
-                      className="font-pp-right w-[36px] h-[36px] border border-black text-sm lg:text-[19px] flex items-center justify-center absolute lg:top-[175px] left-[75px] lg:-ml-0 -ml-[50px] top-[179px]"
+                  {promiseContent.map((content, index) => (
+                    <div
+                      key={index}
+                      id={`content-block${index > 0 ? index : ""}`}
+                      className="relative pt-[50px] pb-[50px] w-full lg:w-auto"
                     >
-                      01
-                    </h1>
-                    <h1
-                      id="letter"
-                      className="font-pp-right text-4xl lg:text-[90.5px] leading-tight lg:leading-[70px]"
-                      onMouseEnter={() => handleMouseEnter(1)}
-                      onMouseLeave={handleMouseLeave}
-                    >
-                      STAY FOCUSED ON GOALS
-                    </h1>
-                    {hoveredImage === 1 && (
-                      <img
-                        src={images[0]}
-                        alt="Promise 1"
-                        className=" absolute xs:w-[180px] w-[160px] xs:pl-0 pl-[30px] xs:h-[200px] h-[180px] right-[10px] xs:top-[110px] top-[140px] lg:hidden sm:block"
-                      />
-                    )}
-                  </div>
-
-                  <div
-                    id="content-block1"
-                    className="pt-[33px] flex items-center  pb-[33px] lg:w-auto w-[181px] lg:ml-0 -ml-[100px]"
-                  >
-                    <h1
-                      id="inside1"
-                      className="font-pp-right w-[36px] h-[36px] border border-black text-sm lg:text-[19px] flex items-center justify-center absolute left-[75px] top-[380px] lg:-ml-0 -ml-[50px]"
-                    >
-                      02
-                    </h1>
-                    <h1
-                      id="letter1"
-                      className=" 2xl:absolute 2xl:top-[380px] font-pp-right text-4xl lg:text-[90.5px] leading-tight lg:leading-[70px]"
-                      onMouseEnter={() => handleMouseEnter(2)}
-                      onMouseLeave={handleMouseLeave}
-                    >
-                      EASILY TRACK YOUR PROGRESS
-                    </h1>
-                    {hoveredImage === 2 && (
-                      <img
-                        src={images[1]}
-                        alt="Promise 2"
-                        className=" absolute xs:w-[180px] w-[160px] xs:h-[200px] h-[180px] xs:pl-0 pl-[30px] right-[10px] xs:top-[270px] top-[325px] lg:hidden sm:block"
-                      />
-                    )}
-                  </div>
-                  <div
-                    id="content-block2"
-                    className="pt-[33px] flex items-center  pb-[33px] lg:w-auto w-[181px] lg:ml-0 -ml-[100px]"
-                  >
-                    <h1
-                      id="inside2"
-                      className="font-pp-right w-[36px] h-[36px] border border-black text-sm lg:text-[19px] flex items-center justify-center absolute left-[75px] lg:top-[587px] lg:-ml-0 -ml-[50px] top-[580px]"
-                    >
-                      03
-                    </h1>
-                    <h1
-                      id="letter2"
-                      className="2xl:absolute 2xl:top-[587px] font-pp-right text-4xl lg:text-[90.5px] leading-tight lg:leading-[70px]"
-                      onMouseEnter={() => handleMouseEnter(3)}
-                      onMouseLeave={handleMouseLeave}
-                    >
-                      PLAN PROJECTS EFFECTIVELY
-                    </h1>
-                    {hoveredImage === 3 && (
-                      <img
-                        src={images[2]}
-                        alt="Promise 3"
-                        className=" absolute xs:w-[180px] w-[160px] xs:h-[200px] h-[180px] right-[10px] xs:top-[490px] xs:pl-0 pl-[30px] top-[533px] lg:hidden sm:block"
-                      />
-                    )}
-                  </div>
-                  <div
-                    id="content-block3"
-                    className="pt-[33px] flex items-center  pb-[33px] lg:w-auto w-[181px] lg:ml-0 -ml-[100px]"
-                  >
-                    <h1
-                      id="inside3"
-                      className="font-pp-right w-[36px] h-[36px] border border-black text-sm lg:text-[19px] flex items-center justify-center absolute left-[75px] lg:top-[794px] lg:-ml-0 -ml-[50px] top-[780px]"
-                    >
-                      04
-                    </h1>
-                    <h1
-                      id="letter3"
-                      className=" 2xl:absolute 2xl:top-[794px] font-pp-right text-4xl lg:text-[90.5px] leading-tight lg:leading-[70px]"
-                      onMouseEnter={() => handleMouseEnter(4)}
-                      onMouseLeave={handleMouseLeave}
-                    >
-                      BOOST PRODUCTIVITY LEVELS
-                    </h1>
-                    {hoveredImage === 4 && (
-                      <img
-                        src={images[3]}
-                        alt="Promise 4"
-                        className=" absolute w-[160px] xs:h-[180px] h-[170px] right-[10px] xs:pl-0 pl-[30px] top-[752px] xs:top-[700px] lg:hidden sm:block"
-                      />
-                    )}
-                  </div>
-                  <div
-                    id="content-block4"
-                    className="pt-[33px] flex items-center  pb-[33px] lg:w-auto w-[181px] lg:ml-0 -ml-[100px]"
-                  >
-                    <h1
-                      id="inside4"
-                      className="font-pp-right w-[36px] h-[36px] border border-black text-sm lg:text-[19px] flex items-center justify-center absolute left-[75px] lg:top-[999px] lg:-ml-0 -ml-[50px] top-[982px]"
-                    >
-                      05
-                    </h1>
-                    <h1
-                      id="letter4"
-                      className=" 2xl:absolute 2xl:top-[999px] font-pp-right text-4xl lg:text-[90.5px] leading-tight lg:leading-[70px]"
-                      onMouseEnter={() => handleMouseEnter(5)}
-                      onMouseLeave={handleMouseLeave}
-                    >
-                      EASILY ARRANGE AND MANAGE TASKS
-                    </h1>
-                    {hoveredImage === 5 && (
-                      <img
-                        src={images[4]}
-                        alt="Promise 5"
-                        className=" absolute w-[180px] h-[200px] xs:pl-0 pl-[30px] right-[10px] top-[955px] lg:top-[930px] lg:hidden sm:block"
-                      />
-                    )}
-                  </div>
-                  <div
-                    id="content-block5"
-                    className="pt-[33px] flex items-center  pb-[33px] lg:w-auto w-[181px] lg:ml-0 -ml-[100px]"
-                  >
-                    <h1
-                      id="inside5"
-                      className="font-pp-right w-[36px] h-[36px] border border-black text-sm lg:text-[19px] flex items-center justify-center absolute left-[75px] lg:top-[1206px] lg:-ml-0 -ml-[50px] top-[1274px]"
-                    >
-                      06
-                    </h1>
-                    <h1
-                      id="letter5"
-                      className=" 2xl:absolute 2xl:top-[1206px] font-pp-right text-4xl lg:text-[90.5px] leading-tight lg:leading-[70px]"
-                      onMouseEnter={() => handleMouseEnter(6)}
-                      onMouseLeave={handleMouseLeave}
-                    >
-                      CUSTOMIZABLE TASK LISTS
-                    </h1>
-                    {hoveredImage === 6 && (
-                      <img
-                        src={images[5]}
-                        alt="Promise 6"
-                        className=" absolute xs:w-[170px] w-[150px] xs:h-[200px] h-[160px] right-[10px] top-[1220px] xs:pl-0 pl-[50px] xs:top-[1150px] lg:hidden sm:block"
-                      />
-                    )}
-                  </div>
-                  <div
-                    id="content-block6"
-                    className="pt-[33px] flex items-center  pb-[33px] lg:w-auto w-[181px] lg:ml-0 -ml-[100px]"
-                  >
-                    <h1
-                      id="inside6"
-                      className="font-pp-right w-[36px] h-[36px] border border-black text-sm lg:text-[19px] flex items-center justify-center absolute left-[75px] lg:top-[1410px] lg:-ml-0 -ml-[50px] top-[1430px]"
-                    >
-                      07
-                    </h1>
-                    <h1
-                      id="letter6"
-                      className=" 2xl:absolute 2xl:top-[1410px] font-pp-right text-4xl lg:text-[90.5px] leading-tight lg:leading-[70px]"
-                      onMouseEnter={() => handleMouseEnter(7)}
-                      onMouseLeave={handleMouseLeave}
-                    >
-                      BUILD GOOD HABITS DAILY
-                    </h1>
-                    {hoveredImage === 7 && (
-                      <img
-                        src={images[6]}
-                        alt="Promise 7"
-                        className=" absolute xs:w-[180px] w-[160px] xs:h-[200px] h-[180px] right-[10px] xs:pl-0 pl-[40px] xs:top-[1350px] top-[1360px] lg:hidden sm:block"
-                      />
-                    )}
-                  </div>
+                      <h1
+                        id={`inside${index > 0 ? index : ""}`}
+                        className="font-pp-right w-[36px] h-[36px] border border-black text-sm lg:text-[19px] flex items-center justify-center absolute top-0 left-0 lg:top-[50px] lg:left-[-40px]"
+                      >
+                        {(index + 1).toString().padStart(2, "0")}
+                      </h1>
+                      <h1
+                        id={`letter${index > 0 ? index : ""}`}
+                        className="font-pp-right text-3xl lg:text-[90.5px] leading-tight lg:leading-[70px] ml-[50px] lg:ml-0"
+                        onMouseEnter={() => handleMouseEnter(index + 1)}
+                        onMouseLeave={handleMouseLeave}
+                      >
+                        {content.title}
+                      </h1>
+                      {hoveredImage === index + 1 && (
+                        <img
+                          src={images[index]}
+                          alt={`Promise ${index + 1}`}
+                          className="w-full max-w-[180px] h-auto mt-4 mx-auto lg:hidden"
+                        />
+                      )}
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
