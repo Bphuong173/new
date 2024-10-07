@@ -110,7 +110,7 @@ export default function Section2() {
                 </div>
                 <div
                   id="sectionBlock-bottom"
-                  className="pt-[17px] pr-[21px] pl-[21px] pb-[22px] h-[96px] flex items-center justify-center"
+                  className="lg:pt-[17px] pt-[0]  pr-[21px] pl-[21px] pb-[22px] h-[96px] flex items-center justify-center"
                 >
                   <p
                     style={{ fontFamily: "Archivo, sans-serif" }}
