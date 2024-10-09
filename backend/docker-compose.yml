@@ -3,10 +3,12 @@ version: "3"
 services:
   app:
     build: .
+    image: ghcr.io/do2304/deploybackend:latest
     ports:
       - "5500:5500"
     environment:
-      - MONGO_URI=mongodb://mongo:27017/todo
+      # - MONGO_URI=mongodb://mongo:27017/todo
+      - MONGO_URI=mongodb+srv://doadmin:ldw649N0f8V1m32M@database-674b0ce7.mongo.ondigitalocean.com/admin
     depends_on:
       - mongo
 
