@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+  app:
+    build: .
+    ports:
+      - "5500:5500"
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/todo
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  mongo-data:
