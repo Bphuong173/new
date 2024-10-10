@@ -8,7 +8,7 @@ services:
       - "5500:5500"
     environment:
       # - MONGO_URI=mongodb://mongo:27017/todo
-      - MONGO_URI=mongodb+srv://doadmin:2wKQ87e013IDPG56@databaseBP-0b3b150e.mongo.ondigitalocean.com/admin?tls=true&authSource=admin
+      - MONGO_URI=mongodb+srv://database-674b0ce7.mongo.ondigitalocean.com/admin?tls=true&authSource=admin
 
     depends_on:
       - mongo
