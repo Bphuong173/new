@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Navigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import axios from "axios";
+import { baseURL } from "../baseurl/baseurl";
 import "../../index.css";
 
 export const Register = ({ handleCloseModal }) => {
@@ -10,7 +11,7 @@ export const Register = ({ handleCloseModal }) => {
 
   const onSubmit = async (data) => {
     try {
-      axios.post("http://localhost:5500/user/register", data);
+      await axios.post(`${baseURL}/user/register`, data);
       reset();
       setIsRegistered(true);
       alert("signup succeed");

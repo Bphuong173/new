@@ -5,6 +5,7 @@ import { Navigate, useNavigate } from "react-router-dom";
 import "../../index.css";
 import { useForm } from "react-hook-form";
 import { GoogleLogin } from "@react-oauth/google";
+import { baseURL } from "../baseurl/baseurl";
 
 export const Login = ({ handleCloseLogin }) => {
   const {
@@ -17,7 +18,7 @@ export const Login = ({ handleCloseLogin }) => {
 
   const responseGoogle = async (response) => {
     try {
-      const res = await axios.post("http://localhost:5500/user/google-login", {
+      const res = await axios.post(`${baseURL}/user/google-login`, {
         token: response.credential,
       });
       localStorage.setItem("token", res.data.token);
@@ -29,7 +30,7 @@ export const Login = ({ handleCloseLogin }) => {
   const onSubmit = async (data) => {
     try {
       const response = await axios.post(
-        "http://localhost:5500/user/login",
+        "https://stingray-app-mc58d.ondigitalocean.app/user/login",
         data
       );
       const token = response.data;

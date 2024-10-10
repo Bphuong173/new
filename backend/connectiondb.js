@@ -6,7 +6,7 @@ import mongoose from "mongoose";
 //   "mongodb://mongo:27017/todo"
 // );
 export const connection = mongoose.createConnection(
-  "mongodb+srv://doadmin:ldw649N0f8V1m32M@database-674b0ce7.mongo.ondigitalocean.com/admin"
+  "mongodb+srv://doadmin:2wKQ87e013IDPG56@databaseBP-0b3b150e.mongo.ondigitalocean.com/admin?tls=true&authSource=admin"
 );
 connection.on("open", () => {
   console.log("Mongoose connection");
